@@ -1,0 +1,331 @@
+
+
+.basicInfo{
+    background-color: #002884;
+    
+    
+    }
+.basicInfo-last {
+    background-color: #002884;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    
+    }
+.info-block-container {
+    width: 100%;
+   
+} 
+.info-container {
+  display: block;
+  border-bottom: 1px solid rgb(210, 210, 219);
+  border-left: 1px solid rgb(210, 210, 219);
+  border-right: 1px solid rgb(210, 210, 219);
+  border-top: 2px solid #002884;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.textQ
+    {
+      color: #fff;
+      font-family:   'AdorshoLipi' ;
+      
+      text-align: center;
+      padding-top: 4px;
+      
+    }
+.textA
+    {
+      color: white;
+      font-family:   'AdorshoLipi' ;
+      text-align: center;
+      padding-top: 4px;
+      
+    }
+    
+.boxQ {
+      border: 1px solid gray;
+      
+      border-left: #002884;
+     
+      
+    
+      
+      
+      
+      color: #fff;
+    }
+.boxA {
+      border-top: 1px solid gray;
+      border-bottom: 1px solid gray;
+      border-right: #002884;
+      border-left:#002884 ;
+     
+     
+    }
+    
+.textCopy
+    {
+      color:#fff ;
+      font-size: 1em;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.4em;
+    }
+    
+.bio-publish{
+  text-align: center;
+  min-width: 100px;
+  color: white;
+  background-color:rgb(107, 36, 59) ;
+  
+}   
+.bio-publish:hover{
+  text-align: center;
+  min-width: 100px;
+  color: white;
+  background-color:dimgray ;
+  
+}   
+.infoHeading
+    {
+      
+      
+      color:#002884;
+    }
+.contactBtnHeading
+{
+  border-bottom: 1px solid rgb(210, 210, 219);
+  
+  color:#002884;
+}
+.textHeading
+    {
+      
+      font-family:   'AdorshoLipi' ;
+      
+      text-align: center;
+      justify-content: center;
+      font-size: larger;
+    }
+
+.basicInfo-ft{
+    height: 1px;
+    background-color: black;
+    border: none;
+    
+}
+.infoBox-1
+    {
+      background-color: rgb(241, 240, 236);
+      
+      
+      
+      
+     
+    }
+.infoBox-2 {
+  background-color: white;
+}
+.wQuestion
+    {
+      border-right: 1px solid rgb(210, 210, 219);
+      min-height: 30px;
+     
+    }
+.bioInfoQ
+    {
+      color:black;
+      font-family:'AdorshoLipi' ;
+      font-size: small;
+      padding-top: 5px;
+      padding-left: 8px;
+     
+      
+    }
+    
+.bioInfoA
+    {
+      color: black;
+      font-family:'AdorshoLipi' ;
+      font-size: small;
+      padding-top: 5px;
+    }
+.ifContact
+    {
+      font-family:'AdorshoLipi' ;
+      font-size: small;
+    }
+.contactBtnCon
+    {
+      align-items: center;
+    }
+.contactBtn
+    {
+      font-family:'AdorshoLipi' ;
+      font-size: larger;
+    }
+    
+    
+    
+    
+.profileText
+    {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+      padding-top: 30px;
+      border-bottom: 1px solid #2d2f41;
+      background-color: #002884;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      
+    }
+.profileText .imgBx
+    {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      background:#fff;
+      border: 3px solid #fff;
+      
+    }
+.profileText .imgBx img
+    {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      filter: invert(13%) sepia(44%) saturate(5780%) hue-rotate(230deg) brightness(83%) contrast(124%);
+      
+     
+    }
+    
+.profileText h2
+    {
+      color:#fff ;
+      font-size: 1.5em;
+      margin-top: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.4em;
+    }
+.profileText h2 span
+    {
+      font-size: 0.8em;
+      font-weight: 300;
+    }
+
+
+    /* short biodata */
+
+   .short-bio{
+    
+    border-radius: 5px;
+    
+   
+   }
+   .short-bio:hover{
+    border-radius: 5px;
+    
+    
+   }
+   .short-bio:focus{
+    outline: 0;
+  }
+    @media screen and (min-width: 1024px) {
+      .short-bio {
+        min-width: 350px;
+        margin-top: 30px;
+        transition: 1s;
+       
+      }
+      }
+      @media screen and (min-width: 308px) and (max-width: 1023px){
+        .short-bio {
+          min-width: 350px;
+          margin-top: 30px;
+          transition: 1s;
+         
+        }
+      }
+      @media screen and (max-width: 767px) {
+        .short-bio {
+          min-width:350px;
+          margin-top: 30px;
+         
+          transition: 1s;
+         
+          
+        }
+      }
+
+      .short-bio-info{
+        
+        color: black;
+        
+       
+      }
+      .short-bio-info-ft{
+        
+        color: black;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+       
+      }
+      .short-bio-text
+      {
+        color: black;
+        font-family:   'AdorshoLipi' ;
+        
+        text-align: center;
+        padding-top: 4px;
+        
+      }
+      .full-bio-btn{
+        margin-top: 20px;
+        min-width: 150px;
+        min-height: 40px;
+        background-color:#002884;
+        color: white;
+        border-radius: 5px;
+        
+      }
+      
+      .bio-edit-btn{
+        background-color:#002884 ;
+        min-width: 150px;
+        min-height: 50px;
+        color: white;
+        font-size: larger;
+        border-radius: 5px;
+      }
+      .bio-publish-btn{
+        background-color:#002884 ;
+        min-width: 150px;
+        min-height: 50px;
+        color: white;
+        font-size: larger;
+        border-radius: 5px;
+      }
+      .sendBio-btn{
+        background-color:#002884 ;
+        
+        min-width: 370px;
+        min-height: 50px;
+        color: white;
+        font-size: larger;
+        border-radius: 5px;
+      }
+     

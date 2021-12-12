@@ -1,0 +1,71 @@
+.applicationForm{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+    background-color: azure;
+}
+
+.apply-container{
+   width: 500px;
+   position: relative;
+   display: flex;
+   border: 1px solid gainsboro;
+   
+
+}
+.apply-header{
+    width: 100%;
+    height: 50px;
+    background-color: cornflowerblue;
+    color: white;
+    align-items: center;
+    justify-content: center;
+  
+    
+    
+    
+}
+.apply-content{
+    position: relative;
+}
+
+.pay-tab {
+    background-color:whitesmoke;
+    color: white;
+    
+   
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+    border: none;
+    outline: none;
+    font-size:larger;
+   
+    
+  }
+  .pay-tab:hover {
+    background-color:turquoise;
+    color:white;
+  }
+  .pay-tab-active {
+    background-color:white;
+    color: white;
+   
+   
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    font-size:larger;
+   
+    
+  }
+  .pay-tab-active:hover {
+    background-color:wheat;
+    color:white;
+  }
+  
+
+
