@@ -98,12 +98,7 @@ const DetailsComponents = ({user}) => {
                  </div>
                  </div>}
 
-                 <div className ="row">
-                 <div className="info-block-container ml-3 ml-md-3 ml-lg-5 
-                     mr-3 mr-md-3 mr-lg-3 mt-5 mt-md-5 mt-lg-0 mb-0 mb-md-0 mb-lg-5" >
-                 <ContactInfo user = {user} />
-                 </div>
-                 </div>
+                 
                  
                  <div className ="row">
                  <div className="info-block-container ml-3 ml-md-3 ml-lg-5 

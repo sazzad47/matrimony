@@ -16,19 +16,7 @@ const ContactBtn = ({id, dispatch, user, profile}) => {
   const { auth } = useSelector(state => state)
     return (
       <>
-      {auth.user.approvers.find(item => item._id=== user._id)?
-         <div className="col-12 col-md-12 col-lg-12  d-flex justify-content-center">
-           <Grid 
-           container
-           alignItems="center"
-           justifyContent="center">
-         <Typography align='center' >উক্ত {user.gender==="পাত্রের বায়োডাটা"? "পাত্রের" : "পাত্রীর"} অভিভাবক আপনার অভিভাবককে যোগাযোগ করতে বলেছেন। যোগাযোগ করতে নীচের বাটনে চাপুন।</Typography><br/><br/>
-              
-              <Link to='/contact'> <button className="full-bio-btn "
-               >যোগাযোগ</button></Link> 
-          </Grid>
-         </div>
-        :
+      
         <Card  className={classes.card}>
         <div className="container-fluid">
            
@@ -50,7 +38,7 @@ const ContactBtn = ({id, dispatch, user, profile}) => {
            </Grid>
         </div>
        
-        </Card>}
+        </Card>
         </>
      
     )
