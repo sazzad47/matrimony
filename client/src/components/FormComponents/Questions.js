@@ -56,7 +56,7 @@ const EditProfile = () => {
     const {  gCVpermit, noDayvar,} = userData
     const [approval, setApproval] = useState('')
 
-    const [allTrue, setAllTrue] = React.useState(true);
+    const [allTrue, setAllTrue] = React.useState(false);
     
 
     const handleChecked = (event) => {
@@ -70,7 +70,7 @@ const EditProfile = () => {
     const dispatch = useDispatch()
     
     useEffect(() => {
-      setUserData(auth.user)
+      setAllTrue(auth.user)
     }, [auth.user])
     
     

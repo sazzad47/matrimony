@@ -49,17 +49,18 @@ const useStyles = makeStyles((theme)=>({
            
            
             <ListItem
-            component={Link} to ="/help" onClick={()=>setOpenDrawer(false)} divider button disableRipple >
+            component={Link} to ="/help&support" onClick={()=>setOpenDrawer(false)} divider button disableRipple >
            <div className="drawer-icon pr-2"> <i class="bi bi-question-square"></i> </div> Help & Support
             </ListItem>
             <ListItem
-            component={Link} to ="/terms" onClick={()=>setOpenDrawer(false)} divider button disableRipple >
-          <div className="drawer-icon pr-2"> <i class="bi bi-award"></i> </div> Terms & Policies
-            </ListItem>
-            <ListItem
-            component={Link} to ="/report" onClick={()=>setOpenDrawer(false)} divider button disableRipple >
+            component={Link} to ="/reportProblem" onClick={()=>setOpenDrawer(false)} divider button disableRipple >
          <div className="drawer-icon pr-2"> <i class="bi bi-exclamation-triangle"></i> </div>  Report a Problem
             </ListItem>
+            <ListItem
+            component={Link} to ="/terms&policies" onClick={()=>setOpenDrawer(false)} divider button disableRipple >
+          <div className="drawer-icon pr-2"> <i class="bi bi-award"></i> </div> Terms & Policies
+            </ListItem>
+            
         </List>
         <ListItem
             component={Link} to ="/about" onClick={()=>setOpenDrawer(false)} divider button disableRipple >

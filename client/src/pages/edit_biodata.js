@@ -5,6 +5,7 @@ import Publishbtn from '../components/FormComponents/Publishbtn'
 import { updateProfileUser } from '../redux/actions/profileAction'
 import { Link } from 'react-router-dom'
 import { Button, Card, Grid, makeStyles, Typography } from '@material-ui/core'
+import Rules from './../components/FormComponents/Rules';
 
 const useStyles = makeStyles((theme)=>({
     tab: {
@@ -59,12 +60,12 @@ const EditProfile = () => {
              <div className="col-md-6"> 
              <Card elevation={6} style={{marginBottom:'20px'}}>
              
-            <Button fullWidth className={classes.tab}><Typography>যেসব কারণে বায়োডাটা বাতিল করা হয়। </Typography></Button>
+           <Rules/>
               </Card>
               <Grid style = {{ marginBottom:'1px'}} spacing={10} container alignItems='center' justifyContent='center'>
                  <Grid item xs={6} sm={6} md={6} lg={6}>
               <Card elevation={6}>
-                    <Link to={`/biodata/${auth.user._id}`}> <Button className={classes.tab} fullWidth > Preview </Button>
+                    <Link style={{ textDecoration: 'none', color: 'white' }} to={`/biodata/${auth.user._id}`}> <Button className={classes.tab} fullWidth > Preview </Button>
                     </Link>
                      </Card>
                      </Grid>

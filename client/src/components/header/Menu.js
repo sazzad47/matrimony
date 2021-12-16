@@ -147,7 +147,7 @@ const HeaderMenu = () => {
                   <Link
                   disableRipple
                   onClick= {handleOpenMenu}
-                  
+                  style={{ textDecoration: 'none', color: 'white' }}
                   aria-label="menu"
                   
                   >  <span className="nav-link pr-2 pr-lg-3">
@@ -183,7 +183,7 @@ const HeaderMenu = () => {
           <div className="drawer-icon pr-2"> <i class="bi bi-journal"></i> </div>Your Biodata
         </MenuItem>
      
-          <MenuItem className={classes.menu} component={Link} to={`/dashboard/${auth.user._id}`} onClick={handleCloseMenu}>
+          <MenuItem className={classes.menu} component={Link} to='/deleteBiodata' onClick={handleCloseMenu}>
           <div className="drawer-icon pr-2"> <i class="bi bi-receipt"></i> </div> Delete Your Biodata
         </MenuItem>
          { auth.user.role==='admin'?

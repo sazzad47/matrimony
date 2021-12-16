@@ -3,6 +3,8 @@ const auth = require("../middleware/auth")
 const userCtrl = require("../controllers/userCtrl")
 const searchCtrl = require("../controllers/searchCtrl")
 const applicantCtrl = require("../controllers/applicantCtrl")
+const deleteCtrl = require('../controllers/deleteCtrl')
+const reportCtrl = require('../controllers/reportCtrl')
 
 router.patch('/user/:id/approve', auth, userCtrl.approve)
 
@@ -40,6 +42,12 @@ router.get('/suggestionsUser',auth, userCtrl.suggestionsUser)
 router.post('/contact', applicantCtrl.createApplicant)
 router.get('/getApplicant', applicantCtrl.getApplicant)
 router.patch('/updateApplicant/:id', applicantCtrl.updateApplicant)
+router.post('/deleteBiodata', deleteCtrl.createApplicant)
+router.get('/getDeleteRequests', deleteCtrl.getApplicant)
+router.patch('/updateDeleteRequest/:id', deleteCtrl.updateApplicant)
+router.post('/report', reportCtrl.createApplicant)
+router.get('/getReports', reportCtrl.getApplicant)
+router.patch('/updateReport/:id', reportCtrl.updateApplicant)
 
 
 module.exports = router

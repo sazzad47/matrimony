@@ -33,7 +33,7 @@ const ContactBtn = ({id, dispatch, user, profile}) => {
            >
                <Typography align='center' style={{marginTop:'30px'}}>আপনার অভিভাবক যদি উক্ত {user.gender==="পাত্রের বায়োডাটা"? "পাত্রের" : "পাত্রীর"} অভিভাবকের সাথে যোগাযোগ করতে আগ্রহী হোন, তাহলে নীচের বাটনে চাপুন।</Typography><br/><br/>
               
-             <Link to='/contact'> <button className="full-bio-btn mb-4"
+             <Link to='/contactRequest'> <button className="full-bio-btn mb-4"
               >যোগাযোগ</button></Link> 
            </Grid>
         </div>

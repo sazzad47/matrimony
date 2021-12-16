@@ -10,7 +10,7 @@ import ViewBiodata from '../pages/biodata/[id]'
 import Dashboard from '../components/profile/Dashboard'
 import Biodatas from './biodatas'
 import Pending from '../pages/pending'
-import ContactRequest from '../pages/contact'
+import ContactRequest from '../pages/contactRequest'
 import Applicants from '../pages/applicants'
 const Pages = () => {
     const { auth } = useSelector(state => state)
@@ -31,7 +31,7 @@ const Pages = () => {
             <Route path="/biodatas" exact component={Biodatas} />
             <Route path="/pending" exact component={isLogged? Pending : Home} />
 
-            <Route path="/contact_request" exact component={ContactRequest} />
+            <Route path="/contactRequest" exact component={ContactRequest} />
 
 
             <Route path="/applicants" exact component={isLogged? Applicants : Home} />

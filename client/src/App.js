@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
 
 import PageRender from './customRouter/PageRender'
 import PrivateRouter from './customRouter/PrivateRouter'
@@ -28,8 +28,13 @@ import Peer from 'peerjs'
 import { getApplicant } from './redux/actions/applicantAction'
 import Pages from './pages/Pages'
 import Biodatas from './pages/biodatas'
-import ConatctRequest from './pages/contact'
+import ConatctRequest from './pages/contactRequest'
 import SingleBiodata from './pages/biodata/[id]'
+
+import ReportProblem from './pages/reportProblem';
+import About from './pages/about';
+import Help from './pages/help&support';
+import Terms from './pages/terms&policies';
 
 function App() {
   const firstLogin = localStorage.getItem('firstLogin')
@@ -95,12 +100,18 @@ function App() {
           {call && <CallModal />}
           <Route exact path="/" component={Home} />
           {firstLogin? null : <Route exact path="/biodatas" component={Biodatas}/>}
-          {firstLogin? null : <Route exact path="/contact" component={ConatctRequest}/>}
+          {firstLogin? null : <Route exact path="/contactRequest" component={ConatctRequest}/>}
+          {firstLogin? null : <Route exact path="/reportProblem" component={ReportProblem}/>}
+          {firstLogin? null : <Route exact path="/about" component={About}/>}
+          {firstLogin? null : <Route exact path="/help&support" component={Help}/>}
+          {firstLogin? null : <Route exact path="/terms&policies" component={Terms}/>}
+
           <Route exact path="/auth" component={Auth}/>
           <Route exact path="/biodatas/:id" component={BiodataDetails}/>
           
           <Route exact path="/register" component={Register} />
-          <PrivateRouter exact path="/:page" component={PageRender} />
+          
+          <PrivateRouter exact path="/:page" component={PageRender} /> 
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
           
         </div>

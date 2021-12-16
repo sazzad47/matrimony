@@ -13,7 +13,7 @@ import ContactInfo from './ContactInfo';
 import QuestionsInfo from './QuestionsInfo';
 import ProfInfo from './ProfInfo';
 import ButtonContainer from './ButtonContainer';
-import ApplicationForm from '../../pages/contact';
+import ApplicationForm from '../../pages/contactRequest';
 import ContactBtn from './ContactBtn';
 import Dashboard from './Dashboard';
 

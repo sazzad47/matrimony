@@ -19,6 +19,8 @@ import call from './callReducer'
 import peer from './peerReducer'
 import biodatas from './searchBiodataReducer'
 
+import deleteRequests from './deleteReducer'
+import reports from './reportReducer'
 import applicants from './applicantReducer'
 import pendingBiodatas from './pendingReducer'
 
@@ -47,6 +49,8 @@ const rootReducer = combineReducers({
     call,
     peer,
     applicants,
+    deleteRequests,
+    reports,
     pendingBiodatas,
     
 })

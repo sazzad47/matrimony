@@ -77,6 +77,8 @@ img {
 
 /* -------- applicant ---------- */
 @import url("./applicant.css");
+/* -------- rules ---------- */
+@import url("./rules.css");
 
 /* -------- biodatas ---------- */
 @import url("./biodatas.css");
