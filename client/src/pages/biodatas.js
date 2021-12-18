@@ -58,7 +58,7 @@ const Biodatas = () => {
     return (
         <div>
           <div className="row d-flex align-items-center justify-content-center">
-        <div className="col-md-4 mx-3 mx-lg-0">
+        <div className="col-md-4 ">
         <BioSearch/>
         </div>
         </div>
@@ -69,6 +69,7 @@ const Biodatas = () => {
       </div>}
 
       {isLoading? null : displayBiodatas.length===0? <div className="biodatas d-flex align-items-center justify-content-center mt-5"><Typography>আফওয়ান! আপনার সার্চ অনুযায়ী বায়োডাটা পাওয়া যায়নি।</Typography> </div>:
+      <div className='my-5'>
       <ReactPaginate
         previousLabel={"previous"}
         nextLabel={"next"}
@@ -88,7 +89,7 @@ const Biodatas = () => {
         pageCount={pageCount}
         onPageChange={changePage}
         
-      />}
+      /> </div>}
      
       
       </div>

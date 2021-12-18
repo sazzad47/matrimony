@@ -4,7 +4,7 @@ import { Box, Button, Card, FormControl, Grid, InputLabel, makeStyles, Paper, Se
 
 import { useSelector, useDispatch } from 'react-redux'
 import { pdistricts } from '../FormComponents/Data'
-
+import searchPhoto from '../../images/searchPhoto.png'
 
 import { GLOBALTYPES } from '../../redux/actions/globalTypes'
 import UserCard from '../UserCard'
@@ -117,7 +117,7 @@ const BioSearch = () => {
         container
          alignItems="center"
          justifyContent="center"
-         ><Typography variant="h5">আমি খুঁজছি...</Typography></Grid>
+         ><img src={searchPhoto} className='img-fluid'/></Grid>
          </div>
          <div className='row mx-3 my-4'>
              <Grid container spacing={2}>

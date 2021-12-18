@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-
+import homePhoto from '../images/homeAyat.png'
 
 import { useSelector } from 'react-redux'
 import LoadIcon from '../images/loading.gif'
@@ -50,14 +50,30 @@ const Home = () => {
     },[])
 
     return (
-        <div className="home row d-flex align-items-start align-items-lg-center justify-content-center">
-            
-              <div className="col-md-4 mx-3 mx-lg-0 ">
+        <div className="home d-flex justify-content-center">
+          <div className='col my-0 my-md-5 my-lg-5'>
+          <div className='row'>
+
+          
+             
+              <div className="col-md-4 order-2 mt-5 mt-md-4 mt-lg-4 order-md-1 order-lg-1">
                  
-              <div className="">
+             
             <BioSearch/>
-              </div>
+             
             
+              
+              
+            
+        </div>
+        <div className='col-md-8 order-1 order-md-2 order-lg-2'>
+          <img src ={homePhoto} className="img-fluid"/>
+                
+             </div>
+             
+              </div>
+              <div className='row'>
+                <div className='col-md-12'>
               <Grid 
               container
               alignItems="center"
@@ -72,10 +88,9 @@ const Home = () => {
             </Paper>
               </Link>
               </Grid>
-              
-            
-        </div>
-              
+                </div>
+              </div>
+              </div>
         </div>
     )
 }

@@ -27,13 +27,13 @@ const ReportProblem = () => {
     return (
       <div className="App"> 
       <Typography gutterBottom variant="h5" align="center">
-      আমাদের ওয়েবসাইট সংক্রান্ত যেকোনো ধরনের সমস্যা আমাদেরকে অবহিত করুন। 
+      আমাদের খেদমত সংক্রান্ত যেকোনো ধরনের সমস্যা আমাদেরকে অবহিত করুন। 
        </Typography>
       <Grid>
         <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto" }}>
           <CardContent>
             <Typography gutterBottom variant="body3">
-            আমাদের ওয়েবসাইট সংক্রান্ত যেকোনো ধরনের সমস্যা, জটিলতা, অথবা কোনো বিষয়ে আপনার পরামর্শ থাকলে আমাদেরকে জানাতে পারেন নীচের ফর্মটির মাধ্যমে।<br/><br/>
+            আমাদের খেদমত সংক্রান্ত যেকোনো ধরনের সমস্যা, জটিলতা, অথবা কোনো বিষয়ে আপনার পরামর্শ থাকলে আমাদেরকে জানাতে পারেন নীচের ফর্মটির মাধ্যমে।<br/><br/>
           </Typography> 
             
             <form onSubmit={handleSubmit}>

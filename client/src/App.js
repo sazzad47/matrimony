@@ -35,6 +35,7 @@ import ReportProblem from './pages/reportProblem';
 import About from './pages/about';
 import Help from './pages/help&support';
 import Terms from './pages/terms&policies';
+import Footer from './components/Footer'
 
 function App() {
   const firstLogin = localStorage.getItem('firstLogin')
@@ -113,7 +114,7 @@ function App() {
           
           <PrivateRouter exact path="/:page" component={PageRender} /> 
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
-          
+          <Footer/>
         </div>
       </div>
     </Router>
