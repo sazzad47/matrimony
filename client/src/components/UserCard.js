@@ -2,8 +2,17 @@ import React from 'react'
 import Avatar from './Avatar'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Button, Card, Paper } from '@material-ui/core'
+import { Button, Card, Grid, makeStyles, Paper } from '@material-ui/core'
 import { approvePending, declinePending } from '../redux/actions/pendingAction'
+
+const useStyles = makeStyles((theme)=>({
+    
+    biodata:{
+      margin:'20px'
+    }
+   
+  }));
+ 
 
 const UserCard = ({children, user, border, handleClose, setShowApprovers, setShowApproved,
     setShowAcceptors, setShowAccepted, setShowFollowers, setShowFollowing, msg}) => {
@@ -11,7 +20,7 @@ const UserCard = ({children, user, border, handleClose, setShowApprovers, setSho
     const dispatch = useDispatch();
     const { theme } = useSelector(state => state)
    
-   
+    const classes = useStyles();
    
     const handleCloseAll = () => {
         if(handleClose) handleClose()
@@ -23,42 +32,18 @@ const UserCard = ({children, user, border, handleClose, setShowApprovers, setSho
         if(setShowApproved) setShowApproved(false)
     }
 
-    const showMsg = (user) => {
-        return(
-            <>
-                <div style={{filter: theme ? 'invert(1)' : 'invert(0)'}}>
-                    {user.text}
-                </div>
-                {
-                    user.media.length > 0 && 
-                    <div>
-                        {user.media.length} <i className="fas fa-image" />
-                    </div>
-                }
-
-                {
-                    user.call &&
-                    <span className="material-icons">
-                        {
-                            user.call.times === 0
-                            ? user.call.video ? 'videocam_off' : 'phone_disabled'
-                            : user.call.video ? 'video_camera_front' : 'call'
-                        }
-                    </span>
-                }
-            </>
-        )
-    }
-
+    
 
     return (
-        <div className="ml-4" >
         
-            <div>
-            <Link to={firstLogin? `/biodata/${user._id}` : `/biodatas/${user._id}`} onClick={handleCloseAll}
-               > <button className="short-bio ">
+        
+            
+            <Link style={{ textDecoration: 'none', }} to={firstLogin? `/biodata/${user._id}` : `/biodatas/${user._id}`} onClick={handleCloseAll}
+               >  
+               
+        
 
-            <Card elevation={24} >
+            <Card elevation={6} className={classes.biodata}>
          
          <div className="profileText">
              <div className="imgBx">
@@ -136,19 +121,21 @@ const UserCard = ({children, user, border, handleClose, setShowApprovers, setSho
       </div>
       </div>
 
-           
+         
            </Card> 
 
                
                     
                    
-                 </button>
+                
                     
+                
                 </Link>
-            </div>
+          
             
-            {children}
-        </div>
+          
+
+
     )
 }
 

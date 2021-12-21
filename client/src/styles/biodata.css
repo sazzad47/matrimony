@@ -142,7 +142,7 @@
       font-family:'AdorshoLipi' ;
       font-size: small;
       padding-top: 5px;
-      padding-left: 8px;
+      
      
       
     }
@@ -244,32 +244,7 @@
    .short-bio:focus{
     outline: 0;
   }
-    @media screen and (min-width: 1024px) {
-      .short-bio {
-        min-width: 350px;
-        margin-top: 30px;
-        transition: 1s;
-       
-      }
-      }
-      @media screen and (min-width: 308px) and (max-width: 1023px){
-        .short-bio {
-          min-width: 350px;
-          margin-top: 30px;
-          transition: 1s;
-         
-        }
-      }
-      @media screen and (max-width: 767px) {
-        .short-bio {
-          min-width:350px;
-          margin-top: 30px;
-         
-          transition: 1s;
-         
-          
-        }
-      }
+   
 
       .short-bio-info{
         

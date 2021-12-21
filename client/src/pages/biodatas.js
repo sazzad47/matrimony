@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom';
-import { Box, Button, CircularProgress, FormControl, InputLabel, makeStyles, Paper, Select, Typography } from '@material-ui/core'
+import { Box, Button, CircularProgress, FormControl, Grid, InputLabel, makeStyles, Paper, Select, Typography } from '@material-ui/core'
 import ReactPaginate from 'react-paginate'
 import { useSelector, useDispatch } from 'react-redux'
 import { getDataAPI } from '../utils/fetchData'
@@ -56,16 +56,21 @@ const Biodatas = () => {
    
     
     return (
-        <div>
+            <div className='biodatas_page'>
           <div className="row d-flex align-items-center justify-content-center">
         <div className="col-md-4 ">
         <BioSearch/>
         </div>
         </div>
         {isLoading? <div className="biodatas mt-5 d-flex align-items-center justify-content-center"><CircularProgress/></div>  :
-          <div className="row biodatas">
+          <div className='biodatas'>
+         
+           
+
          {displayBiodatas}
+           
         
+ 
       </div>}
 
       {isLoading? null : displayBiodatas.length===0? <div className="biodatas d-flex align-items-center justify-content-center mt-5"><Typography>আফওয়ান! আপনার সার্চ অনুযায়ী বায়োডাটা পাওয়া যায়নি।</Typography> </div>:

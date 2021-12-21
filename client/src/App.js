@@ -36,6 +36,7 @@ import About from './pages/about';
 import Help from './pages/help&support';
 import Terms from './pages/terms&policies';
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const firstLogin = localStorage.getItem('firstLogin')
@@ -94,6 +95,7 @@ function App() {
 
       <input type="checkbox" id="theme" />
       <div className={`App ${(status || modal) && 'mode'}`}>
+        <ScrollToTop>
         <div className="main">
          <Header />
           {status && <StatusModal />}
@@ -116,6 +118,7 @@ function App() {
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
           <Footer/>
         </div>
+        </ScrollToTop>
       </div>
     </Router>
   );
