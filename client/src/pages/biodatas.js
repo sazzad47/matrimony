@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom';
-import { Box, Button, CircularProgress, FormControl, Grid, InputLabel, makeStyles, Paper, Select, Typography } from '@material-ui/core'
+import { GridList, GridListTile, CircularProgress, FormControl, Grid, InputLabel, makeStyles, Paper, Select, Typography } from '@material-ui/core'
 import ReactPaginate from 'react-paginate'
 import { useSelector, useDispatch } from 'react-redux'
 import { getDataAPI } from '../utils/fetchData'
@@ -11,13 +11,16 @@ import pdivisionsData from '../components/FormComponents/Data'
 import { getBiodatas, getBiodatasBySearch } from '../redux/actions/getBiodatasAction'
 import BioSearch from '../components/home/BioSearch';
 const useStyles = makeStyles((theme)=>({
-    bioSearchSelect: {
-      minWidth:300,
-      
-},
-        inputLabel:{
-            alignItems:'center'
-        }
+   
+      mainContainer: {
+        borderRadius: 15,
+        margin: '30px 0',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '10px 50px',
+      },
 
    
   }));
@@ -37,14 +40,7 @@ const Biodatas = () => {
     const pagesVisited = pageNumber * biodatasPerPage;
    
     const displayBiodatas = biodatas.slice(pagesVisited, pagesVisited + biodatasPerPage)
-    .map((user) => (
-        <UserCard 
-        key={user._id} 
-        user={user} 
-        border="border"
-        
-        />
-    ))
+    
    
     const pageCount = Math.ceil(biodatas.length / biodatasPerPage);
     
@@ -58,20 +54,41 @@ const Biodatas = () => {
     return (
             <div className='biodatas_page'>
           <div className="row d-flex align-items-center justify-content-center">
-        <div className="col-md-4 ">
+        <div className="col-md-4" style={{padding:'30px'}}>
         <BioSearch/>
         </div>
         </div>
         {isLoading? <div className="biodatas mt-5 d-flex align-items-center justify-content-center"><CircularProgress/></div>  :
-          <div className='biodatas'>
+           <Grid
+           container
+           spacing={2}
+           direction="row"
+           justify="flex-start"
+           alignItems="flex-start"
+           style={{padding:'20px'}}
+       >
+         {displayBiodatas.map((user) => (
+
+                  <Grid item xs={12} sm={6} md={4} key={user._id} >
+                          <UserCard 
+                          
+                          user={user} 
+                          border="border"
+        
+                          />
+                        </Grid>
+        
+    ))}
+           
+
+            </Grid>
          
            
 
-         {displayBiodatas}
            
         
  
-      </div>}
+      }
 
       {isLoading? null : displayBiodatas.length===0? <div className="biodatas d-flex align-items-center justify-content-center mt-5"><Typography>আফওয়ান! আপনার সার্চ অনুযায়ী বায়োডাটা পাওয়া যায়নি।</Typography> </div>:
       <div className='my-5'>

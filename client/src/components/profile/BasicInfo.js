@@ -19,7 +19,7 @@ const BasicInfo = ({id, dispatch, user, profile}) => {
            </div>
 
            {user.gender===""? null
-           : <div className=" basicInfo"> 
+           : <div className="basicInfo"> 
           
           <div className="row px-4 px-lg-5 pt-3" >
        <div className="col-md-6 w-50 w-lg-50  boxQ ">

@@ -24,7 +24,7 @@ const SingleBio = ({id, dispatch, user, auth, profile}) => {
 
 
     return (
-        <Grid>
+        <div className='biodatas_page'>
             <div className = "row "> {user.height===""? null :
                 <div className = "col-md-4">
                   <div className="info-block-container d-block d-md-none d-lg-none
@@ -150,7 +150,7 @@ const SingleBio = ({id, dispatch, user, auth, profile}) => {
                
               
                
-        </Grid>
+        </div>
     )
 }
 

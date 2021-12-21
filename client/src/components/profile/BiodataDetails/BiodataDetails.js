@@ -13,7 +13,7 @@ const BiodataDetails = () => {
         dispatch(getBiodatas())
     }, [dispatch])
     return (
-        <div className ="m-2 m-md-3 m-lg-5" >
+        <div className ="px-4 px-md-5 px-lg-5 py-2 py-md-5 py-lg-5 biodatas_page" >
         {
             biodatas.filter(user => user._id === id ).map(user => (
                 <div key={user._id}>

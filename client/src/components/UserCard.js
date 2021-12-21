@@ -8,7 +8,7 @@ import { approvePending, declinePending } from '../redux/actions/pendingAction'
 const useStyles = makeStyles((theme)=>({
     
     biodata:{
-      margin:'20px'
+      
     }
    
   }));
@@ -111,9 +111,9 @@ const UserCard = ({children, user, border, handleClose, setShowApprovers, setSho
           
       
       <div className='short-bio-info-ft'>
-      <div className="row" >
-      <div className="col-md-12 w-100 ">
-      <div className="my-3 mx-5"><Button disableRipple variant='contained'  color="primary" >সম্পূর্ণ বায়োডাটা</Button></div>
+      <div className="row d-flex justify-content-center my-3" >
+      <div className="col-6 col-md-6 col-lg-6 w-100">
+      <Button disableRipple fullWidth variant='contained'  color="primary" >সম্পূর্ণ বায়োডাটা</Button>
       </div> 
      
       
