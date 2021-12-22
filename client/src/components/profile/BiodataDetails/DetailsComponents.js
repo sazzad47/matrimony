@@ -18,7 +18,7 @@ const DetailsComponents = ({user}) => {
             <div className = "row "> {user.height===""? null :
                 <div className = "col-md-4">
                   
-                     <div className="mx-4 mx-md-0 mx-lg-0">
+                     <div className="">
                 <BasicInfo user = {user} /> 
                </div>
                 </div>}

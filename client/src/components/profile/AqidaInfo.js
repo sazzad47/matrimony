@@ -26,7 +26,7 @@ const AqidaInfo = ({id, dispatch, user, profile}) => {
         
         {user.lifeP === ""? null :
              <div className="row infoBox-1">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">আপনার মতে জীবনের উদ্দেশ্য কী?</div> </div>
+               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">ইসলামী দাম্পত্য জীবন নিয়ে আপনার পরিকল্পনা কী?</div> </div>
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.lifeP}</div> </div>
              </div>}
               
@@ -47,7 +47,7 @@ const AqidaInfo = ({id, dispatch, user, profile}) => {
              </div>}
              {user.dayC === ""? null :
              <div className="row infoBox-1 ">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">আপনার মতে সফল কারা?</div> </div>
+               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">বিদ'আত সম্পর্কে আপনার ধারণা কী?</div> </div>
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.dayC}</div> </div>
              </div>}
              {user.fAlem === ""? null :

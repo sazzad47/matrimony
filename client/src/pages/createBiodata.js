@@ -69,7 +69,7 @@ function CreateBiodata() {
 
 
   useEffect(() => {
-    const data = localStorage.getItem('Alhamdulillah');
+    const data = sessionStorage.getItem('Alhamdulillah');
     if (data){
       setToggleState(JSON.parse(data));
     }
@@ -78,7 +78,7 @@ function CreateBiodata() {
 
    useEffect(() => {
    
-    localStorage.setItem('Alhamdulillah',JSON.stringify(toggleState));
+    sessionStorage.setItem('Alhamdulillah',JSON.stringify(toggleState));
 
    },);
   return (

@@ -103,7 +103,7 @@ const EditProfile = ({setOnEdit}) => {
                      
                      variant="outlined"
                     
-                     label="আপনার মতে জীবনের উদ্দেশ্য কী?"
+                     label="ইসলামী দাম্পত্য জীবন নিয়ে আপনার পরিকল্পনা কী?"
                      id="lifeP"
                      name="lifeP"
                      value={lifeP}
@@ -184,7 +184,7 @@ const EditProfile = ({setOnEdit}) => {
                      
                      variant="outlined"
                      
-                     label="আপনার মতে সফল কারা?"
+                     label="বিদ'আত সম্পর্কে আপনার ধারণা কী?"
                      id="dayC"
                      name="dayC"
                      value={dayC}

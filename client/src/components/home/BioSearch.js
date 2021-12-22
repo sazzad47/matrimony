@@ -103,7 +103,7 @@ const BioSearch = () => {
     
     return (
         <div>
-     <Card elevation={24}>
+     <Card elevation={6}>
         <form onSubmit={handleSearch}>
       
       

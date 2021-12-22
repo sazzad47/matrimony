@@ -282,7 +282,7 @@ const userCtrl = {
 
                 gCVpermit, allTrue, noDayvar,
             } = req.body
-            if(!fullname) return res.status(400).json({msg: "Please add your full name."})
+            
 
             await Users.findOneAndUpdate({_id: req.user._id}, {
                 approval, fullname,gender, status,pdivision,pdistrict,pupazila,cdivision,cdistrict,cupazila,age ,color,
@@ -328,7 +328,7 @@ const userCtrl = {
                 gCVpermit, allTrue, noDayvar,
             })
 
-            res.json({msg: "Update Success!"})
+            res.json({msg: "আলহামদুলিল্লাহ! আপনার দেয়া তথ্য আপনার বায়োডাটায় যুক্ত করা হয়েছে।"})
 
         } catch (err) {
             return res.status(500).json({msg: err.message})

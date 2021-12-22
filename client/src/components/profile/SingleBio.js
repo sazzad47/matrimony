@@ -25,18 +25,18 @@ const SingleBio = ({id, dispatch, user, auth, profile}) => {
 
     return (
         <div className='biodatas_page'>
-            <div className = "row "> {user.height===""? null :
+            <div className = "row "> 
                 <div className = "col-md-4">
                   <div className="info-block-container d-block d-md-none d-lg-none
                      mb-4" >
                  
                  <ButtonContainer user = {user} auth ={auth} profile ={profile} id ={id} dispatch ={dispatch}/> 
                      </div>  
-                  
+                     {user.height===""? null :
                      <div className="">
                 <BasicInfo user = {user} auth ={auth} profile ={profile} id ={id} dispatch ={dispatch}/> 
-               </div>
-                </div>}
+               </div>}
+                </div>
                 <div className ="col-md-8 ">
                 
                 {auth.user? 

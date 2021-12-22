@@ -49,14 +49,14 @@ inputRoot: {
 const EditProfile = () => {
     const classes = useStyles();
     const initState = {
-        gCVpermit: '', allTrue: '', noDayvar: '', 
+        gCVpermit: '', noDayvar: '', 
     }
     const label = "আমি আল্লাহ সুবহানাহু ওয়া তা'আলার নামে হলফ করে বলছি, আমার বায়োডাটায় যে তথ্যগুলো দেয়া হয়েছে, আমার জ্ঞানে সব সত্য, এবং আমার অভিভাবকের অনুমতি সাপেক্ষে। কোনো মিথ্যে তথ্য দিয়ে থাকলে তার কোনো দায়ভার JannaterSathi.com নেবে না।"
     const [userData, setUserData] = useState(initState)
     const {  gCVpermit, noDayvar,} = userData
     const [approval, setApproval] = useState('')
 
-    const [allTrue, setAllTrue] = React.useState(false);
+    const [allTrue, setAllTrue] = React.useState();
     
 
     const handleChecked = (event) => {
@@ -81,10 +81,7 @@ const EditProfile = () => {
 
     
 
-    const handleInput = e => {
-        const { name, value } = e.target
-        setUserData({ ...userData, [name]:value })
-    }
+   
 
     const handleSubmit = e => {
         e.preventDefault()

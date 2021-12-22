@@ -128,7 +128,8 @@ export const register = (data) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
     try {
-        localStorage.removeItem('firstLogin')
+        localStorage.clear()
+        sessionStorage.clear()
         await postDataAPI('logout')
         window.location.href = "/"
     } catch (err) {

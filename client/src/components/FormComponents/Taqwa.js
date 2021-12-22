@@ -433,7 +433,7 @@ const EditProfile = ({setOnEdit}) => {
                   <TextField
                   required
                   multiline
-                  maxRows = "200"
+                  minRows = "8"
                   
                    
                    fullWidth

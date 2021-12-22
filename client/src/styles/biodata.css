@@ -1,4 +1,11 @@
-
+.loading{
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 
 .basicInfo{
     background-color: #002884;
@@ -29,7 +36,8 @@
     {
       color: #fff;
       font-family:   'AdorshoLipi' ;
-      font-size: xx-small;
+      font-size: small;
+      
       text-align: center;
       padding-top: 4px;
       
@@ -38,6 +46,7 @@
     {
       color: white;
       font-family:   'AdorshoLipi' ;
+      font-size: small;
       text-align: center;
       padding-top: 4px;
       

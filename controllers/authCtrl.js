@@ -94,7 +94,7 @@ const authCtrl = {
 
             const verify = await client.verifyIdToken({idToken: tokenId, audience: process.env.MAILING_SERVICE_CLIENT_ID})
             
-            const {email_verified, email, name, picture} = verify.payload
+            const {email_verified, email, name, } = verify.payload
 
             const password = email + process.env.GOOGLE_SECRET
 

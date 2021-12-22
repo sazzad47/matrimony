@@ -263,7 +263,7 @@ const EditProfile = ({setOnEdit}) => {
                <Grid container>
                  <TextField
                  multiline
-                 maxRows = "200"
+                 minRows = "8"
                   required
                   fullWidth
                   className={classes.textfield}

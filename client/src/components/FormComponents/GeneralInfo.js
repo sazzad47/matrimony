@@ -722,19 +722,25 @@ const EditProfile = () => {
                   value={prof}
                   onChange={handleInput} >
                  
-                 <option value="ইমাম">ইমাম</option>
-                 <option value="মুয়াজ্জিন">মুয়াজ্জিন</option>
-                 <option value="খতিব">খতিব</option>
+                 {gender==='পাত্রের বায়োডাটা'? <option value="ইমাম">ইমাম</option> :null}
+                
+                 {gender==='পাত্রের বায়োডাটা'? <option value="মুয়াজ্জিন">মুয়াজ্জিন</option>: null}
+                 {gender==='পাত্রের বায়োডাটা'?<option value="খতিব">খতিব</option> : null}
                  {gender==='পাত্রের বায়োডাটা'?<option value="ছাত্র">ছাত্র</option> :<option value="ছাত্রী">ছাত্রী</option>}
                  
                  <option value="ফ্রিল্যান্সার">ফ্রিল্যান্সার</option>
                  <option value="প্রবাসী">প্রবাসী</option>
                  {gender==='পাত্রের বায়োডাটা'?<option value="শিক্ষক">শিক্ষক</option> :<option value="শিক্ষিকা">শিক্ষিকা</option>}
+                 {gender==='পাত্রের বায়োডাটা'? <option value="মাদরাসার শিক্ষক">মাদরাসার শিক্ষক</option> :<option value="মাদরাসার শিক্ষিকা">মাদরাসার শিক্ষিকা</option>} 
+                 <option value="বিসিএস ক্যাডার">বিসিএস ক্যাডার</option>
+                 {gender==='পাত্রের বায়োডাটা'? <option value="বিশ্ববিদ্যালয়ের শিক্ষক">বিশ্ববিদ্যালয়ের শিক্ষক</option> :<option value="বিশ্ববিদ্যালয়ের শিক্ষিকা">বিশ্ববিদ্যালয়ের শিক্ষিকা</option>} 
                  <option value="ডাক্তার">ডাক্তার</option>
                  <option value="ইঞ্জিনিয়ার">ইঞ্জিনিয়ার</option>
                  <option value="ব্যবসায়ী">ব্যবসায়ী</option>
+                 <option value="কৃষক">কৃষক</option>
                  <option value="সরকারি চাকরিজীবী">সরকারি চাকরিজীবী</option>
                  <option value="বেসরকারি চাকরিজীবী">বেসরকারি চাকরিজীবী</option>
+                 <option value="কিছু করছি না।">কিছু করছি না।</option>
                  
                  
                 
@@ -787,7 +793,7 @@ const EditProfile = () => {
                     <div className={classes.textfield}>
                     
                    <small>
-                     জানাতে না চাইলে ঘরটি ফাঁকা রাখতে পারেন।
+                     জানাতে না চাইলে ঘরটি ফাঁকা রাখুন।
                     </small>
                     </div>
                 </div>}

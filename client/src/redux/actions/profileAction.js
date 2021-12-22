@@ -60,8 +60,7 @@ export const getProfileUsers = ({id,auth}) => async (dispatch) => {
 export const updateProfileUser = ({userData,approval,allTrue, avatar, auth}) => async (dispatch) => {
    
 
-    if(userData.prof.length > 25)
-    return dispatch({type: GLOBALTYPES.ALERT, payload: {error: "সর্বোচ্চ ২৫ ক্যারেক্টারের মধ্যে লিখুন"}})
+    
 
     try {
         let media;

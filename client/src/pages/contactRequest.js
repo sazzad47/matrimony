@@ -9,12 +9,12 @@ import { createApplicant } from '../redux/actions/applicantAction';
 
 const ApplicationForm = () => {
   const dispatch = useDispatch()
-  
+   
   const [fullname, setFullname] = useState('')
   const [mobile, setMobile] = useState('')
   const [email, setEmail] = useState('')
   const [district, setDistrict] = useState('')
-  const [totalPrice, setTotalPrice] = useState('')
+  const [totalPrice, setTotalPrice] = useState('১০০')
   const [biodataNumber, setBiodataNumber] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [trxID, setTrxID] = useState('')

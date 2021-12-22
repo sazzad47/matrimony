@@ -1,5 +1,6 @@
+import { CircularProgress } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
-
+import {useSelector} from 'react-redux'
 
 
 
@@ -14,7 +15,7 @@ import SingleBio from './SingleBio'
 const Info = ({id,profile, auth, dispatch}) => {
     const [userData, setUserData] = useState([])
     
-
+    const {loading  } = useSelector(state => state.profile)
    
 
     useEffect(() => {
@@ -31,7 +32,9 @@ const Info = ({id,profile, auth, dispatch}) => {
     
 
     return (
-        <div className ="px-4 px-md-5 px-lg-5 py-2 py-md-5 py-lg-5 biodatas_page" >
+        <>
+        {loading? <div className='loading'><CircularProgress/> </div> :
+        <div className ="px-3 px-md-5 px-lg-5 py-2 py-md-5 py-lg-5 biodatas_page" >
             {
                 userData.map(user => (
                     <div key={user._id}>
@@ -42,7 +45,8 @@ const Info = ({id,profile, auth, dispatch}) => {
                     </div>
                 ))
             }
-        </div>
+        </div>}
+        </>
     )
 }
 
