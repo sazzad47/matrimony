@@ -52,13 +52,14 @@ const Biodatas = () => {
    
     
     return (
+      <> {isLoading?<div className='loading'><CircularProgress/> </div>  : 
             <div className='biodatas_page'>
           <div className="row d-flex align-items-center justify-content-center">
         <div className="col-md-4" style={{padding:'30px'}}>
         <BioSearch/>
         </div>
         </div>
-        {isLoading? <div className="biodatas mt-5 d-flex align-items-center justify-content-center"><CircularProgress/></div>  :
+        
            <Grid
            container
            spacing={2}
@@ -88,7 +89,7 @@ const Biodatas = () => {
            
         
  
-      }
+      
 
       {isLoading? null : displayBiodatas.length===0? <div className="biodatas d-flex align-items-center justify-content-center mt-5"><Typography>আফওয়ান! আপনার সার্চ অনুযায়ী বায়োডাটা পাওয়া যায়নি।</Typography> </div>:
       <div className='my-5'>
@@ -114,7 +115,8 @@ const Biodatas = () => {
       /> </div>}
      
       
-      </div>
+      </div>}
+      </>
     )
 }
 

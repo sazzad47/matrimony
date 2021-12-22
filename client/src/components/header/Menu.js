@@ -154,7 +154,7 @@ const HeaderMenu = () => {
                       
                            <Badge className="material-icons">
                              
-                         <div className={classes.avatar}>{auth.user?.fullname.charAt(0)} </div>
+                         <div className={classes.avatar}> </div>
                              </Badge>
                              
                    </span>
