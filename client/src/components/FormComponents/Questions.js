@@ -70,8 +70,8 @@ const EditProfile = () => {
     const dispatch = useDispatch()
     
     useEffect(() => {
-      setAllTrue(auth.user)
-    }, [auth.user])
+      setUserData(auth.user)
+  }, [auth.user])
     
     
     

@@ -8,7 +8,7 @@ const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID)
 const authCtrl = {
     register: async (req, res) => {
         try {
-            const { fullname, email, password} = req.body
+            const { fullname, email, password, gender } = req.body
             
 
             const user_email = await Users.findOne({email})
@@ -20,7 +20,7 @@ const authCtrl = {
             const passwordHash = await bcrypt.hash(password, 12)
 
             const newUser = new Users({
-                fullname, email, password: passwordHash
+                fullname, email, password: passwordHash, gender
             })
 
 

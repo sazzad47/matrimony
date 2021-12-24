@@ -5,7 +5,7 @@ import { Box, Button, FormControl, InputLabel, makeStyles, Paper, Select } from 
 import { useSelector, useDispatch } from 'react-redux'
 import { getDataAPI } from '../utils/fetchData'
 import { GLOBALTYPES } from '../redux/actions/globalTypes'
-import UserCard from '../components/UserCard'
+import UserCard from './UserCard'
 import LoadIcon from '../images/loading.gif'
 import { getBiodatasBySearch } from '../redux/actions/getBiodatasAction'
 import { getPendingBiodatas } from '../redux/actions/pendingAction';

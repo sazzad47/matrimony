@@ -86,7 +86,7 @@ const ApproveBtn = ({user}) => {
             alignItems='center'
             justifyContent='center' >
              <Typography style={{marginBottom:'20px'}} align = 'center'>উক্ত {user.gender==='পাত্রের বায়োডাটা'?'পাত্রের' : 'পাত্রীর'} অভিভাবক আপনার অভিভাবকের সাথে যোগাযোগ করতে চেয়েছেন। আপনার অভিভাবক যদি যোগাযোগ করতে আগ্রহী হোন, তাহলে নীচের বাটনে চাপুন।</Typography>
-             <Button disableRipple fullWidth className={classes.tab}
+             <Button disableRipple style={{maxWidth:'600px',}} className={classes.tab}
                  onClick={handleFollow}>
                      <Typography>
                      {user.gender==='পাত্রের বায়োডাটা'?'পাত্রের' : 'পাত্রীর'} অভিভাবককে যোগাযোগ করতে বলুন 

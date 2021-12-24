@@ -32,6 +32,8 @@ export const googleLogin = (tokenId) => async (dispatch) => {
         })
     }
 }
+
+
 export const login = (data) => async (dispatch) => {
     try {
         dispatch({ type: GLOBALTYPES.ALERT, payload: {loading: true} })

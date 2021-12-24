@@ -37,7 +37,7 @@ export const approvePending = ({user, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: auth.user._id,
-            text:`আসসালামু আলাইকুম! আপনার বায়োডাটা আমরা এপ্রুভ করেছি। JannaterSathi.com টিমের পক্ষ থেকে আপনার জন্য দু'আ রইলো। আল্লাহ তা'আলা আপনাকে জান্নাতের সাথী দান করুন।`,
+            text:`আসসালামু আলাইকুম! আপনার বায়োডাটা আমরা এপ্রুভ করেছি। JannaterSathi.com টিমের পক্ষ থেকে আপনার জন্য দু'আ রইলো।`,
             recipients: [res.data.approvedBiodatas._id],
             url: `/biodata/${user._id}`,
         }

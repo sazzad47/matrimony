@@ -90,7 +90,7 @@ const FollowBtn = ({user}) => {
             alignItems='center'
             justifyContent='center' >
             <Typography style={{marginBottom:'20px'}} align = 'center'>আপনার অভিভাবক যদি আমাদের মাধ্যমে {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষের' : 'পাত্রীপক্ষের'} নিকট প্রস্তাব পাঠাতে আগ্রহী হোন, তাহলে নীচের বাটনে চাপুন।</Typography>
-            <Button disableRipple fullWidth className={classes.tab}
+            <Button disableRipple style={{maxWidth:'600px',}} className={classes.tab}
             onClick={handleFollow}> 
             <Typography>
             {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষকে' : 'পাত্রীপক্ষকে'} আপনার বায়োডাটা প্রেরণ করুন

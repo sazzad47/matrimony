@@ -642,7 +642,7 @@ const userSchema = new mongoose.Schema({
     },
     bridePhoto:{
         type: String,
-        default: 'https://res.cloudinary.com/sazzadhossen/image/upload/v1636472838/bridePhoto_mkvr1t.png'
+        default: 'https://res.cloudinary.com/sazzadhossen/image/upload/v1640354518/bridePhoto_wa6cbv.png'
     },
     role: {type: String, default: 'user'},
    

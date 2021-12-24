@@ -26,7 +26,7 @@ import { getNotifies } from './redux/actions/notifyAction'
 import CallModal from './components/message/CallModal'
 import Peer from 'peerjs'
 import { getApplicant } from './redux/actions/applicantAction'
-import Pages from './pages/Pages'
+
 import Biodatas from './pages/biodatas'
 import ConatctRequest from './pages/contactRequest'
 import SingleBiodata from './pages/biodata/[id]'
@@ -37,6 +37,8 @@ import Help from './pages/help&support';
 import Terms from './pages/terms&policies';
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop';
+import Pending from './components/Pending'
+import Applicants from './components/Applicants'
 
 function App() {
   const firstLogin = localStorage.getItem('firstLogin')
@@ -113,9 +115,11 @@ function App() {
           <Route exact path="/biodatas/:id" component={BiodataDetails}/>
           
           <Route exact path="/register" component={Register} />
-          
+          <Route path="/pending" exact component={auth.user?.role ==='admin'? Pending : Home} />
+          <Route path="/applicants" exact component={auth.user?.role ==='admin'? Applicants : Home} />
           <PrivateRouter exact path="/:page" component={PageRender} /> 
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
+          <Redirect to='/'/>
           <Footer/>
         </div>
         </ScrollToTop>

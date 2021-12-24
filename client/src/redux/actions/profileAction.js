@@ -202,7 +202,7 @@ export const unfollow = ({users, user, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: auth.user._id,
-            text:`আসসালামু আলাইকুম! ${auth.user.pdistrict} থেকে ${auth.user.gender==='পাত্রের বায়োডাটা'? 'পাত্রপক্ষ': 'পাত্রীপক্ষ'} আপনার অভিভাবকের সাথে যোগাযোগ করতে চেয়েছেন। ${auth.user.gender==='পাত্রের বায়োডাটা'? 'পাত্রের' : 'পাত্রীর'} বায়োডাটা দেখতে লিংকে ক্লিক করুন।`,
+            text:`আসসালামু আলাইকুম! ${auth.user.pdistrict} থেকে ${auth.user.gender==='পাত্রের বায়োডাটা'? 'পাত্রপক্ষ': 'পাত্রীপক্ষ'} আপনার অভিভাবকের সাথে যোগাযোগ করতে চেয়েছেন। ${auth.user.gender==='পাত্রের বায়োডাটা'? 'পাত্রের' : 'পাত্রীর'} বায়োডাটা নং-${auth.user.index}। বায়োডাটা দেখতে এই নোটিফিকেশনের উপর ক্লিক করুন।`,
             recipients: [newUser._id],
             url: `/biodata/${auth.user._id}`,
         }

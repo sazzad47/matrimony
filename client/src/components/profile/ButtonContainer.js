@@ -7,6 +7,7 @@ import FollowBtn from '../FollowBtn'
 import ApproveBtn from '../ApproveBtn'
 import ContactBtn from './ContactBtn'
 import { approvePending, declinePending } from '../../redux/actions/pendingAction'
+import ContactBtnPvt from './ContactBtnPvt';
 
 const ButtonContainer = ({user}) => {
 
@@ -76,7 +77,7 @@ const ButtonContainer = ({user}) => {
                  <>
                  <div className="col-12 col-md-12 col-lg-12  d-flex justify-content-center">
 
-                 <ContactBtn user = {user}/>
+                 <ContactBtnPvt user = {user}/>
                  </div>
                  </>
                  :

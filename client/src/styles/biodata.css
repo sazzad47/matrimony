@@ -8,12 +8,12 @@
 }
 
 .basicInfo{
-    background-color: #002884;
+    background-color: #0d3186;
     
     
     }
 .basicInfo-last {
-    background-color: #002884;
+    background-color: #041644;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     
@@ -190,7 +190,7 @@
       padding-bottom: 20px;
       padding-top: 30px;
       border-bottom: 1px solid #2d2f41;
-      background-color: #002884;
+      background-color: #0d3186;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       
@@ -215,7 +215,7 @@
       object-fit: cover;
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
-      filter: invert(13%) sepia(44%) saturate(5780%) hue-rotate(230deg) brightness(83%) contrast(124%);
+      filter: invert(17%) sepia(53%) saturate(5345%) hue-rotate(263deg) brightness(64%) contrast(104%);
       
      
     }

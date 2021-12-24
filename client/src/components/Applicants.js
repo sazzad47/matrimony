@@ -2,7 +2,7 @@ import { CircularProgress } from '@material-ui/core';
 import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 
-import Applicant from '../components/Applicant';
+import Applicant from './Applicant';
 import { getApplicant } from '../redux/actions/applicantAction'
 
 const Applicants = () => {
