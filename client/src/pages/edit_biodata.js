@@ -51,7 +51,7 @@ const EditProfile = () => {
 
    
     return (
-        <div className="container-fluid edit-biodata-container">
+        <div className="biodatas_page">
          <div className="row">
              <div className="col-md-3"> 
 
