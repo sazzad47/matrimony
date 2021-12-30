@@ -109,7 +109,7 @@ const Login = () => {
             cookiePolicy="single_host_origin"
           />
 
-       <Typography>Or</Typography>
+       {/* <Typography>Or</Typography>
           <form onSubmit={handleSubmit} className={classes.form}>
         
          
@@ -193,7 +193,7 @@ const Login = () => {
              
              
              
-             </form>
+             </form> */}
 
                 </Paper>
   
