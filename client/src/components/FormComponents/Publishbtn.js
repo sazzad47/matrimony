@@ -59,7 +59,7 @@ const EditProfile = () => {
 
       
     
-                <Button fullWidth className={classes.tab} onClick={() => {
+                <Button fullWidth disabled={!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat} className={classes.tab} onClick={() => {
                 
                 handlePublish();
                }}  type="submit">Publish</Button>
