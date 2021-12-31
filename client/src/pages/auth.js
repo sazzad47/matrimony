@@ -100,7 +100,7 @@ const Login = () => {
         <GoogleLogin
             clientId="561387637533-9qhib68msa9o56d7g5fnmth96u2dej83.apps.googleusercontent.com"
             render={(renderProps) => (
-              <Button className={classes.googleButton} color="primary" fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
+              <Button className={classes.googleButton} color="primary" fullWidth onClick={renderProps.onClick}  startIcon={<Icon />} variant="contained">
                 Continue with Google
               </Button>
             )}
