@@ -52,7 +52,7 @@ const Biodatas = () => {
    
     
     return (
-      <> {isLoading?<div className='loading'><CircularProgress/> </div>  : 
+      <div className='biodatas_page'> {isLoading?<div className='loading'><CircularProgress/> </div>  : 
             <div className='biodatas_page'>
           <div className="row d-flex align-items-center justify-content-center">
         <div className="col-md-4" style={{padding:'30px'}}>
@@ -91,7 +91,7 @@ const Biodatas = () => {
  
       
 
-      {isLoading? null : displayBiodatas.length===0? <div className="biodatas d-flex align-items-center justify-content-center mt-5"><Typography>আফওয়ান! আপনার সার্চ অনুযায়ী বায়োডাটা পাওয়া যায়নি।</Typography> </div>:
+      {isLoading? null : displayBiodatas.length===0? <div className='biodatas_page' style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}><Typography variant='h5'>আফওয়ান!</Typography><Typography>আপনার সার্চ অনুযায়ী বায়োডাটা পাওয়া যায়নি।</Typography></div>:
       <div className='my-5'>
       <ReactPaginate
         previousLabel={"previous"}
@@ -116,7 +116,7 @@ const Biodatas = () => {
      
       
       </div>}
-      </>
+      </div>
     )
 }
 
