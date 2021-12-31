@@ -75,23 +75,14 @@ const Login = () => {
     }
 
     const responseGoogle = async (response) => {
-      if (auth.user?.status===''){
-        try {
-          dispatch(googleLogin({tokenId: response.tokenId}))
-          history.push('/edit_biodata')
-      } catch (err) {
-         console.log(err)
-      }
-      }else {
-        
-        try {
+      try {
+          
+
           dispatch(googleLogin({tokenId: response.tokenId}))
           history.push('/')
       } catch (err) {
          console.log(err)
       }
-      }
-      
   }
 
   
