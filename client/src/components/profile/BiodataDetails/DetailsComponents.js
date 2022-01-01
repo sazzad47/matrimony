@@ -32,14 +32,7 @@ const DetailsComponents = ({user}) => {
                  <AddressInfo user = {user}/> 
                      </div>
                  </div>}
-                 {user.detProf===""? null :
-                 <div className ="row">
-                 <div className="info-block-container ml-3 ml-md-3 ml-lg-5 
-                     mr-3 mr-md-3 mr-lg-3 mt-5 mt-md-5 mt-lg-0 mb-0 mb-md-0 mb-lg-5" >
-                        
-                 <ProfInfo user ={user} />
-                 </div>
-                 </div>}
+                 
                  {user.eduMedium===""? null :
                  <div className ="row">
                  <div className="info-block-container ml-3 ml-md-3 ml-lg-5 
@@ -79,6 +72,14 @@ const DetailsComponents = ({user}) => {
                      mr-3 mr-md-3 mr-lg-3 mt-5 mt-md-5 mt-lg-0 mb-0 mb-md-0 mb-lg-5" >
                         
                  <MaritalInfo user = {user} />
+                 </div>
+                 </div>}
+                 {user.detProf===""? null :
+                 <div className ="row">
+                 <div className="info-block-container ml-3 ml-md-3 ml-lg-5 
+                     mr-3 mr-md-3 mr-lg-3 mt-5 mt-md-5 mt-lg-0 mb-0 mb-md-0 mb-lg-5" >
+                        
+                 <ProfInfo user ={user} />
                  </div>
                  </div>}
                  {user.partDistrict===""? null : 
