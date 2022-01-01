@@ -105,7 +105,7 @@ const SingleBio = ({id, dispatch, user, auth, profile}) => {
                  </div>
                  </div>}
                  {user.partDistrict===""? null : 
-                 <div className ="row">-
+                 <div className ="row">
                  <div className="info-block-container ml-3 ml-md-3 ml-lg-5 
                      mr-3 mr-md-3 mr-lg-3 mt-5 mt-md-5 mt-lg-0 mb-0 mb-md-0 mb-lg-5" >
                  <PartnerInfo user = {user} auth ={auth} profile ={profile} id ={id} dispatch ={dispatch}/>
@@ -113,7 +113,7 @@ const SingleBio = ({id, dispatch, user, auth, profile}) => {
                  </div>}
                  
                 
-                 {user.allTrue===""? null :
+                 {user.allTrue===null? null :
                  <div className ="row">
                  <div className="info-block-container ml-3 ml-md-3 ml-lg-5 
                      mr-3 mr-md-3 mr-lg-3 mt-5 mt-md-5 mt-lg-0 mb-0 mb-md-0 mb-lg-5" >
