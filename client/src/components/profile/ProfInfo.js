@@ -17,7 +17,7 @@ const ProfInfo = ({id, dispatch, user, profile}) => {
            
         <div className="row infoHeading">
           <div className="col-md-12 text-center">
-          <div className="textHeading">পেশা</div>
+          <div className="textHeading">অন্যান্য তথ্য</div>
           </div>
         </div>
      
@@ -39,6 +39,11 @@ const ProfInfo = ({id, dispatch, user, profile}) => {
              <div className={user.income===""? "row infoBox-2":"row infoBox-1"}>
                <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">পেশা সম্পর্কে বিস্তারিত বলুন</div> </div>
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.detProf}</div> </div>
+             </div>}
+             {user.disease === ""? null :
+             <div className={user.income===""? "row infoBox-1":"row infoBox-2"}>
+               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">আপনার শারীরিক বা মানসিক বড় কোনো রোগ আছে?</div> </div>
+               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.disease}</div> </div>
              </div>}
              
              
