@@ -29,7 +29,7 @@ import { getApplicant } from './redux/actions/applicantAction'
 
 import Biodatas from './pages/biodatas'
 import ConatctRequest from './pages/contactRequest'
-import SingleBiodata from './pages/biodata/[id]'
+import SingleBiodata from './pages/biodatas/[id]'
 
 import ReportProblem from './pages/reportProblem';
 import About from './pages/about';
@@ -112,7 +112,7 @@ function App() {
           {firstLogin? null : <Route exact path="/terms&policies" component={Terms}/>}
 
           <Route exact path="/auth" component={Auth}/>
-          <Route exact path="/biodatas/:id" component={BiodataDetails}/>
+          {firstLogin? null : <Route exact path="/biodatas/:id" component={BiodataDetails}/>}
           
           <Route exact path="/register" component={Register} />
           <Route path="/pending" exact component={auth.user?.role ==='admin'? Pending : Home} />

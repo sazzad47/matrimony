@@ -65,7 +65,7 @@ const EditProfile = () => {
               <Grid style = {{ marginBottom:'1px'}} spacing={10} container alignItems='center' justifyContent='center'>
                  <Grid item xs={6} sm={6} md={6} lg={6}>
               <Card elevation={6}>
-                    <Link style={{ textDecoration: 'none', color: 'white' }} to={`/biodata/${auth.user._id}`}> <Button className={classes.tab} fullWidth > Preview </Button>
+                    <Link style={{ textDecoration: 'none', color: 'white' }} to={`/biodatas/${auth.user._id}`}> <Button className={classes.tab} fullWidth > Preview </Button>
                     </Link>
                      </Card>
                      </Grid>

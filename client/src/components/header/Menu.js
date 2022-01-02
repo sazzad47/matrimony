@@ -179,7 +179,7 @@ const HeaderMenu = () => {
         }} >
           <div className="drawer-icon pr-2"> <i class="bi bi-brightness-high-fill"></i> </div> {theme ? 'Light mode' : 'Dark mode'}
         </MenuItem>
-      <MenuItem className={classes.menu}  onClick={handleCloseMenu} component={Link}  to={`/biodata/${auth.user._id}`}>
+      <MenuItem className={classes.menu}  onClick={handleCloseMenu} component={Link}  to={`/biodatas/${auth.user._id}`}>
           <div className="drawer-icon pr-2"> <i class="bi bi-journal"></i> </div>Your Biodata
         </MenuItem>
      

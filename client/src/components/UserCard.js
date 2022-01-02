@@ -38,7 +38,7 @@ const UserCard = ({children, user, border, handleClose, setShowApprovers, setSho
         
         
             
-            <Link style={{ textDecoration: 'none', }} to={firstLogin? `/biodata/${user._id}` : `/biodatas/${user._id}`} onClick={handleCloseAll}
+            <Link style={{ textDecoration: 'none', }} to={`/biodatas/${user._id}`} onClick={handleCloseAll}
                >  
                
         
