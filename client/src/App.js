@@ -119,7 +119,7 @@ function App() {
           <Route path="/applicants" exact component={auth.user?.role ==='admin'? Applicants : Home} />
           <PrivateRouter exact path="/:page" component={PageRender} /> 
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
-          <Redirect to='/'/>
+          
           <Footer/>
         </div>
         </ScrollToTop>
