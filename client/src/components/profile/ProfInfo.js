@@ -24,11 +24,7 @@ const ProfInfo = ({id, dispatch, user, profile}) => {
 
         
         
-        {user.prof === ""? null :
-             <div className="row infoBox-1">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">পেশা</div> </div>
-               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.prof}</div> </div>
-             </div>}
+        
               
              {user.income === ""? null :
              <div className="row infoBox-2 ">

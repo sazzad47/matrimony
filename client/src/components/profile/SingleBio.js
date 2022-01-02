@@ -97,7 +97,7 @@ const SingleBio = ({id, dispatch, user, auth, profile}) => {
                  <MaritalInfo user = {user} auth ={auth} profile ={profile} id ={id} dispatch ={dispatch}/>
                  </div>
                  </div>}
-                 {user.detProf===""? null :
+                 {user.disease===""? null :
                  <div className ="row">
                  <div className="info-block-container ml-3 ml-md-3 ml-lg-5 
                      mr-3 mr-md-3 mr-lg-3 mt-5 mt-md-5 mt-lg-0 mb-0 mb-md-0 mb-lg-5" >

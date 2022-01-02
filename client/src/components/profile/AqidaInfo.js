@@ -37,7 +37,7 @@ const AqidaInfo = ({id, dispatch, user, profile}) => {
              </div>}
              {user.politics === ""? null :
              <div className="row infoBox-1 ">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">আপনার আপনার কোনো রাজনৈতিক মতাদর্শ থাকলে লিখুন।</div> </div>
+               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">আপনার কোনো রাজনৈতিক মতাদর্শ থাকলে লিখুন।</div> </div>
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.politics}</div> </div>
              </div>}
              {user.majar === ""? null :
