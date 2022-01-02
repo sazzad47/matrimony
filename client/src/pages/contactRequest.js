@@ -6,6 +6,7 @@ import Rocket from '../images/Rocket.png'
 import Nagad from '../images/Nagad.png'
 import Bkash from '../images/Bkash.png'
 import { createApplicant } from '../redux/actions/applicantAction';
+import { Helmet } from 'react-helmet-async';
 
 const ApplicationForm = () => {
   const dispatch = useDispatch()
