@@ -4,9 +4,16 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import TreeItem from '@material-ui/lab/TreeItem';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
+import { Helmet } from 'react-helmet-async';
 
 const Help = () => {
     return (
+      <>
+      <Helmet>
+          <title>সাধারণ প্রশ্ন ও উত্তর</title>
+          <meta name='description' content='আপনাদের ওয়েবসাইটে বায়োডাটা পাবলিশ করতে কতো টাকা দিতে হয়? কোনো টাকা দিতে হয় না..'/>
+          <link rel='canonical' href='/help&support'/>
+         </Helmet>
         <div className="App"> 
            <Typography gutterBottom variant="h5" align="center"> সাধারণ প্রশ্ন ও উত্তর</Typography>
       <Grid>
@@ -41,7 +48,7 @@ const Help = () => {
         </Card>
       </Grid>
     </div>
-       
+       </>
     )
 }
 

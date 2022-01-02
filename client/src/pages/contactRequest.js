@@ -35,6 +35,11 @@ const ApplicationForm = () => {
 
     return (
       <div className="App"> 
+      <Helmet>
+          <title>যোগাযোগের আবেদন ফর্ম</title>
+          <meta name='description' content='যোগাযোগ তথ্য পেতে আবেদন ফর্মটি পূরণ করুন।'/>
+          <link rel='canonical' href='/contactRequest'/>
+         </Helmet>
       <Typography gutterBottom variant="h3" align="center">
         আবেদন ফর্ম 
        </Typography>

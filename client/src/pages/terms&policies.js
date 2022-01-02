@@ -1,9 +1,15 @@
 import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const Terms = () => {
     return (
         <div className="App"> 
+        <Helmet>
+         <title>Terms & Policy</title>
+         <meta name='description' content="Registration is open only to the practicing Muslims of legal marriageable age who are not prohibited from matrimony by any..."/>
+          <link rel='canonical' href='/terms&policies'/>
+      </Helmet>
       <Typography gutterBottom variant="h5" align="center">
       Terms & Privacy Policies
        </Typography>

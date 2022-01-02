@@ -10,6 +10,7 @@ import LoadIcon from '../images/loading.gif'
 import pdivisionsData from '../components/FormComponents/Data'
 import { getBiodatas, getBiodatasBySearch } from '../redux/actions/getBiodatasAction'
 import BioSearch from '../components/home/BioSearch';
+import { Helmet } from 'react-helmet-async';
 const useStyles = makeStyles((theme)=>({
    
       mainContainer: {
@@ -52,6 +53,12 @@ const Biodatas = () => {
    
     
     return (
+      <>
+       <Helmet>
+          <title>বায়োডাটাসমূহ</title>
+          <meta name='description' content='দ্বীনদার পাত্র-পাত্রীর বায়োডাটা সার্চ করুন..'/>
+          <link rel='canonical' href='/biodatas'/>
+         </Helmet>
       <div className='biodatas_page'> {isLoading?<div className='loading'><CircularProgress/> </div>  : 
             <div className='biodatas_page'>
           <div className="row d-flex align-items-center justify-content-center">
@@ -117,6 +124,7 @@ const Biodatas = () => {
       
       </div>}
       </div>
+      </>
     )
 }
 

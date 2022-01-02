@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, Grid, TextField, Typography } from '@material-ui/core';
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -26,6 +27,11 @@ const About = () => {
 
     return (
       <div className="App"> 
+      <Helmet>
+         <title>About</title>
+         <meta name='description' content="JannaterSathi.com একটি আন্দোলন, যার লক্ষ্য ও উদ্দেশ্য-পার্থিব মোহকে দূরে ঠেলে, দ্বীনদারিতাকে প্রাধান্য দিয়ে জীবনসঙ্গী নির্বাচনে..."/>
+          <link rel='canonical' href='/about'/>
+      </Helmet>
       <Typography gutterBottom variant="h5" align="center">
       JannaterSathi.com একটি আন্দোলন, যার লক্ষ্য ও উদ্দেশ্য-
        </Typography>

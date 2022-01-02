@@ -10,6 +10,8 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Icon from '../components/icon';
 import { googleLogin } from './../redux/actions/authAction';
 import { styled } from '@material-ui/styles'
+import { Helmet } from 'react-helmet-async'
+
 const useStyles = makeStyles((theme)=>({
   paper: {
     marginTop: theme.spacing(8),
@@ -88,6 +90,12 @@ const Login = () => {
   
 
     return (
+         <>
+         <Helmet>
+          <title>Login</title>
+          <meta name='description' content='Login to your account.'/>
+          <link rel='canonical' href='/auth'/>
+         </Helmet>
         
       <Container component="main" maxWidth="xs" style={{minHeight:'50vh'}}>
 
@@ -200,7 +208,7 @@ const Login = () => {
              </Container>
 
 
-
+         </>
 
 
     )

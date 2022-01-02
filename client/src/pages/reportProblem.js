@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, Grid, TextField, Typography } from '@material-ui/core';
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -26,6 +27,11 @@ const ReportProblem = () => {
 
     return (
       <div className="App"> 
+      <Helmet>
+         <title>Report a Problem</title>
+         <meta name='description' content="আমাদের খেদমত সংক্রান্ত যেকোনো ধরনের সমস্যা আমাদেরকে অবহিত করুন।"/>
+          <link rel='canonical' href='/reportProblem'/>
+      </Helmet>
       <Typography gutterBottom variant="h5" align="center">
       আমাদের খেদমত সংক্রান্ত যেকোনো ধরনের সমস্যা আমাদেরকে অবহিত করুন। 
        </Typography>

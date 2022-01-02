@@ -1,5 +1,6 @@
 import { CircularProgress } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import {useSelector} from 'react-redux'
 
 
@@ -39,7 +40,11 @@ const Info = ({id,profile, auth, dispatch}) => {
                 userData.map(user => (
                     <div key={user._id}>
                        
-
+                       <Helmet>
+                   <title>{`বায়োডাটা নং- ${ user.index }` }</title>
+                   <meta name='description' content={`${user.aboutMe}`}/>
+                   <link rel='canonical' href={`/biodatas/${user._id}`}/>
+                    </Helmet>
                        
                         <SingleBio user= {user} auth={auth}  profile ={profile} id ={id} dispatch ={dispatch}/>
                     </div>

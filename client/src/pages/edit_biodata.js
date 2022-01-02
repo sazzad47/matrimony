@@ -6,6 +6,7 @@ import { updateProfileUser } from '../redux/actions/profileAction'
 import { Link } from 'react-router-dom'
 import { Button, Card, Grid, makeStyles, Typography } from '@material-ui/core'
 import Rules from './../components/FormComponents/Rules';
+import { Helmet } from 'react-helmet-async'
 
 const useStyles = makeStyles((theme)=>({
     tab: {
@@ -51,6 +52,12 @@ const EditProfile = () => {
 
    
     return (
+      <>
+      <Helmet>
+         <title>Edit Your Biodata</title>
+         <meta name='description' content="Edit your boidata."/>
+          <link rel='canonical' href='/edit_biodata'/>
+      </Helmet>
         <div className="biodatas_page">
          <div className="row">
              <div className="col-md-3"> 
@@ -86,6 +93,7 @@ const EditProfile = () => {
              </div>
             </div>
         </div>
+        </>
     )
 }
 

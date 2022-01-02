@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, Grid, TextField, Typography } from '@material-ui/core';
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -27,6 +28,11 @@ const DeleteBiodata = () => {
 
     return (
       <div className="App"> 
+      <Helmet>
+         <title>Delete Your Biodata</title>
+         <meta name='description' content="আপনার বায়োডাটা ডিলিট/হাইড করতে আবেদন ফর্মটি পূরণ করুন।"/>
+          <link rel='canonical' href='/deleteBiodata'/>
+      </Helmet>
       <Typography gutterBottom variant="h5" align="center">
         ডিলিট/হাইড করার আবেদন ফর্ম 
        </Typography>

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import AddressInfo from '../AddressInfo'
 import AqidaInfo from '../AqidaInfo'
 import BasicInfo from '../BasicInfo'
@@ -15,6 +16,7 @@ import TaqwaInfo from '../TaqwaInfo'
 const DetailsComponents = ({user}) => {
     return (
         <div>
+            
             <div className = "row "> {user.height===""? null :
                 <div className = "col-md-4">
                   

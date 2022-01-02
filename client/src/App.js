@@ -40,6 +40,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Pending from './components/Pending'
 import Applicants from './components/Applicants'
 
+
 function App() {
   const firstLogin = localStorage.getItem('firstLogin')
   const { auth, status, modal, call } = useSelector(state => state)
@@ -93,6 +94,7 @@ function App() {
 
   return (
     <Router>
+      
       <Alert />
 
       <input type="checkbox" id="theme" />
