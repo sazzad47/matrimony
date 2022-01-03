@@ -153,10 +153,11 @@ const EditProfile = ({setOnEdit}) => {
                    
                    
                   <TextField
+                  required
                   fullWidth
                   className={classes.textfield}
                   select
-                  required
+                  
                   label="আপনার সুন্নতি দাড়ি আছে?"
                   variant="outlined"
                  
@@ -179,11 +180,12 @@ const EditProfile = ({setOnEdit}) => {
                    
                     
                   <TextField
+                  required
                   fullWidth
                   className={classes.textfield}
                   select
                   label="টাখনুর উপর কাপড় পরেন?"
-                  required
+                  
                   
                   variant="outlined"
                  
@@ -373,10 +375,10 @@ const EditProfile = ({setOnEdit}) => {
               <div className="form mt-4 mr-3 ml-1">
                 <Grid container>
                   <TextField
-                 
+                  required
                   multiline
                   maxRows = "200"
-                  required
+                  
                    
                    fullWidth
                    className={classes.textfield}
@@ -397,10 +399,10 @@ const EditProfile = ({setOnEdit}) => {
               <div className="form mt-4 mr-3 ml-1">
                 <Grid container >
                   <TextField
-               
+                  required
                   multiline
                   maxRows = "200"
-                  required
+                 
                    
                    fullWidth
                    className={classes.textfield}

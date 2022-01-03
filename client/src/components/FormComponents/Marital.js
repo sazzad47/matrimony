@@ -101,9 +101,10 @@ const EditProfile = ({setOnEdit}) => {
                      <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
+                    required
                     multiline
                     maxRows = "200"
-                     required
+                    
                      fullWidth
                      className={classes.textfield}
                      multiline
@@ -132,9 +133,10 @@ const EditProfile = ({setOnEdit}) => {
                      <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
+                    required
                     multiline
                     maxRows = "200"
-                     required
+                   
                      fullWidth
                      className={classes.textfield}
                      multiline
@@ -170,9 +172,10 @@ const EditProfile = ({setOnEdit}) => {
                          <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
+                    required
                     multiline
                     maxRows = "200"
-                     required
+                    
                      fullWidth
                      className={classes.textfield}
                      multiline
@@ -200,9 +203,10 @@ const EditProfile = ({setOnEdit}) => {
                 <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
+                    required
                     multiline
                     maxRows = "200"
-                     required
+                   
                      fullWidth
                      className={classes.textfield}
                      multiline
@@ -233,9 +237,10 @@ const EditProfile = ({setOnEdit}) => {
                           <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
+                    required
                     multiline
                     maxRows = "200"
-                     required
+                    
                      fullWidth
                      className={classes.textfield}
                      multiline
@@ -264,9 +269,10 @@ const EditProfile = ({setOnEdit}) => {
                 <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
+                    required
                     multiline
                     maxRows = "200"
-                     required
+                    
                      fullWidth
                      className={classes.textfield}
                      multiline
@@ -300,9 +306,10 @@ const EditProfile = ({setOnEdit}) => {
                    
                     
                   <TextField
+                  required
                   fullWidth
                   className={classes.textfield}
-                  required
+                 
                   select
                   label="বর্তমানে কতজন স্ত্রী আছেন?"
                   variant="outlined"
@@ -335,9 +342,10 @@ const EditProfile = ({setOnEdit}) => {
                      {cWN==="১ জন"? 
                                    
                   <TextField
+                   required
                    fullWidth
                    className={classes.textfield}
-                   required
+                 
                    select
                    label="নতুন বিয়েতে পূর্বের স্ত্রীর অনুমতি আছে?"
                    variant="outlined"
@@ -355,9 +363,10 @@ const EditProfile = ({setOnEdit}) => {
                         
                    </TextField> :
                   <TextField
+                   required
                    fullWidth
                    className={classes.textfield}
-                   required
+                  
                    select
                    label="নতুন বিয়েতে পূর্বের স্ত্রীদের অনুমতি আছে?"
                    variant="outlined"
@@ -385,9 +394,10 @@ const EditProfile = ({setOnEdit}) => {
                      
                  
                     <TextField
+                    required
                    fullWidth
                    className={classes.textfield}
-                   required
+                  
                    select
                    label="আপনার সন্তান আছে?"
                    variant="outlined"
@@ -422,9 +432,10 @@ const EditProfile = ({setOnEdit}) => {
                    
                    
                   <TextField
+                  required
                   fullWidth
                   className={classes.textfield}
-                  required
+                 
                   select
                   label="কতজন সন্তান আছে?"
                   variant="outlined"
@@ -457,9 +468,10 @@ const EditProfile = ({setOnEdit}) => {
                 <div className="form mt-4 mr-3 ml-1">
                 <Grid container>
                   <TextField
+                  required
                   multiline
                   maxRows = "200"
-                   required
+                  
                    fullWidth
                    className={classes.textfield}
                    
@@ -486,9 +498,10 @@ const EditProfile = ({setOnEdit}) => {
                <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+                  
                   fullWidth
                   className={classes.textfield}
                   
@@ -521,9 +534,10 @@ const EditProfile = ({setOnEdit}) => {
                      
                  
                     <TextField
+                    required
                    fullWidth
                    className={classes.textfield}
-                   required
+                 
                    label="বিয়েতে আপনার অভিভাবক রাজি আছেন?"
                    variant="outlined"
                    InputProps={{ classes: { root: classes.inputRoot } }}
@@ -548,9 +562,10 @@ const EditProfile = ({setOnEdit}) => {
                   <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+               
                   fullWidth
                   className={classes.textfield}
                   
@@ -573,9 +588,10 @@ const EditProfile = ({setOnEdit}) => {
                     <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+                 
                   fullWidth
                   className={classes.textfield}
                   InputProps={{ classes: { root: classes.inputRoot } }}
@@ -594,9 +610,10 @@ const EditProfile = ({setOnEdit}) => {
                     <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+                 
                   fullWidth
                   className={classes.textfield}
                   InputProps={{ classes: { root: classes.inputRoot } }}
@@ -615,9 +632,10 @@ const EditProfile = ({setOnEdit}) => {
                     <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+                
                   fullWidth
                   className={classes.textfield}
                   InputProps={{ classes: { root: classes.inputRoot } }}
@@ -637,9 +655,10 @@ const EditProfile = ({setOnEdit}) => {
                     <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+                 
                   fullWidth
                   className={classes.textfield}
                   InputProps={{ classes: { root: classes.inputRoot } }}
@@ -658,9 +677,10 @@ const EditProfile = ({setOnEdit}) => {
                     <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+                 
                   fullWidth
                   className={classes.textfield}
                   InputProps={{ classes: { root: classes.inputRoot } }}
@@ -688,9 +708,10 @@ const EditProfile = ({setOnEdit}) => {
                        <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+                 
                   fullWidth
                   className={classes.textfield}
                   InputProps={{ classes: { root: classes.inputRoot } }}
@@ -709,9 +730,10 @@ const EditProfile = ({setOnEdit}) => {
                        <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
-                  required
+                  
                   fullWidth
                   className={classes.textfield}
                   InputProps={{ classes: { root: classes.inputRoot } }}
@@ -730,6 +752,7 @@ const EditProfile = ({setOnEdit}) => {
                        <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                
                  multiline
                  maxRows = "200"
                  
@@ -757,6 +780,7 @@ const EditProfile = ({setOnEdit}) => {
                        <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
+                 required
                  multiline
                  maxRows = "200"
                   
