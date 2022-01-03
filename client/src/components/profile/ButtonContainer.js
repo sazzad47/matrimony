@@ -82,7 +82,7 @@ const ButtonContainer = ({user}) => {
                  </>
                  :
                 <>
-                 {user._id===auth.user._id? null : auth.user.gender===''? null : user.gender===auth.user.gender? null : auth.user.gender==='পাত্রের বায়োডাটা'? (auth.user.approval==='no'? null : 
+                 {user._id===auth.user._id? null : auth.user.gender===''? null : user.gender===auth.user.gender? null : auth.user.gender==='পাত্রের বায়োডাটা'? (auth.user.approval==='declined' || 'no'? null : 
                  <div className="col-12 col-md-12 col-lg-12  d-flex justify-content-center">
 
                  <FollowBtn user={user}/>
@@ -96,6 +96,7 @@ const ButtonContainer = ({user}) => {
                 {user._id===auth.user._id?
                 <div className="col-6 col-md-6 col-lg-6 d-flex justify-content-end">
                 <button 
+                disabled={!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat}
                 type='submit' 
                 className="bio-publish-btn"
                 onClick={() => {handlePublish();}}

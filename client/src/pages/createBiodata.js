@@ -95,7 +95,7 @@ function CreateBiodata() {
         className={toggleState === 1 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(1)}
             >
-              <Typography>সাধারণ তথ্য</Typography>
+              <Typography>{auth.user.status?<i class="bi bi-check"></i>:null} সাধারণ তথ্য</Typography>
            
             </Button>
         </Grid>
@@ -105,7 +105,7 @@ function CreateBiodata() {
         className={toggleState === 10 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(10)}
             >
-              <Typography>ঠিকানা</Typography>
+              <Typography>{auth.user.pdistrict?<i class="bi bi-check"></i>:null} ঠিকানা</Typography>
            
             </Button>
         </Grid>
@@ -115,7 +115,7 @@ function CreateBiodata() {
         className={toggleState === 2 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(2)}
             >
-              <Typography>শিক্ষাগত যোগ্যতা</Typography>
+              <Typography>{auth.user.eduMedium?<i class="bi bi-check"></i>:null} শিক্ষাগত যোগ্যতা</Typography>
            
             </Button>
         </Grid>
@@ -125,7 +125,7 @@ function CreateBiodata() {
         className={toggleState === 3 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(3)}
             >
-              <Typography>পারিবারিক তথ্য</Typography>
+              <Typography>{auth.user.fatherN?<i class="bi bi-check"></i>:null} পারিবারিক তথ্য</Typography>
            
             </Button>
         </Grid>
@@ -136,7 +136,7 @@ function CreateBiodata() {
         className={toggleState === 4 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(4)}
             >
-              <Typography>তাক্বওয়া</Typography>
+              <Typography>{auth.user.salat?<i class="bi bi-check"></i>:null} তাক্বওয়া</Typography>
            
             </Button>
         </Grid>
@@ -146,7 +146,7 @@ function CreateBiodata() {
         className={toggleState === 5 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(5)}
             >
-              <Typography>আক্বীদা</Typography>
+              <Typography>{auth.user.aMazhab?<i class="bi bi-check"></i>:null} আক্বীদা</Typography>
            
             </Button>
         </Grid>
@@ -156,7 +156,7 @@ function CreateBiodata() {
         className={toggleState === 6 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(6)}
             >
-              <Typography>বিয়ে</Typography>
+              <Typography>{auth.user.marriageC?<i class="bi bi-check"></i>:null} বিয়ে সংক্রান্ত তথ্য</Typography>
         
             </Button>
         </Grid>
@@ -166,7 +166,7 @@ function CreateBiodata() {
         className={toggleState === 7 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(7)}
             >
-              <Typography>জান্নাতের সাথী</Typography>
+              <Typography>{auth.user.partDistrict?<i class="bi bi-check"></i>:null} জান্নাতের সাথী</Typography>
            
             </Button>
         </Grid>
@@ -176,7 +176,7 @@ function CreateBiodata() {
         className={toggleState ===8  ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(8)}
             >
-              <Typography>যোগাযোগ</Typography>
+             <Typography>{auth.user.gMobile?<i class="bi bi-check"></i>:null} যোগাযোগ</Typography>
         
             </Button>
         </Grid>
@@ -186,7 +186,7 @@ function CreateBiodata() {
         className={toggleState === 9 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(9)}
             >
-              <Typography>হলফনামা</Typography>
+              <Typography>{auth.user.allTrue?<i class="bi bi-check"></i>:null} হলফনামা</Typography>
            
             </Button>
         </Grid>
@@ -205,7 +205,7 @@ function CreateBiodata() {
         className={toggleState === 1 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(1)}
             >
-              <Typography>সাধারণ তথ্য</Typography>
+              <Typography>{auth.user.status?<i class="bi bi-check"></i>:null} সাধারণ তথ্য</Typography>
            
             </Button>
         </Grid>
@@ -215,7 +215,7 @@ function CreateBiodata() {
         className={toggleState === 2 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(2)}
             >
-              <Typography>শিক্ষাগত যোগ্যতা</Typography>
+              <Typography>{auth.user.eduMedium?<i class="bi bi-check"></i>:null} শিক্ষাগত যোগ্যতা</Typography>
            
             </Button>
         </Grid>
@@ -225,7 +225,7 @@ function CreateBiodata() {
         className={toggleState === 3 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(3)}
             >
-              <Typography>পারিবারিক তথ্য</Typography>
+              <Typography>{auth.user.fatherN?<i class="bi bi-check"></i>:null} পারিবারিক তথ্য</Typography>
            
             </Button>
         </Grid>
@@ -235,7 +235,7 @@ function CreateBiodata() {
         className={toggleState === 4 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(4)}
             >
-              <Typography> তাক্বওয়া</Typography>
+              <Typography>{auth.user.salat?<i class="bi bi-check"></i>:null} তাক্বওয়া</Typography>
            
             </Button>
         </Grid>
@@ -245,7 +245,7 @@ function CreateBiodata() {
         className={toggleState === 5 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(5)}
             >
-              <Typography>আক্বীদা</Typography>
+              <Typography>{auth.user.aMazhab?<i class="bi bi-check"></i>:null} আক্বীদা</Typography>
            
             </Button>
         </Grid>
@@ -255,7 +255,7 @@ function CreateBiodata() {
         className={toggleState === 6 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(6)}
             >
-              <Typography>বিয়ে সংক্রান্ত তথ্য</Typography>
+              <Typography>{auth.user.marriageC?<i class="bi bi-check"></i>:null} বিয়ে সংক্রান্ত তথ্য</Typography>
            
             </Button>
         </Grid>
@@ -265,7 +265,7 @@ function CreateBiodata() {
         className={toggleState === 7 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(7)}
             >
-              <Typography> জান্নাতের সাথী</Typography>
+              <Typography>{auth.user.partDistrict?<i class="bi bi-check"></i>:null} জান্নাতের সাথী</Typography>
            
             </Button>
         </Grid>
@@ -275,7 +275,7 @@ function CreateBiodata() {
         className={toggleState === 8 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(8)}
             >
-              <Typography>যোগাযোগ</Typography>
+              <Typography>{auth.user.gMobile?<i class="bi bi-check"></i>:null} যোগাযোগ</Typography>
            
             </Button>
         </Grid>
@@ -285,7 +285,7 @@ function CreateBiodata() {
         className={toggleState === 9 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(9)}
             >
-              <Typography>হলফনামা</Typography>
+              <Typography>{auth.user.allTrue?<i class="bi bi-check"></i>:null} হলফনামা</Typography>
            
             </Button>
         </Grid>
