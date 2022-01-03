@@ -376,7 +376,7 @@ const EditProfile = ({setOnEdit}) => {
                  
                   multiline
                   maxRows = "200"
-                  
+                  required
                    
                    fullWidth
                    className={classes.textfield}
@@ -392,12 +392,7 @@ const EditProfile = ({setOnEdit}) => {
                    
                   />
                   </Grid>
-                  <div className={classes.textfield}>
-                    
-                    <small>
-                    জানাতে না চাইলে ঘরটি ফাঁকা রাখুন।
-                    </small>
-                    </div>
+                  
               </div>
               <div className="form mt-4 mr-3 ml-1">
                 <Grid container >
@@ -405,7 +400,7 @@ const EditProfile = ({setOnEdit}) => {
                
                   multiline
                   maxRows = "200"
-                  
+                  required
                    
                    fullWidth
                    className={classes.textfield}
