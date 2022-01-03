@@ -303,6 +303,14 @@
         font-size: larger;
         border-radius: 5px;
       }
+      .bio-status{
+        background-color:#706f6c ;
+        min-width: 200px;
+        min-height: 50px;
+        color: white;
+        font-size: larger;
+        border-radius: 5px;
+      }
       .sendBio-btn{
         background-color:#002884 ;
         

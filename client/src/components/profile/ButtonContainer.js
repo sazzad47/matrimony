@@ -50,7 +50,7 @@ const ButtonContainer = ({user}) => {
         <div>
             <div className="row bio-btn-Container">
                 {user._id===auth.user._id?
-                <div className="col-6 col-md-6 col-lg-6">
+                <div className="col-4 col-md-4 col-lg-4">
 
                  <Link to='/edit_biodata'>
                      <button className="bio-edit-btn">Edit</button>
@@ -94,13 +94,22 @@ const ButtonContainer = ({user}) => {
                 </div>}
                 </>}
                 {user._id===auth.user._id?
-                <div className="col-6 col-md-6 col-lg-6 d-flex justify-content-end">
+                <div className="col-4 col-md-4 col-lg-4 d-flex justify-content-center">
+                <button 
+                disabled
+                type='submit' 
+                className="bio-status"
+                onClick={() => {handlePublish();}}
+                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Published' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending Approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not Approved' : (!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat)? 'Not completed' : 'Completed'} </button>
+                </div>:null}
+                {user._id===auth.user._id?
+                <div className="col-4 col-md-4 col-lg-4 d-flex justify-content-end">
                 <button 
                 disabled={!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat}
                 type='submit' 
                 className="bio-publish-btn"
                 onClick={() => {handlePublish();}}
-                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Approved' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending Approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not Approved' : 'Publish'} </button>
+                >Publish</button>
                 </div>:null}
 
                 {auth.user.role==="admin"?
