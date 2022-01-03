@@ -132,7 +132,10 @@ function CreateBiodata() {
      
      <Grid item xs={6} md={6}>
         
-        <Button fullWidth disableRipple 
+        <Button 
+         disabled={!auth.user.status}
+         fullWidth
+         disableRipple 
         className={toggleState === 4 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(4)}
             >
@@ -152,7 +155,10 @@ function CreateBiodata() {
         </Grid>
      <Grid item xs={6} md={6}>
         
-        <Button fullWidth disableRipple 
+        <Button 
+        disabled={!auth.user.status}
+        fullWidth 
+        disableRipple 
         className={toggleState === 6 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(6)}
             >
@@ -231,7 +237,10 @@ function CreateBiodata() {
         </Grid>
       <Grid item md={4} lg={4}>
         
-        <Button fullWidth disableRipple
+        <Button 
+        disabled={!auth.user.status}
+        fullWidth 
+        disableRipple
         className={toggleState === 4 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(4)}
             >
@@ -251,7 +260,10 @@ function CreateBiodata() {
         </Grid>
       <Grid item md={4} lg={4}>
         
-        <Button fullWidth disableRipple
+        <Button 
+        disabled={!auth.user.status}
+        fullWidth 
+        disableRipple
         className={toggleState === 6 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(6)}
             >
