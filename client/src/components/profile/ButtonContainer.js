@@ -100,7 +100,7 @@ const ButtonContainer = ({user}) => {
                 type='submit' 
                 className="bio-publish-btn"
                 onClick={() => {handlePublish();}}
-                >Publish</button>
+                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Approved' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending Approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not Approved' : 'Publish'} </button>
                 </div>:null}
 
                 {auth.user.role==="admin"?

@@ -62,7 +62,7 @@ const EditProfile = () => {
                 <Button fullWidth disabled={!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat} className={classes.tab} onClick={() => {
                 
                 handlePublish();
-               }}  type="submit">Publish</Button>
+               }}  type="submit">{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Approved' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending Approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not Approved' : 'Publish'} </Button>
             
         </div>
     )
