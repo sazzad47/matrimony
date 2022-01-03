@@ -55,7 +55,7 @@ const ButtonContainer = ({user}) => {
                 type='submit' 
                 className="bio-status w-100"
                 onClick={() => {handlePublish();}}
-                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Published' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending Approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not Approved' : (!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat)? 'Not completed yet' : 'Completed'} </button>
+                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Published' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not approved' : (!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat)? 'Not completed yet' : 'Completed'} </button>
                 </div>:null}
             <div className="row bio-btn-Container">
                 {user._id===auth.user._id?
@@ -109,7 +109,7 @@ const ButtonContainer = ({user}) => {
                 type='submit' 
                 className="bio-status"
                 onClick={() => {handlePublish();}}
-                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Published' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending Approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not Approved' : (!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat)? 'Not completed yet' : 'Completed'} </button>
+                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Published' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not approved' : (!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat)? 'Not completed yet' : 'Completed'} </button>
                 </div>:null}
                 {user._id===auth.user._id?
                 <div className="col-6 col-md-4 col-lg-4 d-flex justify-content-end">
