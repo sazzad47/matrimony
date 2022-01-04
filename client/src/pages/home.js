@@ -86,7 +86,7 @@ const Home = () => {
               <Paper elevation={24}>
               <Button variant="contained" fullWidth style={{minWidth:"300px"}} className={classes.tab}
             >
-             <Typography variant="h5">{auth.token? 'আপনার বায়োডাটা তৈরি সম্পন্ন করুন': 'আপনার বায়োডাটা তৈরি করুন'}</Typography>
+             <Typography variant="h5">আপনার বায়োডাটা তৈরি করুন</Typography>
             </Button>
             </Paper>
               </Link>

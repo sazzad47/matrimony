@@ -63,7 +63,7 @@ const Login = () => {
 
 
     useEffect(() => {
-        if(auth.token) history.push("/")
+        if(auth.token) history.push("/edit_biodata")
     }, [auth.token, history])
 
     const handleChangeInput = e => {
@@ -81,7 +81,7 @@ const Login = () => {
           
 
           dispatch(googleLogin({tokenId: response.tokenId}))
-          history.push('/')
+          
       } catch (err) {
          console.log(err)
       }
