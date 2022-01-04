@@ -11,17 +11,7 @@
     "client-install": "cd client && npm install",
     "install-all": "concurrently \"npm run server-install\" \"npm run client-install\" ",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "heroku-postbuild": "cd client && npm install && npm run build",
-    "postbuild": "react-snap"
-  },
-  "reactSnap": {
-    "cacheAjaxRequests": true,
-    "inlineCss": true,
-    "http2PushManifest": true,
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -42,7 +32,6 @@
     "nodemailer": "^6.7.2",
     "peer": "^0.6.1",
     "react-helmet-async": "^1.2.2",
-    "react-snap": "^1.23.0",
     "socket.io": "^3.1.2"
   },
   "devDependencies": {
