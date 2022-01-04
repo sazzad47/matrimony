@@ -37,15 +37,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap"
+    "eject": "react-scripts eject"
+   
   },
-  "reactSnap": {
-    "cacheAjaxRequests": true,
-    "inlineCss": true,
-    "http2PushManifest": true,
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
-  },
+ 
   "eslintConfig": {
     "extends": [
       "react-app",
