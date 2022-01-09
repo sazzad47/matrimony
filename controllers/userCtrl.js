@@ -539,15 +539,13 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
-    downloadPDF: async (req, res) => {
-        try {
+    downloadPDF:(req, res) => {
+       
 
             res.download("./aqida.pdf");
             
 
-        } catch (err) {
-            return res.status(500).json({msg: err.message})
-        }
+        
     },
 }
 
