@@ -27,7 +27,7 @@ const Quiz = () => {
          <meta name='description' content="ইলমে নববীকে সবার মাঝে ছড়িয়ে দিতেই আমাদের এই ক্ষুদ্র প্রচেষ্টা..."/>
           <link rel='canonical' href='/terms&policies'/>
       </Helmet>
-       {start?<div className='loading'>অনুগ্রহ করে অপেক্ষা করুন, নিশ্চয়ই আল্লাহ তা'আলা ধৈর্যশীলদের সাথে রয়েছেন। (সূরা: বাকারা, আয়াত : ১৫৩)</div>:<div>
+       {start?<div className='loading p-5'>Starting...please wait.</div>:<div>
       <Typography gutterBottom variant="h5" align="center">
       JannaterSathi.com Quiz Contest
        </Typography>
