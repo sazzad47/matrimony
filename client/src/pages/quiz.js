@@ -57,7 +57,7 @@ const Quiz = () => {
                 
             </ul><br/>
             <Typography variant='h6' style={{fontWeight:'bold'}}>বিষয় ও প্রস্তুতিঃ</Typography> <br/>
-            <Typography>প্রতিযোগীদের নির্বাচনে ফেব্রুয়ারি মাসের বিষয় নির্বাচিত হয়েছে 'আক্বীদা'। প্রতিযোগীদের প্রস্তুতির সুবিধার্থে আমরা সবগুলো প্রশ্ন তৈরি করবো ড. খন্দকার আব্দুল্লাহ জাহাঙ্গীর স্যার কর্তৃক লিখিত 'ইসলামী আকীদা' বই থেকে। <div > বইটির PDF ডাউনলোড করতে ডাউনলোড বাটনে ক্লিক করুন <Button disableFocusRipple disableRipple onClick={(e) => download(e)} variant='contained' color='primary'> Download PDF </Button></div></Typography>
+            <Typography>প্রতিযোগীদের নির্বাচনে ফেব্রুয়ারি মাসের বিষয় নির্বাচিত হয়েছে 'আক্বীদা'। প্রতিযোগীদের প্রস্তুতির সুবিধার্থে আমরা সবগুলো প্রশ্ন তৈরি করবো ড. খন্দকার আব্দুল্লাহ জাহাঙ্গীর স্যার কর্তৃক লিখিত 'ইসলামী আকীদা' বই থেকে। <div className='d-none'> বইটির PDF ডাউনলোড করতে ডাউনলোড বাটনে ক্লিক করুন <Button disableFocusRipple disableRipple onClick={(e) => download(e)} variant='contained' color='primary'> Download PDF </Button></div></Typography>
             <br/>
             <Typography variant='h6' style={{fontWeight:'bold'}}>পুরস্কারঃ</Typography> <br/>
             <ul>
