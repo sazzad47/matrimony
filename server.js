@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const SocketServer = require('./socketServer')
 const { ExpressPeerServer } = require('peer')
 const path = require('path')
+const fs = require("fs");
 
 
 const app = express()
@@ -33,7 +34,10 @@ app.use('/api', require('./routes/postRouter'))
 app.use('/api', require('./routes/commentRouter'))
 app.use('/api', require('./routes/notifyRouter'))
 app.use('/api', require('./routes/messageRouter'))
-app.get('/downloadQuizAqida', (res, req) => {res.download('./aqida.pdf')})
+app.get("/pdf", (req, res) => {
+    var file = fs.createReadStream("./aqida.pdf");
+    file.pipe(res);
+  });
 
 
 const URI = process.env.MONGODB_URL
