@@ -8,7 +8,7 @@ const Quiz = () => {
     const download = (e) => {
         e.preventDefault();
         axios({
-            url: "http://localhost:3000",
+            url: "http://localhost:3000/downloadQuizAqida",
             method:'GET',
             responseType:'blob',
         }).then((res) => {
