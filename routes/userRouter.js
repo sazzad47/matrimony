@@ -13,7 +13,7 @@ router.patch('/user/:id/publish', auth, userCtrl.publishBiodata)
 router.patch('/user/:id/decline', auth, userCtrl.decline)
 
 router.get('/search', userCtrl.searchUser)
-router.get('/downloadQuizAqida', (res, req) => {res.download('./aqida.pdf')})
+
 
 router.get('/biodatas', userCtrl.getBiodatas)
 router.get('/biodata/:id', userCtrl.getBiodata)
