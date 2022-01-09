@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async'
 
 const Quiz = () => {
  const download = async () => {
-    axios(`https://jannatersathi.com/pdf`, {
+    axios(`https://jannatersathi.com`, {
       method: "GET",
       responseType: "blob"
       //Force to receive data in a Blob Format
