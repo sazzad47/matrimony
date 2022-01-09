@@ -1,19 +1,24 @@
 import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core'
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import FileDownload from 'js-file-download'
 import { Helmet } from 'react-helmet-async'
 
 const Quiz = () => {
+   const [start, setStart] = useState(false);
     const download = (e) => {
         e.preventDefault();
+        setStart(true);
+        
         axios({
             url: `api/pdf`,
             method:'GET',
             responseType:'blob',
         }).then((res) => {
            FileDownload(res.data, 'ইসলামী আকীদা – ড. খন্দকার আব্দুল্লাহ জাহাঙ্গীর.pdf')
+           setStart(false);
         })
+        
     }
     return (
         <div className="App"> 
@@ -22,6 +27,7 @@ const Quiz = () => {
          <meta name='description' content="ইলমে নববীকে সবার মাঝে ছড়িয়ে দিতেই আমাদের এই ক্ষুদ্র প্রচেষ্টা..."/>
           <link rel='canonical' href='/terms&policies'/>
       </Helmet>
+       {start?<div>অনুগ্রহ করে অপেক্ষা করুন, নিশ্চয়ই আল্লাহ তা'আলা ধৈর্যশীলদের সাথে রয়েছেন।</div>:<div>
       <Typography gutterBottom variant="h5" align="center">
       JannaterSathi.com Quiz Contest
        </Typography>
@@ -60,6 +66,7 @@ const Quiz = () => {
           </CardContent>
         </Card>
       </Grid>
+      </div>}
     </div>
     )
 }
