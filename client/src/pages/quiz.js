@@ -5,26 +5,16 @@ import FileDownload from 'js-file-download'
 import { Helmet } from 'react-helmet-async'
 
 const Quiz = () => {
- const download = async () => {
-    axios(`/pdf`, {
-      method: "GET",
-      responseType: "blob"
-      //Force to receive data in a Blob Format
-    })
-      .then(response => {
-        //Create a Blob from the PDF Stream
-        const file = new Blob([response.data], {
-          type: "application/pdf"
-        });
-        //Build a URL from the file
-        const fileURL = URL.createObjectURL(file);
-        //Open the URL on new Window
-        window.open(fileURL);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
+    const download = (e) => {
+        e.preventDefault();
+        axios({
+            url: `http://localhost:3000/pdf`,
+            method:'GET',
+            responseType:'blob',
+        }).then((res) => {
+           FileDownload(res.data, 'ইসলামী আকীদা – ড. খন্দকার আব্দুল্লাহ জাহাঙ্গীর.pdf')
+        })
+    }
     return (
         <div className="App"> 
         <Helmet>
@@ -57,7 +47,7 @@ const Quiz = () => {
                 
             </ul><br/>
             <Typography variant='h6' style={{fontWeight:'bold'}}>বিষয় ও প্রস্তুতিঃ</Typography> <br/>
-            <Typography>প্রতিযোগীদের নির্বাচনে ফেব্রুয়ারি মাসের বিষয় নির্বাচিত হয়েছে 'আক্বীদা'। প্রতিযোগীদের প্রস্তুতির সুবিধার্থে আমরা সবগুলো প্রশ্ন তৈরি করবো ড. খন্দকার আব্দুল্লাহ জাহাঙ্গীর স্যার কর্তৃক লিখিত 'ইসলামী আকীদা' বই থেকে। বইটির PDF ডাউনলোড করতে ডাউনলোড বাটনে ক্লিক করুন <Button disableFocusRipple disableRipple onClick={(e) => download(e)} variant='contained' color='primary'> Download PDF </Button></Typography>
+            <Typography>প্রতিযোগীদের নির্বাচনে ফেব্রুয়ারি মাসের বিষয় নির্বাচিত হয়েছে 'আক্বীদা'। প্রতিযোগীদের প্রস্তুতির সুবিধার্থে আমরা সবগুলো প্রশ্ন তৈরি করবো ড. খন্দকার আব্দুল্লাহ জাহাঙ্গীর স্যার কর্তৃক লিখিত 'ইসলামী আকীদা' বই থেকে। <div className='d-none'>বইটির PDF ডাউনলোড করতে ডাউনলোড বাটনে ক্লিক করুন <Button disableRipple onClick={(e) => download(e)} variant='contained' color='primary'> Download PDF </Button></div></Typography>
             <br/>
             <Typography variant='h6' style={{fontWeight:'bold'}}>পুরস্কারঃ</Typography> <br/>
             <ul>
