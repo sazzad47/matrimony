@@ -39,6 +39,7 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop';
 import Pending from './components/Pending'
 import Applicants from './components/Applicants'
+import Quiz from './pages/quiz'
 
 
 function App() {
@@ -112,6 +113,7 @@ function App() {
           {firstLogin? null : <Route exact path="/about" component={About}/>}
           {firstLogin? null : <Route exact path="/help&support" component={Help}/>}
           {firstLogin? null : <Route exact path="/terms&policies" component={Terms}/>}
+          {firstLogin? null : <Route exact path="/quiz" component={Quiz}/>}
 
           <Route exact path="/auth" component={Auth}/>
           {firstLogin? null : <Route exact path="/biodatas/:id" component={BiodataDetails}/>}

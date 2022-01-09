@@ -8,6 +8,7 @@ import NotifyModal from '../NotifyModal'
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import {AppBar, Button, Tab, Tabs, Toolbar, Typography, Menu, MenuItem, makeStyles, Box, Avatar, Grid} from '@material-ui/core'
 import HomeIcon from '@material-ui/icons/Home';
+import SearchIcon from '@material-ui/icons/Search';
 
 import { Badge } from '@material-ui/core'
 import Search from './Search';
@@ -101,6 +102,7 @@ const HeaderMenu = () => {
               >
                 
 
+                
                 <Grid 
                  
                 style={{opacity: 1}} >

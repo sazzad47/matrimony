@@ -4,6 +4,8 @@ import MenuIcon from '@material-ui/icons/Menu'
 
 
 
+
+
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme)=>({
     drawerPaper: {
@@ -44,6 +46,13 @@ const useStyles = makeStyles((theme)=>({
             onClick={()=>setOpenDrawer(false)} divider button disableRipple >
             
             <div className="drawer-icon pr-2">  <i class="bi bi-house-door"></i> </div> Home
+           
+            </ListItem>
+            <ListItem 
+            component={Link} to ="/quiz"
+            onClick={()=>setOpenDrawer(false)} divider button disableRipple >
+            
+            <div className="drawer-icon pr-2"> <i class="bi bi-book"></i>  </div> Quiz
            
             </ListItem>
            
