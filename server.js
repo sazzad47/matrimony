@@ -33,9 +33,7 @@ app.use('/api', require('./routes/postRouter'))
 app.use('/api', require('./routes/commentRouter'))
 app.use('/api', require('./routes/notifyRouter'))
 app.use('/api', require('./routes/messageRouter'))
-app.get ('/pdf', (res,req) => {
-    res.download("./aqida.pdf")
-})
+
 
 
 const URI = process.env.MONGODB_URL

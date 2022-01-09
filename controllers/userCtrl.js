@@ -1,5 +1,7 @@
 const Users = require('../models/userModel')
 
+const fs = require("fs");
+
 const userCtrl = {
     searchUser: async (req, res) => {
         const {gender,status,pdistrict} = req.query
@@ -532,6 +534,16 @@ const userCtrl = {
                 users,
                 result: users.length
             })
+
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    downloadPDF: async (req, res) => {
+        try {
+
+            res.download("./aqida.pdf");
+            
 
         } catch (err) {
             return res.status(500).json({msg: err.message})
