@@ -8,7 +8,7 @@ import { Divider, Chip, Container, Paper, Avatar,Grid, Typography,Button, IconBu
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Icon from '../components/icon';
-import { googleLogin } from './../redux/actions/authAction';
+import { googleLogin } from '../redux/actions/authAction';
 import { styled } from '@material-ui/styles'
 import { Helmet } from 'react-helmet-async'
 
@@ -117,7 +117,7 @@ const Login = () => {
             cookiePolicy="single_host_origin"
           />
 
-       {/* <Typography>Or</Typography>
+       <Typography>Or</Typography>
           <form onSubmit={handleSubmit} className={classes.form}>
         
          
@@ -201,7 +201,7 @@ const Login = () => {
              
              
              
-             </form> */}
+             </form>
 
                 </Paper>
   

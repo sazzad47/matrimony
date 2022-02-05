@@ -69,7 +69,7 @@ const Header = () => {
                 {auth.token? <HeaderMenu />:
                 <Button 
                 variant="contained"
-                component={Link} to = '/auth'>Login</Button>}
+                component={Link} to = '/login'>Login</Button>}
                 
         </Toolbar>
         </AppBar>

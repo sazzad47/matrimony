@@ -36,7 +36,7 @@ const authCtrl = {
             await newUser.save()
 
             res.json({
-                msg: 'You have successfully logged in to JannaterSathi.com!',
+                msg: 'আলহামদুলিল্লাহ! আপনার রেজিস্ট্রেশন সম্পন্ন হয়েছে। এখন আপনার সম্পূর্ণ বায়োডাটা তৈরি করে পাবলিশ বাটনে চাপুন।',
                 access_token,
                 user: {
                     ...newUser._doc,

@@ -237,7 +237,7 @@ const Register = () => {
                  Sign Up
                 </Button>
             <p className="my-2">
-             Already have an account? <Link to="/auth" style={{color: "crimson"}}>Sign in</Link>
+             Already have an account? <Link to="/login" style={{color: "crimson"}}>Sign in</Link>
            </p>
            
             

@@ -5,7 +5,7 @@ import PageRender from './customRouter/PageRender'
 import PrivateRouter from './customRouter/PrivateRouter'
 
 import Home from './pages/home'
-import Auth from './pages/auth'
+import Auth from './pages/login'
 import Register from './pages/register'
 import BiodataDetails from '../src/components/profile/BiodataDetails/BiodataDetails'
 import Alert from './components/alert/Alert'
@@ -115,7 +115,7 @@ function App() {
           {firstLogin? null : <Route exact path="/terms&policies" component={Terms}/>}
           {firstLogin? null : <Route exact path="/quiz" component={Quiz}/>}
 
-          <Route exact path="/auth" component={Auth}/>
+          <Route exact path="/login" component={Auth}/>
           {firstLogin? null : <Route exact path="/biodatas/:id" component={BiodataDetails}/>}
           
           <Route exact path="/register" component={Register} />
