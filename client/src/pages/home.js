@@ -82,7 +82,7 @@ const Home = () => {
               alignItems="center"
               justifyContent="center"
               style={{marginTop:'50px'}}>
-              <Link style={{ textDecoration: 'none', }} to={firstLogin? "/edit_biodata" : "/auth"}>
+              <Link style={{ textDecoration: 'none', }} to={firstLogin? "/edit_biodata" : "/register"}>
               <Paper elevation={24}>
               <Button variant="contained" fullWidth style={{minWidth:"300px"}} className={classes.tab}
             >
