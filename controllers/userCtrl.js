@@ -542,7 +542,7 @@ const userCtrl = {
     downloadPDF:(req, res) => {
        
 
-            res.download("./aqida.pdf");
+            res.download("./siyam.pdf");
             
 
         
