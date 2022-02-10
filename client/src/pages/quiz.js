@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core'
+import { Button, Card, CardContent, CircularProgress, Grid, Typography } from '@material-ui/core'
 import React, { useState } from 'react'
 import axios from 'axios'
 import FileDownload from 'js-file-download'
@@ -27,7 +27,7 @@ const Quiz = () => {
          <meta name='description' content="ইলমে নববীকে সবার মাঝে ছড়িয়ে দিতেই আমাদের এই ক্ষুদ্র প্রচেষ্টা..."/>
           <link rel='canonical' href='/terms&policies'/>
       </Helmet>
-       {start?<div className='loading p-5'>Starting...please wait.</div>:<div>
+       {start?<div className='loading p-5'><CircularProgress/> <br/> <br/>Starting...please wait.</div>:<div>
       <Typography gutterBottom variant="h5" align="center">
       জান্নাতের সাথী কুইজ মার্চ ২০২২ 
        </Typography>
