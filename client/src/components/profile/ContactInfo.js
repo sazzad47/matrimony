@@ -20,7 +20,11 @@ const ContactInfo = ({id, dispatch, user, profile}) => {
           <div className="textHeading">বায়োডাটা নং-{user.index} এর যোগাযোগ তথ্য </div>
           </div>
         </div>
-     
+        {user.fullname === ""? null :
+             <div className="row infoBox-1">
+               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">পূর্ণ নাম</div> </div>
+               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.fullname}</div> </div>
+             </div>}
         {user.gMobile === ""? null :
              <div className="row infoBox-1">
                <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">অভিভাবকের মোবাইল নাম্বার</div> </div>
@@ -36,6 +40,7 @@ const ContactInfo = ({id, dispatch, user, profile}) => {
                <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">বায়োডাটা পাঠানোর ই-মেইল এড্রেস</div> </div>
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.urEmail}</div> </div>
              </div>}
+        
 
         
         
