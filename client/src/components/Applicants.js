@@ -25,6 +25,7 @@ const Applicants = () => {
       <th scope="col">জেলা</th>
       <th scope="col">যোগাযোগ</th>
       <th scope="col">ই-মেইল</th>
+      <th scope="col">বায়োডাটা নাম্বার</th>
       <th scope="col">মোবাইল নাম্বার</th>
       <th scope="col">Transaction ID</th>
     </tr>

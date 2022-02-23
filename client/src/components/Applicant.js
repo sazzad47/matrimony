@@ -27,6 +27,7 @@ const Applicant = ({user}) => {
       <td>{user.district}</td>
       <td>{user.mobile}</td>
       <td>{user.email}</td>
+      <td>{user.biodataNumber}</td>
       <td>{user.phoneNumber}</td>
       <td>{user.trxID}</td>
       <td> <DeleteIcon onClick={handleDone} /></td>
