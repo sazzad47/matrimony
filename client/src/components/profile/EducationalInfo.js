@@ -519,15 +519,7 @@ const EducationalInfo = ({id, dispatch, user, profile}) => {
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.honors}</div> </div>
              </div>
              
-             <div className="row infoBox-1 ">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">অনার্সের বিষয়</div> </div>
-               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.honorsSubject}</div> </div>
-             </div>
-             
-             <div className="row infoBox-2 ">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">শিক্ষাপ্রতিষ্ঠানের নাম</div> </div>
-               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.honorsMadrasa}</div> </div>
-             </div> 
+            
              <div className="row infoBox-1 ">
                <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">অনার্সের বিষয়</div> </div>
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.honorsSubject}</div> </div>
