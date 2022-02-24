@@ -330,7 +330,7 @@ const userCtrl = {
                 gCVpermit, allTrue, noDayvar,
             })
 
-            res.json({msg: "আলহামদুলিল্লাহ! আপনার দেয়া তথ্য আপনার বায়োডাটায় যুক্ত করা হয়েছে।"})
+            res.json({msg: "Alhamdulillah! Saved successfully!"})
 
         } catch (err) {
             return res.status(500).json({msg: err.message})

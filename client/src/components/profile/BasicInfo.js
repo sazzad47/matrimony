@@ -1,8 +1,13 @@
 import { Button, Card } from '@material-ui/core'
-import React from 'react'
-import Avatar from '../Avatar'
+import React, { useState } from 'react'
+import { BASE_URL } from '../../utils/config'
 
 const BasicInfo = ({id, dispatch, user, profile}) => {
+      const [copy , setCopy] = useState(false);
+
+      const handleCopyLink = () => {
+            navigator.clipboard.writeText(`${BASE_URL}/biodatas/${user._id}`)
+        }
     return (
         <div>
         <Card >
@@ -212,10 +217,16 @@ const BasicInfo = ({id, dispatch, user, profile}) => {
      
       </div>
       </div>
-      <div className='basicInfo-last'>
-      <div className="row" >
+      <div className='basicInfo'>
+      <div className="d-flex align-items-center justify-content-center pb-3" >
      
-     
+      <div onClick={() => {
+            handleCopyLink();
+            setCopy(true);
+
+      }}>
+                   <Button disableRipple variant='contained'>{copy?"কপি সম্পন্ন হয়েছে":"বায়োডাটার লিঙ্ক কপি করুন"}</Button>     
+                    </div>
       
      
       </div>
