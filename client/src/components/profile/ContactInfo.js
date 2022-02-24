@@ -40,6 +40,11 @@ const ContactInfo = ({id, dispatch, user, profile}) => {
                <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">বায়োডাটা পাঠানোর ই-মেইল এড্রেস</div> </div>
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.urEmail}</div> </div>
              </div>}
+        {user.urMobile === ""? null :
+             <div className="row infoBox-2">
+               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">{user.gender === "পাত্রের বায়োডাটা"?<span>পাত্রের মোবাইল নাম্বার</span>:<span>পাত্রীর মোবাইল নাম্বার</span>}</div> </div>
+               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.urMobile}</div> </div>
+             </div>}
         
 
         
