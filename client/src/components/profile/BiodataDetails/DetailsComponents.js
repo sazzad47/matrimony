@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core'
 import React from 'react'
 
 import AddressInfo from '../AddressInfo'
@@ -15,6 +16,8 @@ import TaqwaInfo from '../TaqwaInfo'
 
 const DetailsComponents = ({user}) => {
     return (
+        <>
+        {user.isPublished==="deleted"? <div className='loading'><Typography variant='h5'>বায়োডাটাটি ওয়েবসাইট থেকে ডিলিট করা হয়েছে।</Typography> </div> :
         <div>
             
             <div className = "row "> {user.height===""? null :
@@ -111,7 +114,8 @@ const DetailsComponents = ({user}) => {
                  </div>
                 </div>
             </div> 
-               </div>
+               </div>}
+               </>
     )
 }
 

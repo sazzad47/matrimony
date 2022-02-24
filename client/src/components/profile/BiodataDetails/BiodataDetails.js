@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getBiodatas } from '../../../redux/actions/getBiodatasAction'
 import DetailsComponents from './DetailsComponents'
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet-async'
 
 const BiodataDetails = () => {

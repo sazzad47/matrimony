@@ -1,4 +1,4 @@
-import { CircularProgress } from '@material-ui/core'
+import { CircularProgress, Typography } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import {useSelector} from 'react-redux'
@@ -34,7 +34,7 @@ const Info = ({id,profile, auth, dispatch}) => {
 
     return (
         <>
-        {loading? <div className='loading'><CircularProgress/> </div> :
+        {loading? <div className='loading'><CircularProgress/> </div>  :
         <div className ="px-3 px-md-5 px-lg-5 py-2 py-md-5 py-lg-5 biodatas_page" >
             {
                 userData.map(user => (
@@ -46,7 +46,7 @@ const Info = ({id,profile, auth, dispatch}) => {
                    <link rel='canonical' href={`/biodatas/${user._id}`}/>
                     </Helmet>
                        
-                        <SingleBio user= {user} auth={auth}  profile ={profile} id ={id} dispatch ={dispatch}/>
+                       {user.isPublished==="deleted"? <div className='loading'><Typography variant='h5'>বায়োডাটাটি ওয়েবসাইট থেকে ডিলিট করা হয়েছে।</Typography> </div>: <SingleBio user= {user} auth={auth}  profile ={profile} id ={id} dispatch ={dispatch}/>}
                     </div>
                 ))
             }
