@@ -167,7 +167,7 @@ const HeaderMenu = () => {
      
 
     <Menu
-    disableScrollLock={true}
+    disableScrollLock={false}
     className={classes.dropMenu}
     id='menu' 
     onClose={handleCloseMenu} 
