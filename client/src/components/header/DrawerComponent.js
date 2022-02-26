@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme)=>({
     return (
         <>
         <Drawer 
-        disableScrollLock={true}
+        disableScrollLock={false}
         classes={{
             paper: classes.drawerPaper
             }}
