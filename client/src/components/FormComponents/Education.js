@@ -1751,7 +1751,7 @@ const EditProfile = ({setOnEdit}) => {
                   
                   label="এসএসসির ফলাফল"
                   fullWidth
-                  required
+              
                   className={classes.textfield}
                   variant="outlined"
                  
@@ -1906,7 +1906,7 @@ const EditProfile = ({setOnEdit}) => {
                  
                   label="এইচএসসির ফলাফল"
                   fullWidth
-                  required
+                
                   className={classes.textfield}
                   variant="outlined"
                  
