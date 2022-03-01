@@ -265,7 +265,7 @@ const userCtrl = {
                 mastersMadrasa,mastersYear,mastersSubject,mastersJamat,
 
                 fatherN,motherN,fatherO,motherO,brother,
-                sister,brotherInfo,sisterInfo,uncleInfo,
+                sister,brotherInfo,sisterInfo,uncleInfo, familyStatus,
 
                 salat,salatCon, dari, takhnu, poshak,mahram,quran,
                 iStudy,natok,mehnot,tahajjud,aboutMe,
@@ -310,7 +310,7 @@ const userCtrl = {
                 mastersMadrasa,mastersYear,mastersSubject,mastersJamat,
 
                 fatherN,motherN,fatherO,motherO,brother,
-                sister,brotherInfo,sisterInfo,uncleInfo,
+                sister,brotherInfo,sisterInfo,uncleInfo, familyStatus,
 
                 salat,salatCon, dari, takhnu, poshak,mahram,quran,iStudy,
                 natok,mehnot,tahajjud,aboutMe,

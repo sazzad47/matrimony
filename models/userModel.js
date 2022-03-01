@@ -408,6 +408,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: '',
         },
+    familyStatus: {
+        type: String,
+        default: '',
+        },
     salat: {
         type: String,
         default: '',

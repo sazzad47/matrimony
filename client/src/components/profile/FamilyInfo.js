@@ -70,6 +70,15 @@ const FamilyInfo = ({id, dispatch, user, profile}) => {
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.uncleInfo}</div> </div>
              </div>}
              
+             {user.uncleInfo === ""?<div className={user.brother==="ভাই নেই"? "row infoBox-2" : user.sister==="বোন নেই"? "row infoBox-2": "row infoBox-1"}>
+               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">পরিবারের অর্থনৈতিক ও সামাজিক অবস্থা</div> </div>
+               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.familyStatus}</div> </div>
+             </div>:
+             <div className={user.brother==="ভাই নেই"? "row infoBox-1" : user.sister==="বোন নেই"? "row infoBox-1": "row infoBox-2"}>
+               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">পরিবারের অর্থনৈতিক ও সামাজিক অবস্থা</div> </div>
+               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.familyStatus}</div> </div>
+             </div>}
+             
              
             
              

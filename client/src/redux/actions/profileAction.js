@@ -154,7 +154,7 @@ export const follow = ({users, user, auth, socket}) => async (dispatch) => {
             id: auth.user._id,
             text:`আসসালামু আলাইকুম! ${auth.user.pdistrict} থেকে ${auth.user.gender==='পাত্রের বায়োডাটা'? 'পাত্রপক্ষ': 'পাত্রীপক্ষ'} আপনার অভিভাবকের সাথে যোগাযোগ করতে চেয়েছেন। ${auth.user.gender==='পাত্রের বায়োডাটা'? 'পাত্রের' : 'পাত্রীর'} বায়োডাটা দেখতে লিংকে ক্লিক করুন।`,
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(createNotify({msg, auth, socket}))
@@ -204,7 +204,7 @@ export const unfollow = ({users, user, auth, socket}) => async (dispatch) => {
             id: auth.user._id,
             text:`আসসালামু আলাইকুম! ${auth.user.pdistrict} থেকে ${auth.user.gender==='পাত্রের বায়োডাটা'? 'পাত্রপক্ষ': 'পাত্রীপক্ষ'} আপনার অভিভাবকের সাথে যোগাযোগ করতে চেয়েছেন। ${auth.user.gender==='পাত্রের বায়োডাটা'? 'পাত্রের' : 'পাত্রীর'} বায়োডাটা নং-${auth.user.index}। বায়োডাটা দেখতে এই নোটিফিকেশনের উপর ক্লিক করুন।`,
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(removeNotify({msg, auth, socket}))
@@ -250,7 +250,7 @@ export const accept = ({users, user, auth, socket}) => async (dispatch) => {
             id: auth.user._id,
             text: 'has started to accept you.',
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(createNotify({msg, auth, socket}))
@@ -300,7 +300,7 @@ export const reject = ({users, user, auth, socket}) => async (dispatch) => {
             id: auth.user._id,
             text: 'has started to accept you.',
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(removeNotify({msg, auth, socket}))
@@ -345,7 +345,7 @@ export const approve = ({users, user, auth, socket}) => async (dispatch) => {
             id: auth.user._id,
             text:`আসসালামু আলাইকুম! বায়োডাটা নং-${auth.user.index} এর অভিভাবক আপনার অভিভাবককে যোগাযোগ করতে বলেছেন।`,
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(createNotify({msg, auth, socket}))
@@ -396,7 +396,7 @@ export const decline = ({users, user, auth, socket}) => async (dispatch) => {
             id: auth.user._id,
             text: 'has started to approve you.',
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(removeNotify({msg, auth, socket}))
@@ -441,7 +441,7 @@ export const remove = ({users, user, auth, socket}) => async (dispatch) => {
             id: auth.user._id,
             text: 'has started to remove you.',
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(createNotify({msg, auth, socket}))
@@ -492,7 +492,7 @@ export const cancelRemoval = ({users, user, auth, socket}) => async (dispatch) =
             id: auth.user._id,
             text: 'has started to remove you.',
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(removeNotify({msg, auth, socket}))
@@ -537,7 +537,7 @@ export const notifyUser = ({users, user, auth, socket}) => async (dispatch) => {
             id: auth.user._id,
             text: 'has started to notify you.',
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(createNotify({msg, auth, socket}))
@@ -588,7 +588,7 @@ export const cancelNotification = ({users, user, auth, socket}) => async (dispat
             id: auth.user._id,
             text: 'has started to notify you.',
             recipients: [newUser._id],
-            url: `/biodata/${auth.user._id}`,
+            url: `/biodatas/${auth.user._id}`,
         }
 
         dispatch(removeNotify({msg, auth, socket}))

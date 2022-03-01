@@ -52,11 +52,11 @@ const EditProfile = ({setOnEdit}) => {
     const classes = useStyles();
     const initState = {
         fatherN:'',motherN:'',fatherO:'',motherO:'',brother:'',
-        sister:'',brotherInfo:'',sisterInfo:'',uncleInfo:'',
+        sister:'',brotherInfo:'',sisterInfo:'',uncleInfo:'', familyStatus:'',
     }
     const [userData, setUserData] = useState(initState)
     const {fatherN,motherN,fatherO,motherO,brother,
-        sister,brotherInfo,sisterInfo,uncleInfo,  } = userData
+        sister,brotherInfo,sisterInfo,uncleInfo,familyStatus  } = userData
 
         const [approval, setApproval] = useState('')
         const  handleApproval = () => {
@@ -409,6 +409,27 @@ const EditProfile = ({setOnEdit}) => {
                   জানাতে না চাইলে ঘরটি ফাঁকা রাখুন। 
                   </small>
                   </div>
+                  
+              </div>
+               <div className="form mt-4 mr-3 ml-1">
+                <Grid container>
+                  <TextField
+                   required
+                   fullWidth
+                   className={classes.textfield}
+                   multiline
+                   maxRows="200"
+                   variant="outlined"
+                  
+                   label="পরিবারের অর্থনৈতিক ও সামাজিক অবস্থা"
+                   id="familyStatus"
+                   name="familyStatus"
+                   value={familyStatus}
+                   onChange={handleInput}
+                   
+                  />
+                  </Grid>
+                  
                   
               </div>
                
