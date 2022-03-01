@@ -403,10 +403,10 @@ const EducationalInfo = ({id, dispatch, user, profile}) => {
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.hsc}</div> </div>
              </div>
             
-             <div className="row infoBox-1 ">
+             {user.hscResult===''? null :<div className="row infoBox-1 ">
                <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">এইচএসসির ফলাফল</div> </div>
                <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.hscResult}</div> </div>
-             </div>
+             </div>}
             
              <div className="row infoBox-2 ">
                <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">এইচএসসির বিভাগ</div> </div>
