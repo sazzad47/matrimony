@@ -100,7 +100,8 @@ const EditProfile = ({setOnEdit}) => {
                      fullWidth
                      InputProps={{ classes: { root: classes.inputRoot } }}
                      className={classes.textfield}
-                     
+                     multiline
+                     minRows = "4"
                      variant="outlined"
                     
                      label="ইসলামী দাম্পত্য জীবন নিয়ে আপনার পরিকল্পনা কী?"
@@ -142,7 +143,8 @@ const EditProfile = ({setOnEdit}) => {
                      className={classes.textfield}
                      
                      variant="outlined"
-                    
+                     multiline
+                     minRows = "4"
                      label="কোনো রাজনৈতিক মতাদর্শ থাকলে লিখুন।"
                      id="politics"
                      name="politics"
@@ -162,7 +164,8 @@ const EditProfile = ({setOnEdit}) => {
                      className={classes.textfield}
                      
                      variant="outlined"
-                    
+                     multiline
+                     minRows = "4"
                      label="মাজার সম্পর্কে আপনার বিশ্বাস কী?"
                      id="majar"
                      name="majar"
@@ -183,7 +186,8 @@ const EditProfile = ({setOnEdit}) => {
                      className={classes.textfield}
                      
                      variant="outlined"
-                     
+                     multiline
+                     minRows = "4"
                      label="বিদ'আত সম্পর্কে আপনার ধারণা কী?"
                      id="dayC"
                      name="dayC"
@@ -203,7 +207,8 @@ const EditProfile = ({setOnEdit}) => {
                      className={classes.textfield}
                      
                      variant="outlined"
-                    
+                     multiline
+                     minRows = "4"
                      label="আপনার পছন্দের অন্তত ৩ জন আলেমের নাম লিখুন।"
                      id="fAlem"
                      name="fAlem"
@@ -223,7 +228,8 @@ const EditProfile = ({setOnEdit}) => {
                      className={classes.textfield}
                      
                      variant="outlined"
-                    
+                     multiline
+                     minRows = "4"
                      label="আপনার পছন্দের অন্তত ৩ জন লেখকের নাম লিখুন।"
                      id="fWriter"
                      name="fWriter"

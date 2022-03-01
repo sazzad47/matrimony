@@ -866,6 +866,7 @@ const EditProfile = ({setOnEdit}) => {
                   onChange={handleInput}
                   >
                       <option value = "Golden A+">Golden A+</option>
+                       <option value = "A">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
@@ -1024,6 +1025,7 @@ const EditProfile = ({setOnEdit}) => {
                   onChange={handleInput}
                   >
                       <option value = "Golden A+">Golden A+</option>
+                      <option value = "A">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
@@ -1746,7 +1748,7 @@ const EditProfile = ({setOnEdit}) => {
                 
                    
                   <TextField
-                  select
+                  
                   label="এসএসসির ফলাফল"
                   fullWidth
                   required
@@ -1759,12 +1761,7 @@ const EditProfile = ({setOnEdit}) => {
                   value={sscResult}
                   onChange={handleInput}
                   >
-                      <option value = "Golden A+">Golden A+</option>
-                        <option value = "A">A</option>
-                        <option value = "A-">A-</option>
-                        <option value = "B">B</option>
-                        <option value = "C">C</option>
-                        <option value = "D">D</option>
+                      
                   </TextField>
                 
                    </Grid>
@@ -1906,7 +1903,7 @@ const EditProfile = ({setOnEdit}) => {
                   
                     
                   <TextField
-                  select
+                 
                   label="এইচএসসির ফলাফল"
                   fullWidth
                   required
@@ -1919,12 +1916,7 @@ const EditProfile = ({setOnEdit}) => {
                   value={hscResult}
                   onChange={handleInput}
                   >
-                      <option value = "Golden A+">Golden A+</option>
-                        <option value = "A">A</option>
-                        <option value = "A-">A-</option>
-                        <option value = "B">B</option>
-                        <option value = "C">C</option>
-                        <option value = "D">D</option>
+                      
                   </TextField>
                   
                    </Grid>
