@@ -80,19 +80,7 @@ const BioSearch = () => {
             })
         }
     }
-    useEffect(() => {
-      const data = sessionStorage.getItem('Afa-Allahu-anni');
-      if (data){
-        setUserData(JSON.parse(data));
-      }
-      
-    }, []);
-  
-     useEffect(() => {
-     
-      sessionStorage.setItem('Afa-Allahu-anni',JSON.stringify(userData));
-  
-     },);
+    
 
     useEffect(() => {
         if (gender===!'none' && status==!'none' && pdistrict===!'none') {

@@ -62,7 +62,7 @@ const Register = () => {
     const handleClickShowCPassword = () => setShowCPassword(!showCPassword);
     const handleMouseDownCPassword = () => setShowCPassword(!showCPassword);
     useEffect(() => {
-        if(auth.token) history.push("/")
+        if(auth.token) history.push("/edit_biodata")
     }, [auth.token, history])
 
     
@@ -74,6 +74,7 @@ const Register = () => {
     const handleSubmit = e => {
         e.preventDefault()
         dispatch(register(userData))
+        history.push("/edit_biodata")
     }
 
     const responseGoogle = async (response) => {
@@ -81,7 +82,7 @@ const Register = () => {
           
 
           dispatch(googleLogin({tokenId: response.tokenId}))
-          history.push('/')
+          history.push("/edit_biodata")
       } catch (err) {
          console.log(err)
       }
