@@ -9,7 +9,8 @@ import { useSelector } from 'react-redux'
 const useStyles = makeStyles((theme)=>({
     appBar: {
         borderRadius: 15,
-        margin: '30px 0',
+        marginLeft: '0px',
+        marginBottom:'30px',
         height:'80px',
         display: 'flex',
         flexDirection: 'row',

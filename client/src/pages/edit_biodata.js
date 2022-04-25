@@ -35,7 +35,7 @@ const EditProfile = () => {
     const classes = useStyles();
     
 
-    const { auth, theme } = useSelector(state => state)
+    const { auth, loading } = useSelector(state => state)
     const dispatch = useDispatch()
     
   

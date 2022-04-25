@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 
 import homePhoto from '../images/homeAyat.png'
+import Instructions from '../components/contents/Instructions'
 
 import { useSelector } from 'react-redux'
 import LoadIcon from '../images/loading.gif'
@@ -91,6 +92,12 @@ const Home = () => {
             </Paper>
               </Link>
               </Grid>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-md-12'>
+                  <Instructions/>
+
                 </div>
               </div>
               </div>
