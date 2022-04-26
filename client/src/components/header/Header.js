@@ -8,7 +8,7 @@ import DrawerComponent from './DrawerComponent'
 import { useSelector } from 'react-redux'
 const useStyles = makeStyles((theme)=>({
     appBar: {
-        borderRadius: 15,
+        
         marginLeft: '0px',
         marginBottom:'30px',
         height:'80px',
