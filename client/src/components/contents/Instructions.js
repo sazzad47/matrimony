@@ -9,9 +9,9 @@ const Instructions = () => {
       জীবনসঙ্গী নির্বাচনে ইসলামের নির্দেশনা
        </Typography>
       <Grid>
-        <Card elevation='disabled' style={{ maxWidth: 600, padding: "20px 5px", margin: "0 auto" }}>
+        <Card elevation='disabled' style={{ maxWidth: 600, padding: "20px 0px", margin: "0 auto" }}>
           <CardContent>
-              <ul className='ml-3'>
+              <ul>
                 
                   <Typography gutterBottom variant="body3">
                   “তোমরা নারীদের (কেবল) রূপ দেখে বিবাহ করো না। হতে পারে রূপই তাদের বরবাদ করে দেবে। তাদের অর্থ-সম্পদ দেখেও বিবাহ করো না, হতে পারে অর্থ-সম্পদ তাকে উদ্ধত করে তুলবে। বরং দ্বীন দেখেই তাদের বিবাহ কর। একজন নাক-কান-কাটা অসুন্দর দাসীও (রূপসী ধনবতী স্বাধীন নারী অপেক্ষা) শ্রেয়, যদি সে দ্বীনদার হয়। “(ইবনে মাজাহ) <br/><br/>
