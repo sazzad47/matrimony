@@ -13,6 +13,7 @@ router.patch('/user/:id/publish', auth, userCtrl.publishBiodata)
 router.patch('/user/:id/decline', auth, userCtrl.decline)
 
 router.get('/search', userCtrl.searchUser)
+router.get('/searchByNumber', userCtrl.searchByNumber)
 router.get('/pdf',userCtrl.downloadPDF)
 
 

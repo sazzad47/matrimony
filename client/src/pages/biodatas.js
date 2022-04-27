@@ -11,6 +11,7 @@ import pdivisionsData from '../components/FormComponents/Data'
 import { getBiodatas, getBiodatasBySearch } from '../redux/actions/getBiodatasAction'
 import BioSearch from '../components/home/BioSearch';
 import { Helmet } from 'react-helmet-async';
+import BioSearchByNumber from '../components/home/BioSearchByNumber';
 const useStyles = makeStyles((theme)=>({
    
       mainContainer: {
@@ -63,7 +64,11 @@ const Biodatas = () => {
             <div className='biodatas_page'>
           <div className="row d-flex align-items-center justify-content-center">
         <div className="col-md-4" style={{padding:'30px'}}>
+          <div className='mb-4'>
+
         <BioSearch/>
+          </div>
+       
         </div>
         </div>
         

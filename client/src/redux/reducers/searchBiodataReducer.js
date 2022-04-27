@@ -26,6 +26,9 @@ const Biodatas =  (state = { isLoading: true, biodatas: [] }, action) => {
       case 'GET_BIODATAS_BYSEARCH':
         return { ...state, biodatas: action.payload};
       
+      case 'GET_BIODATAS_BY_NUMBER':
+        return { ...state, biodatas: action.payload};
+      
       default:
         return state;
     }

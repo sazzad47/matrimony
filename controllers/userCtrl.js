@@ -3,9 +3,29 @@ const Users = require('../models/userModel')
 const fs = require("fs");
 
 const userCtrl = {
+    searchByNumber: async (req, res) => {
+        const index = req.query
+
+        try {
+            const users = await Users.find(
+                
+                {$and:
+                    [
+                        {approval: 'yes' },  {index: {$regex: index}},
+                    ]}
+                       
+               
+                ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
+                
+            res.json({users})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+
     searchUser: async (req, res) => {
-        const {gender,status,pdistrict} = req.query
-        if ((gender===gender) && (status==='none') && (pdistrict==='none')) {
+        const {gender,status,pdivision} = req.query
+        if ((gender===gender) && (status==='none') && (pdivision==='none')) {
             try {
                 const users = await Users.find(
                     
@@ -15,13 +35,13 @@ const userCtrl = {
                         ]}
                            
                    
-                    ).select("gender status age pdistrict index groomPhoto bridePhoto")
+                    ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
                     
                 res.json({users})
             } catch (err) {
                 return res.status(500).json({msg: err.message})
             }
-        } else if ((gender==='none') && (status===status) && (pdistrict==='none')) {
+        } else if ((gender==='none') && (status===status) && (pdivision==='none')) {
             try {
                 const users = await Users.find(
                     
@@ -31,30 +51,30 @@ const userCtrl = {
                         ]}
                            
                    
-                    ).select("gender status age pdistrict index groomPhoto bridePhoto")
+                    ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
                     
                 res.json({users})
             } catch (err) {
                 return res.status(500).json({msg: err.message})
             }
-        } else if ((gender==='none') && (status==='none') && (pdistrict===pdistrict)) {
+        } else if ((gender==='none') && (status==='none') && (pdivision===pdivision)) {
             try {
                 const users = await Users.find(
                     
                     {$and:
                         [
-                            {approval: 'yes' },  {pdistrict: {$regex: pdistrict}},
+                            {approval: 'yes' },  {pdivision: {$regex: pdivision}},
                         ]}
                            
                            
                    
-                    ).select("gender status age pdistrict index groomPhoto bridePhoto")
+                    ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
                     
                 res.json({users})
             } catch (err) {
                 return res.status(500).json({msg: err.message})
             }
-        } else if ((gender===gender) && (status===status) && (pdistrict==='none')) {
+        } else if ((gender===gender) && (status===status) && (pdivision==='none')) {
             try {
                 const users = await Users.find(
                     {$and:
@@ -64,55 +84,55 @@ const userCtrl = {
                             
                            
                    
-                    ).select("gender status age pdistrict index groomPhoto bridePhoto")
+                    ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
                     
                 res.json({users})
             } catch (err) {
                 return res.status(500).json({msg: err.message})
             }
-        } else if ((gender===gender) && (status==='none') && (pdistrict===pdistrict)) {
+        } else if ((gender===gender) && (status==='none') && (pdivision===pdivision)) {
             try {
                 const users = await Users.find(
                     {$and:
                     [
-                        {approval: 'yes' },  {gender: {$regex: gender}},  {pdistrict: {$regex: pdistrict}},
+                        {approval: 'yes' },  {gender: {$regex: gender}},  {pdivision: {$regex: pdivision}},
                     ]}
                             
                            
                    
-                    ).select("gender status age pdistrict index groomPhoto bridePhoto")
+                    ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
                     
                 res.json({users})
             } catch (err) {
                 return res.status(500).json({msg: err.message})
             }
-        } else if ((gender==='none') && (status===status) && (pdistrict===pdistrict)) {
+        } else if ((gender==='none') && (status===status) && (pdivision===pdivision)) {
             try {
                 const users = await Users.find(
                     {$and:
                     [
-                        {approval: 'yes' },  {status: {$regex: status}},  {pdistrict: {$regex: pdistrict}},
+                        {approval: 'yes' },  {status: {$regex: status}},  {pdivision: {$regex: pdivision}},
                     ]}
                             
                            
                    
-                    ).select("gender status age pdistrict index groomPhoto bridePhoto")
+                    ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
                     
                 res.json({users})
             } catch (err) {
                 return res.status(500).json({msg: err.message})
             }
-        }  else if ((gender===gender) && (status===status) && (pdistrict===pdistrict)) {
+        }  else if ((gender===gender) && (status===status) && (pdivision===pdivision)) {
             try {
                 const users = await Users.find(
                     {$and:
                     [
-                        {approval: 'yes' }, {gender: {$regex: gender}}, {status: {$regex: status}},  {pdistrict: {$regex: pdistrict}},
+                        {approval: 'yes' }, {gender: {$regex: gender}}, {status: {$regex: status}},  {pdivision: {$regex: pdivision}},
                     ]}
                             
                            
                    
-                    ).select("gender status age pdistrict index groomPhoto bridePhoto")
+                    ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
                     
                 res.json({users})
             } catch (err) {

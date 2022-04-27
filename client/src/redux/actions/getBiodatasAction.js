@@ -21,10 +21,21 @@ export const getBiodatas = (page) => async (dispatch) => {
     }
 }
 export const getBiodatasBySearch = (userData) => async (dispatch) => {
-    const {gender,status,pdistrict,} = userData
+    const {gender,status,pdivision,} = userData
     try {
         dispatch({type: 'START_LOADING'});
-        const  res= await getDataAPI(`search?gender=${gender}&status=${status}&pdistrict=${pdistrict}`)
+        const  res= await getDataAPI(`search?gender=${gender}&status=${status}&pdivision=${pdivision}`)
+        dispatch({type: 'GET_BIODATAS_BYSEARCH', payload: res.data.users});
+        dispatch({type: 'END_LOADING'});
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const getBiodatasByNumber = (userData) => async (dispatch) => {
+    const {index} = userData
+    try {
+        dispatch({type: 'START_LOADING'});
+        const  res= await getDataAPI(`searchByNumber?index=${index}`)
         dispatch({type: 'GET_BIODATAS_BYSEARCH', payload: res.data.users});
         dispatch({type: 'END_LOADING'});
     } catch (error) {

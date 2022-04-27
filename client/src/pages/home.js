@@ -9,6 +9,7 @@ import BioSearch from '../components/home/BioSearch'
 import { Link } from 'react-router-dom';
 import { Button, Grid, makeStyles, Paper, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet-async'
+import BioSearchByNumber from './../components/home/BioSearchByNumber';
 
 
 let scroll = 0;
@@ -62,14 +63,14 @@ const Home = () => {
              
               <div className="col-md-4 order-2 mt-5 mt-md-4 mt-lg-4 order-md-1 order-lg-1">
                  
-             
+            
+             <div className='mb-4'>
+
             <BioSearch/>
+             </div>
              
             
-              
-              
-            
-        </div>
+               </div>
         <div className='col-md-8 order-1 order-md-2 order-lg-2'>
           <img src ={homePhoto} className="img-fluid"/>
                 

@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme)=>({
   }));
   
 
-const BioSearch = () => {
-    const { auth, biodatas } = useSelector(state => state.biodatas)
+const BioSearchByNumber = () => {
+    
     const dispatch = useDispatch()
     const history = useHistory();
     
@@ -42,15 +42,7 @@ const BioSearch = () => {
   const { gender,status,pdivision, } = userData
     
     
-  const divisions = pdivisions.map((name) => (
-    <option
-      key={name}
-      value={name}
-      className="pl-3"
-    >
-      {name}
-    </option>
-  ))
+ 
   
  
     
@@ -88,13 +80,7 @@ const BioSearch = () => {
     }
     
 
-    // useEffect(() => {
-    //     if (gender===!'none' && status==!'none' && pdivision===!'none') {
-    //       dispatch(getBiodatasBySearch(userData));
-    //   } 
-    // }, [dispatch])
    
-    
     return (
         <div>
      <Card className={classes.BioSearchBox}  elevation={3}>
@@ -109,66 +95,25 @@ const BioSearch = () => {
      
          <div className='row mx-3 my-4'>
              <Grid container spacing={2}>
-                 <Grid item xs={5} md={5}>
-             <Typography align="right">আমি খুঁজছি</Typography>
-             </Grid>
-                 <Grid item xs={7} md={7}>
-             <select
-             className='bioSearchSelect'
-             
-              
-              
-              id="gender"
-              name="gender"
-              value={gender}
-              onChange={handleInput} >
-               
-              <option value='none'>সকল</option>
-              <option value="পাত্রের">পাত্রের বায়োডাটা</option>
-              <option value="পাত্রীর">পাত্রীর বায়োডাটা</option>
-             </select>
-             </Grid>
-                 <Grid item xs={5} md={5}>
-            <Typography align="right">বৈবাহিক অবস্থা</Typography>
-             </Grid>
-             <Grid item xs ={7} md={7}>
-             <select
-             className='bioSearchSelect'
-              
-              id="status"
-              name="status"
-              value={status}
-              onChange={handleInput} >
-                    <option value='none' className="pl-4">সকল</option>
-                   <option value ="অবিবাহিত" className="pl-4">অবিবাহিত</option>
-                   <option value ="ডিভোর্সড" className="pl-4">ডিভোর্সড</option>
-                   <option value ="বিধবা" className="pl-4">বিধবা</option>
-                   <option value ="বিপত্নীক" className="pl-4">বিপত্নীক</option>
-                   <option value ="বিবাহিত" className="pl-4">বিবাহিত</option>
-             </select>
-            </Grid>
-             
-        
+                
              <Grid item xs ={5} md={5}>
-             <Typography align="right">বিভাগ</Typography>
+             <Typography align="right">বায়োডাটা নং</Typography>
             </Grid>
             
              <Grid item xs ={7} md={7}>
-             <select
+             <TextField
              className='bioSearchSelect'
               
               id="pdivision"
               name="pdivision"
               value={pdivision}
               onChange={handleInput} >
-              <option value="none"  className="pl-3">সকল </option>
-              {divisions}
               
               
               
-             </select>
+              
+             </TextField>
             </Grid>
-            
         
              
             
@@ -199,4 +144,4 @@ const BioSearch = () => {
     )
 }
 
-export default BioSearch
+export default BioSearchByNumber
