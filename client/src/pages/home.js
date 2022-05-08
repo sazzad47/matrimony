@@ -68,7 +68,7 @@ const Home = () => {
 
             <BioSearch/>
              </div>
-             
+             <BioSearchByNumber/>
             
                </div>
         <div className='col-md-8 order-1 order-md-2 order-lg-2'>

@@ -866,7 +866,7 @@ const EditProfile = ({setOnEdit}) => {
                   onChange={handleInput}
                   >
                       <option value = "Golden A+">Golden A+</option>
-                       <option value = "A">A+</option>
+                       <option value = "A+">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
@@ -1025,7 +1025,7 @@ const EditProfile = ({setOnEdit}) => {
                   onChange={handleInput}
                   >
                       <option value = "Golden A+">Golden A+</option>
-                      <option value = "A">A+</option>
+                      <option value = "A+">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
@@ -1762,7 +1762,7 @@ const EditProfile = ({setOnEdit}) => {
                   onChange={handleInput}
                   >
                       <option value = "Golden A+">Golden A+</option>
-                       <option value = "A">A+</option>
+                       <option value = "A+">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
@@ -1923,7 +1923,7 @@ const EditProfile = ({setOnEdit}) => {
                   onChange={handleInput}
                   >
                       <option value = "Golden A+">Golden A+</option>
-                        <option value = "A">A+</option>
+                        <option value = "A+">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>

@@ -68,7 +68,7 @@ const Biodatas = () => {
 
         <BioSearch/>
           </div>
-       
+        <BioSearchByNumber/>
         </div>
         </div>
         

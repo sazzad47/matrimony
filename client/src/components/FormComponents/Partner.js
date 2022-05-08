@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { checkImage } from '../../utils/imageUpload'
 import { GLOBALTYPES } from '../../redux/actions/globalTypes'
 import { updateProfileUser } from '../../redux/actions/profileAction'
-import { Button, Grid, makeStyles, TextField } from '@material-ui/core'
+import { Button, Grid, makeStyles, TextField, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles((theme)=>({
   textfield: {
@@ -90,7 +90,7 @@ const EditProfile = ({setOnEdit}) => {
             <form onSubmit={handleSubmit}>
                 
 
-                   
+                 <Typography style={{paddingTop:'20px'}} variant='h6' align='center'>আপনি যেমন জীবনসঙ্গী আশা করেন</Typography>  
             <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField

@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme)=>({
       
 },
     bioSearchButton:{
-            backgroundColor:'#263238',
+            backgroundColor:'hsl(320, 94%, 21%)',
             color:'#FFFFFF',
             '&:hover': {
-              backgroundColor: '#263238',
+              backgroundColor: 'hsl(320, 94%, 21%)',
               color: '#FFFFFF',
             }
         }
@@ -36,10 +36,10 @@ const BioSearch = () => {
     
     const classes = useStyles();
     const initState = {
-     gender:'',status:'',pdivision:"", 
+     gender:'',status:'',pdivision:"", index:""
   }
   const [userData, setUserData] = useState(initState)
-  const { gender,status,pdivision, } = userData
+  const { gender,status,pdivision,index } = userData
     
     
   const divisions = pdivisions.map((name) => (
@@ -70,7 +70,7 @@ const BioSearch = () => {
         
 
         try {
-            if (gender==='none' && status==='none' && pdivision==='none' ) {
+            if (gender==='none' && status==='none' && pdivision==='none' && index==='none' ) {
                   dispatch(getBiodatas())
                   history.push('/biodatas')
             } else {

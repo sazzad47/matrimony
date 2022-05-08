@@ -3,20 +3,15 @@ const Users = require('../models/userModel')
 const fs = require("fs");
 
 const userCtrl = {
-    searchByNumber: async (req, res) => {
-        const index = req.query
-
+    searchUserByNumber: async (req, res) => {
+        const {index} = req.query
         try {
             const users = await Users.find(
-                
                 {$and:
-                    [
-                        {approval: 'yes' },  {index: {$regex: index}},
-                    ]}
-                       
-               
-                ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
-                
+                [
+                    {approval: 'yes' },  {index:index },
+                ]}).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
+            
             res.json({users})
         } catch (err) {
             return res.status(500).json({msg: err.message})

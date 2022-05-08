@@ -9,18 +9,31 @@ import searchPhoto from '../../images/searchPhoto.png'
 import { GLOBALTYPES } from '../../redux/actions/globalTypes'
 import UserCard from '../UserCard'
 
-import { getBiodatas, getBiodatasBySearch } from '../../redux/actions/getBiodatasAction'
+import { getBiodatas, getBiodatasByNumber, getBiodatasBySearch } from '../../redux/actions/getBiodatasAction'
+const convertToEnglishNumber = require('banglanumber-to-englishnumber');
 const useStyles = makeStyles((theme)=>({
     BioSearchBox: {
       backgroundColor:'#880e4f',
       color:'	#FFFFFF'
       
 },
-    bioSearchButton:{
-            backgroundColor:'#263238',
+    bioSearchField: {
+      backgroundColor:'#263238',
             color:'#FFFFFF',
             '&:hover': {
               backgroundColor: '#263238',
+              color: '#FFFFFF',
+            },
+            
+      
+     
+      
+},
+    bioSearchButton:{
+            backgroundColor:'hsl(320, 94%, 21%)',
+            color:'#FFFFFF',
+            '&:hover': {
+              backgroundColor: 'hsl(320, 94%, 21%)',
               color: '#FFFFFF',
             }
         }
@@ -36,10 +49,10 @@ const BioSearchByNumber = () => {
     
     const classes = useStyles();
     const initState = {
-     gender:'',status:'',pdivision:"", 
+     gender:'',status:'',pdivision:"", index:""
   }
   const [userData, setUserData] = useState(initState)
-  const { gender,status,pdivision, } = userData
+  const { gender,status,pdivision,index  } = userData
     
     
  
@@ -48,8 +61,10 @@ const BioSearchByNumber = () => {
     
 
       const handleInput = e => {
-        const { name, value } = e.target
-        setUserData({ ...userData, [name]:value })
+        const englishNumber = convertToEnglishNumber(e.target.value);
+        
+        const { name } = e.target
+        setUserData({ ...userData, [name]:englishNumber })
     }
     
    
@@ -59,24 +74,11 @@ const BioSearchByNumber = () => {
 
     const handleSearch = async (e) => {
         e.preventDefault()
-        
-
-        try {
-            if (gender==='none' && status==='none' && pdivision==='none' ) {
-                  dispatch(getBiodatas())
-                  history.push('/biodatas')
-            } else {
-
-              dispatch(getBiodatasBySearch(userData));
-                history.push('/biodatas')
-            }
+        dispatch(getBiodatasByNumber(userData));
+        history.push('/biodatas')
+            
           
            
-        } catch (err) {
-            dispatch({
-                type: GLOBALTYPES.ALERT, payload: {error: err.response.data.msg}
-            })
-        }
     }
     
 
@@ -101,18 +103,18 @@ const BioSearchByNumber = () => {
             </Grid>
             
              <Grid item xs ={7} md={7}>
-             <TextField
+             <input
              className='bioSearchSelect'
               
-              id="pdivision"
-              name="pdivision"
-              value={pdivision}
+              id="index"
+              name="index"
+              value={index}
               onChange={handleInput} >
               
               
               
               
-             </TextField>
+             </input>
             </Grid>
         
              
