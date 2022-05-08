@@ -35,7 +35,9 @@ const useStyles = makeStyles((theme)=>({
             '&:hover': {
               backgroundColor: 'hsl(320, 94%, 21%)',
               color: '#FFFFFF',
-            }
+              outline:'none'
+            },
+            outline:'none'
         }
 
    

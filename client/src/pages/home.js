@@ -7,27 +7,25 @@ import { useSelector } from 'react-redux'
 import LoadIcon from '../images/loading.gif'
 import BioSearch from '../components/home/BioSearch'
 import { Link } from 'react-router-dom';
-import { Button, Grid, makeStyles, Paper, Typography } from '@material-ui/core';
+import { Button, Grid, makeStyles, Paper, Typography, Card } from '@material-ui/core';
 import { Helmet } from 'react-helmet-async'
 import BioSearchByNumber from './../components/home/BioSearchByNumber';
+import CreateBioBtn from '../components/home/CreateBioBtn'
 
 
 let scroll = 0;
 
 const useStyles = makeStyles((theme)=>({
-    tab: {
-      backgroundColor:'#263238',
-      color:'#FFFFFF',
-     
+  BioSearchBox: {
+    backgroundColor:'#880e4f',
+    color:'	#FFFFFF',
+    minWidth:'400px',
+    minHeight:'50px'
     
-      '&:hover': {
-        backgroundColor:'#263238',
-        color:'#FFFFFF',
-       
-      
-    },
+},
+  
      
-  },
+  
     
     
   
@@ -68,7 +66,14 @@ const Home = () => {
 
             <BioSearch/>
              </div>
+             <div className='mb-4'>
+
              <BioSearchByNumber/>
+             </div>
+             <div className='d-block d-md-none d-lg-none'>
+
+          <CreateBioBtn/>
+             </div>
             
                </div>
         <div className='col-md-8 order-1 order-md-2 order-lg-2'>
@@ -78,21 +83,13 @@ const Home = () => {
              
               </div>
               <div className='row'>
-                <div className='col-md-12'>
-              <Grid 
-              container
-              alignItems="center"
-              justifyContent="center"
-              style={{marginTop:'50px'}}>
-              <Link style={{ textDecoration: 'none', }} to={firstLogin? "/edit_biodata" : "/register"}>
-              <Paper elevation={24}>
-              <Button variant="contained" fullWidth style={{minWidth:"300px"}} className={classes.tab}
-            >
-             <Typography variant="h5">আপনার বায়োডাটা তৈরি করুন</Typography>
-            </Button>
-            </Paper>
-              </Link>
-              </Grid>
+                <div className='col-md-12 d-flex justify-content-center align-items-center'>
+              
+              <div style={{minWidth:'400px'}} className='mt-5 d-none d-md-block d-lg-block'>
+
+             <CreateBioBtn/>
+                </div>
+            
                 </div>
               </div>
               <div className='row'>
