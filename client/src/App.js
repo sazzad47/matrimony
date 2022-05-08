@@ -39,6 +39,7 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop';
 import Pending from './components/Pending'
 import Applicants from './components/Applicants'
+import Requests from './components/Requests'
 import Quiz from './pages/quiz'
 
 
@@ -121,6 +122,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route path="/pending" exact component={auth.user?.role ==='admin'? Pending : Home} />
           <Route path="/applicants" exact component={auth.user?.role ==='admin'? Applicants : Home} />
+          <Route path="/requests" exact component={auth.user?.role ==='admin'? Requests : Home} />
           <PrivateRouter exact path="/:page" component={PageRender} /> 
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
           

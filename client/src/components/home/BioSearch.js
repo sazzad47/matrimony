@@ -11,21 +11,21 @@ import UserCard from '../UserCard'
 
 import { getBiodatas, getBiodatasBySearch } from '../../redux/actions/getBiodatasAction'
 const useStyles = makeStyles((theme)=>({
-    BioSearchBox: {
-      backgroundColor:'#880e4f',
-      color:'	#FFFFFF'
-      
+  BioSearchBox: {
+    backgroundColor:'#880e4f',
+    color:'	#FFFFFF'
+    
 },
-    bioSearchButton:{
-            backgroundColor:'hsl(320, 94%, 21%)',
-            color:'#FFFFFF',
-            '&:hover': {
-              backgroundColor: 'hsl(320, 94%, 21%)',
-              color: '#FFFFFF',
-              outline:'none'
-            },
-            outline:'none'
-        }
+bioSearchButton:{
+  backgroundColor:'hsl(320, 94%, 21%)',
+  color:'#FFFFFF',
+  '&:hover': {
+    backgroundColor: 'hsl(320, 94%, 21%)',
+    color: '#FFFFFF',
+    outline:'none'
+  },
+  outline:'none'
+}
 
    
   }));

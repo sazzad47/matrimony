@@ -4,9 +4,9 @@ import homePhoto from '../images/homeAyat.png'
 import Instructions from '../components/contents/Instructions'
 
 import { useSelector } from 'react-redux'
-import LoadIcon from '../images/loading.gif'
+
 import BioSearch from '../components/home/BioSearch'
-import { Link } from 'react-router-dom';
+
 import { Button, Grid, makeStyles, Paper, Typography, Card } from '@material-ui/core';
 import { Helmet } from 'react-helmet-async'
 import BioSearchByNumber from './../components/home/BioSearchByNumber';
@@ -66,11 +66,11 @@ const Home = () => {
 
             <BioSearch/>
              </div>
-             <div className='mb-4'>
+             <div className='mb-5'>
 
              <BioSearchByNumber/>
              </div>
-             <div className='d-block d-md-none d-lg-none'>
+             <div className='mt-5 pt-2 d-block d-md-none d-lg-none'>
 
           <CreateBioBtn/>
              </div>
