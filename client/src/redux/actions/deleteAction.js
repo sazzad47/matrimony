@@ -7,7 +7,7 @@ export const APPLICANT_TYPES = {
     UPDATE_APPLICANT:'UPDATE_APPLICANT'
 }
 
-export const createApplicant = ({fullname, mobile, email, reason, action, biodataNumber,}) => async (dispatch) => {
+export const createRequests = ({fullname, mobile, email, reason, action, biodataNumber,}) => async (dispatch) => {
    
 
    
@@ -36,7 +36,7 @@ export const createApplicant = ({fullname, mobile, email, reason, action, biodat
         })
     }
 }
-export const getApplicant = () => async (dispatch) => {
+export const getRequests = () => async (dispatch) => {
    
 
    
@@ -60,7 +60,7 @@ export const getApplicant = () => async (dispatch) => {
     }
 }
 
-export const updateApplicant = (user) => async (dispatch) => {
+export const updateRequests = (user) => async (dispatch) => {
    
 
    

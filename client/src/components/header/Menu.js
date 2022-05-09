@@ -192,6 +192,9 @@ const HeaderMenu = () => {
          <><MenuItem className={classes.menu} component={Link} to ="/requests" onClick={handleCloseMenu}>
           <div className="drawer-icon pr-2"> <i class="bi bi-save"></i> </div> Requests
         </MenuItem>
+         <MenuItem className={classes.menu} component={Link} to ="/reports" onClick={handleCloseMenu}>
+          <div className="drawer-icon pr-2"> <i class="bi bi-save"></i> </div> Reports
+        </MenuItem>
           <MenuItem className={classes.menu} component={Link} to ="/pending" onClick={handleCloseMenu}>
           <div className="drawer-icon pr-2"> <i class="bi bi-save"></i> </div> Pending
         </MenuItem>

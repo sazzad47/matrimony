@@ -4,26 +4,25 @@ import { Helmet } from 'react-helmet-async';
 import { useSelector, useDispatch } from 'react-redux'
 
 
-import { createApplicant } from '../redux/actions/deleteAction';
+import { createRequests } from '../redux/actions/deleteAction';
 
 const DeleteBiodata = () => {
   const dispatch = useDispatch()
-  
-  const [fullname, setFullname] = useState('')
-  const [mobile, setMobile] = useState('')
-  const [email, setEmail] = useState('')
+  const { auth } = useSelector(state => state)
+  const [fullname, setFullname] = useState(auth.user.fullname)
+  const [mobile, setMobile] = useState(auth.user.urMobile)
+  const [email, setEmail] = useState(auth.user.email)
   const [reason, setReason] = useState('')
   const [action, setAction] = useState('')
-  const [biodataNumber, setBiodataNumber] = useState('')
+  const [biodataNumber, setBiodataNumber] = useState(auth.user.index)
   
-
   
 
    
    
   const handleSubmit = e => {
     e.preventDefault()
-    dispatch(createApplicant({ fullname, mobile, email, reason, action, biodataNumber,}))
+    dispatch(createRequests({ fullname, mobile, email, reason, action, biodataNumber,}))
 }
 
     return (
@@ -47,7 +46,10 @@ const DeleteBiodata = () => {
           </Typography> 
             
             <form onSubmit={handleSubmit}>
+
+              
               <Grid container spacing={1}>
+              <div className='d-none'>
                 <Grid  item xs={12}>
                   <TextField 
                   placeholder="আপনার পূর্ণ নাম লিখুন" 
@@ -57,7 +59,7 @@ const DeleteBiodata = () => {
                   required
                   id="fullname"
                   name="fullname"
-                  value={fullname}
+                  value={auth.user.fullname}
                   onChange={(e) => {
                     setFullname(e.target.value) }} />
                 </Grid>
@@ -71,7 +73,7 @@ const DeleteBiodata = () => {
                   placeholder="আপনার বায়োডাটার নং"
                   id="biodataNumber"
                   name="biodataNumber"
-                  value={biodataNumber}
+                  value={auth.user.index}
                   onChange={(e) => {
                     setBiodataNumber(e.target.value) }} 
                    ></TextField>
@@ -87,7 +89,7 @@ const DeleteBiodata = () => {
                   required
                   id="mobile"
                   name="mobile"
-                  value={mobile}
+                  value={auth.user.urMobile}
                   onChange={(e) => {
                     setMobile(e.target.value) }} />
                 </Grid>
@@ -106,7 +108,7 @@ const DeleteBiodata = () => {
                   required
                   id="email"
                   name="email"
-                  value={email}
+                  value={auth.user.email}
                   onChange={(e) => {
                     setEmail(e.target.value) }} />
                 </Grid>
@@ -115,7 +117,7 @@ const DeleteBiodata = () => {
                 >
                   <Typography gutterBottom variant="body2"color="textSecondary" > বায়োডাটায় দেয়া ই-মেইল এড্রেসটি লিখুন। </Typography>
                 </Grid>
-                
+                </div>
                 <Grid item xs = {12}>
                   <TextField 
                   required

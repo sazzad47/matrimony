@@ -2,7 +2,7 @@ import { APPLICANT_TYPES } from '../actions/deleteAction'
 import { DeleteData, EditData } from '../actions/globalTypes';
 const initialState = {
     loading: false,
-    applicants: []
+    deleteRequests: []
 }
 
 
@@ -16,17 +16,17 @@ const DeleteReducer = (state = initialState, action) => {
         case APPLICANT_TYPES.CREATE_APPLICANT:
             return {
                 ...state,
-                applicants: action.payload
+                deleteRequests: action.payload
             };
         case APPLICANT_TYPES.GET_APPLICANT:
             return {
                 ...state,
-                applicants: action.payload
+                deleteRequests: action.payload
             };
         case APPLICANT_TYPES.UPDATE_APPLICANT:
             return {
                 ...state,
-                applicants: DeleteData(state.applicants, action.payload._id)
+                deleteRequests: DeleteData(state.deleteRequests, action.payload._id)
             };
         default:
             return state;

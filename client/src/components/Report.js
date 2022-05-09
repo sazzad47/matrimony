@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import DeleteIcon from '@material-ui/icons/Delete'
 import { patchDataAPI } from '../utils/fetchData'
-import { getApplicant, updateApplicant } from '../redux/actions/applicantAction'
+import { getApplicant, updateApplicant } from '../redux/actions/reportAction'
 import { CircularProgress } from '@material-ui/core'
 
-const Applicant = ({user}) => {
+const Report = ({user}) => {
   const dispatch = useDispatch();
  
   
@@ -24,12 +24,10 @@ const Applicant = ({user}) => {
      
       
       <td>{user.fullname}</td>
-      <td>{user.district}</td>
-      <td>{user.mobile}</td>
+      <td>{user.subject}</td>
+      <td>{user.report}</td>
       <td>{user.email}</td>
-      <td>{user.biodataNumber}</td>
-      <td>{user.phoneNumber}</td>
-      <td>{user.trxID}</td>
+     
       <td> <DeleteIcon onClick={handleDone} /></td>
  
     </tr>
@@ -38,4 +36,4 @@ const Applicant = ({user}) => {
     )
 }
 
-export default Applicant
+export default Report

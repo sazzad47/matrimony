@@ -2,11 +2,11 @@ import { CircularProgress } from '@material-ui/core';
 import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 
-import Applicant from './Applicant';
-import { getApplicant } from '../redux/actions/applicantAction'
+import Report from './Report';
+import { getApplicant } from '../redux/actions/reportAction'
 
-const Applicants = () => {
-    const { applicants } = useSelector(state => state.applicants)
+const Reports = () => {
+    const {loading, reports } = useSelector(state => state.reports)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getApplicant());
@@ -15,25 +15,23 @@ const Applicants = () => {
    
     
     return (
-      !applicants.length ? 'No applicants found':
+      loading? <div className='loading'><CircularProgress/> </div>: !reports.length ? 'No reports found':
         <div>
             <table class="table table-bordered">
   <thead>
     <tr>
-     
+      
       <th scope="col">পূর্ণ নাম</th>
-      <th scope="col">জেলা</th>
-      <th scope="col">যোগাযোগ</th>
+      <th scope="col">বিষয়</th>
+      <th scope="col">সমস্যা</th>
       <th scope="col">ই-মেইল</th>
-      <th scope="col">বায়োডাটা নাম্বার</th>
-      <th scope="col">মোবাইল নাম্বার</th>
-      <th scope="col">Transaction ID</th>
+      
     </tr>
   </thead>
   <tbody>
              {
-              applicants.map(user => (
-                  <Applicant
+              reports.map(user => (
+                  <Report
                   key={user._id} 
                   user={user} 
                  
@@ -47,4 +45,4 @@ const Applicants = () => {
     )
 }
 
-export default Applicants
+export default Reports
