@@ -29,7 +29,7 @@ const BiodataDetails = () => {
                    <link rel='canonical' href={`/biodatas/${user._id}`}/>
                     </Helmet>
                    
-                    {user.isPublished==="deleted"? <div className='loading'><Typography variant='h5'>বায়োডাটাটি ওয়েবসাইট থেকে ডিলিট করা হয়েছে।</Typography> </div>:    <DetailsComponents user= {user} />}
+                    {user.isPublished==="hidden"? <div className='loading'><Typography variant='h5'>বায়োডাটাটি ওয়েবসাইট থেকে হাইড করা হয়েছে।</Typography> </div> : user.isPublished==="deleted"? <div className='loading'><Typography variant='h5'>বায়োডাটাটি ওয়েবসাইট থেকে ডিলিট করা হয়েছে।</Typography> </div>:    <DetailsComponents user= {user} />}
                 </div>
             ))
         }
