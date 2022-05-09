@@ -5,6 +5,7 @@ const searchCtrl = require("../controllers/searchCtrl")
 const applicantCtrl = require("../controllers/applicantCtrl")
 const deleteCtrl = require('../controllers/deleteCtrl')
 const reportCtrl = require('../controllers/reportCtrl')
+const biodataCtrl = require('../controllers/biodataCtrl')
 
 router.patch('/user/:id/approve', auth, userCtrl.approve)
 
@@ -19,9 +20,11 @@ router.get('/pdf',userCtrl.downloadPDF)
 
 router.get('/biodatas', userCtrl.getBiodatas)
 router.get('/biodata/:id', userCtrl.getBiodata)
-router.get('/pendingBiodatas', userCtrl.getPendingBiodatas)
-router.patch('/biodatas/:id/approve', userCtrl.approvePending)
-router.patch('/biodatas/:id/decline', userCtrl.declinePending)
+router.get('/pendingBiodatas', biodataCtrl.getPendingBiodatas)
+router.patch('/biodatas/:id/approve', biodataCtrl.approvePending)
+router.patch('/biodatas/:id/decline', biodataCtrl.declinePending)
+router.patch('/biodatas/:id/hide', biodataCtrl.hideBiodata)
+router.patch('/biodatas/:id/delete', biodataCtrl.deleteBiodata)
 
 // router.get('/search', userCtrl.getBiodatasBySearch)
 

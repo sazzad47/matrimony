@@ -1,4 +1,5 @@
-
+import { DeleteData } from "../actions/globalTypes";
+import { PENDING_BIODATAS_TYPES } from "../actions/pendingAction";
 
 
 const Biodatas =  (state = { isLoading: true, biodatas: [] }, action) => {
@@ -28,6 +29,18 @@ const Biodatas =  (state = { isLoading: true, biodatas: [] }, action) => {
       
       case 'GET_BIODATAS_BY_NUMBER':
         return { ...state, biodatas: action.payload};
+        
+      case PENDING_BIODATAS_TYPES.HIDE_BIODATA:
+          return {
+              ...state,
+              biodatas: DeleteData(state.biodatas, action.payload._id)
+          };
+      case PENDING_BIODATAS_TYPES.DELETE_BIODATA:
+          return {
+              ...state,
+              biodatas: DeleteData(state.biodatas, action.payload._id)
+          };
+        
       
       default:
         return state;

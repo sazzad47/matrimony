@@ -6,7 +6,7 @@ import { publishBiodata, updateProfileUser } from '../../redux/actions/profileAc
 import FollowBtn from '../FollowBtn'
 import ApproveBtn from '../ApproveBtn'
 import ContactBtn from './ContactBtn'
-import { approvePending, declinePending } from '../../redux/actions/pendingAction'
+import { approvePending, declinePending, deleteBiodata, hideBiodata } from '../../redux/actions/pendingAction'
 import ContactBtnPvt from './ContactBtnPvt';
 
 const ButtonContainer = ({user}) => {
@@ -35,6 +35,16 @@ const ButtonContainer = ({user}) => {
     const  handleDecline = () => {
         dispatch(declinePending({user, auth, socket}))
         history.push('/pending')
+       
+      }  
+    const  handleHide = () => {
+        dispatch(hideBiodata({user, auth, socket}))
+        history.push('/biodatas')
+       
+      }  
+    const  handleDelete = () => {
+        dispatch(deleteBiodata({user, auth, socket}))
+        history.push('/biodatas')
        
       }  
     
@@ -70,7 +80,7 @@ const ButtonContainer = ({user}) => {
                 <div className="col-6 col-md-6 col-lg-6">
 
                 
-                    <button onClick={handleApproval} className="bio-edit-btn">Approve</button>
+                   {user.approval==='yes'? <button onClick={handleHide} className="bio-edit-btn">Hide</button>: <button onClick={handleApproval} className="bio-edit-btn">Approve</button>}
                 
                </div> : null}
       
@@ -125,9 +135,10 @@ const ButtonContainer = ({user}) => {
                 <div className="col-6 col-md-6 col-lg-6 d-flex justify-content-end">
 
                 
-                    <button 
+            {user.approval==='yes'? <button onClick={handleDelete} className="bio-edit-btn">Delete</button>:  
+            <button 
                     onClick={handleDecline} 
-                    className="bio-edit-btn">Decline</button>
+                    className="bio-edit-btn">Decline</button>}
                 
                </div> : null}
             </div>

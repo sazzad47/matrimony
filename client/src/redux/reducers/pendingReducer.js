@@ -1,26 +1,34 @@
 import { DeleteData } from "../actions/globalTypes";
+import { PENDING_BIODATAS_TYPES } from "../actions/pendingAction";
+const initialState = {
+  loading: false,
+  pendingBiodatas: []
+}
 
-
-
-const PendingBiodatas =  (state = { isLoading: true, pendingBiodatas: [] }, action) => {
+const PendingBiodatas =  (state = initialState, action) => {
     switch (action.type) {
-      
-      case 'GET_PENDING_BIODATAS':
+      case PENDING_BIODATAS_TYPES.LOADING:
+            return {
+                ...state,
+                loading: action.payload
+            };
+      case PENDING_BIODATAS_TYPES.GET_PENDING_BIODATAS:
         return {
           ...state,
           pendingBiodatas: action.payload
          
         };
-        case 'APPROVE_PENDING':
+        case PENDING_BIODATAS_TYPES.APPROVE_PENDING_BIODATAS:
             return {
                 ...state,
                 pendingBiodatas: DeleteData(state.pendingBiodatas, action.payload._id)
             };
-        case 'DECLINE_PENDING':
+        case PENDING_BIODATAS_TYPES.DECLINE_PENDING_BIODATAS:
             return {
                 ...state,
                 pendingBiodatas: DeleteData(state.pendingBiodatas, action.payload._id)
             };
+        
       
       
       default:

@@ -6,7 +6,7 @@ import Applicant from './Applicant';
 import { getApplicant } from '../redux/actions/applicantAction'
 
 const Applicants = () => {
-    const { applicants } = useSelector(state => state.applicants)
+    const { loading, applicants } = useSelector(state => state.applicants)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getApplicant());
@@ -15,7 +15,7 @@ const Applicants = () => {
    
     
     return (
-      !applicants.length ? 'No applicants found':
+      loading? <div className='loading'><CircularProgress/> </div> :  !applicants.length ? 'No applicants found':
         <div>
             <table class="table table-bordered">
   <thead>
