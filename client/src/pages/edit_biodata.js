@@ -8,6 +8,8 @@ import { Button, Card, Grid, makeStyles, Typography } from '@material-ui/core'
 import Rules from './../components/FormComponents/Rules';
 import { Helmet } from 'react-helmet-async'
 
+import DeletedBiodata from '../components/DeletedBiodata'
+
 const useStyles = makeStyles((theme)=>({
     tab: {
       backgroundColor:'#3f50b5',
@@ -58,7 +60,7 @@ const EditProfile = () => {
          <meta name='description' content="Edit your boidata."/>
           <link rel='canonical' href='/edit_biodata'/>
       </Helmet>
-        <div className="biodatas_page">
+        {auth.user.isPublished==="deleted"? <DeletedBiodata/> : <div className="biodatas_page">
          <div className="row">
              <div className="col-md-3"> 
 
@@ -92,7 +94,7 @@ const EditProfile = () => {
            {/* something to add */}
              </div>
             </div>
-        </div>
+        </div>}
         </>
     )
 }

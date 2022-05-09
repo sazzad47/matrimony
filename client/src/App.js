@@ -41,6 +41,7 @@ import Pending from './components/Pending'
 import Applicants from './components/Applicants'
 import Requests from './components/Requests'
 import Reports from './components/Reports'
+
 import Quiz from './pages/quiz'
 
 
@@ -121,6 +122,8 @@ function App() {
           {firstLogin? null : <Route exact path="/biodatas/:id" component={BiodataDetails}/>}
           
           <Route exact path="/register" component={Register} />
+         
+         
           <Route path="/pending" exact component={auth.user?.role ==='admin'? Pending : Home} />
           <Route path="/applicants" exact component={auth.user?.role ==='admin'? Applicants : Home} />
           <Route path="/requests" exact component={auth.user?.role ==='admin'? Requests : Home} />

@@ -73,16 +73,17 @@ const Register = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
+        
         dispatch(register(userData))
-        history.push("/edit_biodata")
+        
     }
 
     const responseGoogle = async (response) => {
       try {
           
-
+         
           dispatch(googleLogin({tokenId: response.tokenId}))
-          history.push("/edit_biodata")
+          
       } catch (err) {
          console.log(err)
       }

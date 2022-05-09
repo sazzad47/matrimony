@@ -144,6 +144,17 @@ export const deleteBiodata = ({user, auth, socket}) => async (dispatch) => {
                 
             
         })
+        socket.emit('delete', res.data.deletedBiodatas)
+
+        // Notify
+        const msg = {
+            id: auth.user._id,
+            text:`আসসালামু আলাইকুম! আপনার বায়োডাটা ওয়েবসাইট থেকে ডিলিট করা হয়েছে।`,
+            recipients: [res.data.deletedBiodatas._id],
+            url: `/biodatas/${user._id}`,
+        }
+
+        dispatch(createNotify({msg, auth, socket}))
 
         dispatch({type: GLOBALTYPES.ALERT, payload: {loading: false}})
     } catch (err) {

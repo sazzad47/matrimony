@@ -173,21 +173,21 @@ const HeaderMenu = () => {
     onClose={handleCloseMenu} 
     anchorEl={anchorEl} 
     open={Boolean(anchorEl)}>
-      <MenuItem className={classes.menu}   onClick={() => {
+      {/* <MenuItem className={classes.menu}   onClick={() => {
           handleCloseMenu();
           dispatch({
             type: GLOBALTYPES.THEME, payload: !theme
         });
         }} >
-          <div className="drawer-icon pr-2"> <i class="bi bi-brightness-high-fill"></i> </div> {theme ? 'Light mode' : 'Dark mode'}
-        </MenuItem>
-      <MenuItem className={classes.menu}  onClick={handleCloseMenu} component={Link}  to={`/biodatas/${auth.user._id}`}>
+          <div className=" drawer-icon pr-2"> <i class="bi bi-brightness-high-fill"></i> </div> {theme ? 'Light mode' : 'Dark mode'}
+        </MenuItem> */}
+      {auth.user.isPublished==="deleted"? null :<><MenuItem className={classes.menu}  onClick={handleCloseMenu} component={Link}  to={`/biodatas/${auth.user._id}`}>
           <div className="drawer-icon pr-2"> <i class="bi bi-journal"></i> </div>Your Biodata
         </MenuItem>
      
           <MenuItem className={classes.menu} component={Link} to='/deleteBiodata' onClick={handleCloseMenu}>
           <div className="drawer-icon pr-2"> <i class="bi bi-receipt"></i> </div> Delete Your Biodata
-        </MenuItem>
+        </MenuItem></>}
          { auth.user.role==='admin'?
          <><MenuItem className={classes.menu} component={Link} to ="/requests" onClick={handleCloseMenu}>
           <div className="drawer-icon pr-2"> <i class="bi bi-save"></i> </div> Requests

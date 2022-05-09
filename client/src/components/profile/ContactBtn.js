@@ -6,7 +6,19 @@ const useStyles = makeStyles((theme)=>({
   card:{
     borderTop:'1px solid #002884',
     borderRadius:'10px'
-  }
+  },
+  BioSearchBox: {
+    backgroundColor:'#880e4f',
+    color:'	#FFFFFF',
+    margin:'15px',
+    '&:hover': {
+      backgroundColor: 'hsl(320, 94%, 21%)',
+      color: '#FFFFFF',
+      outline:'none',
+      cursor:'pointer'
+    }
+    
+},
    
 
  
@@ -31,10 +43,45 @@ const ContactBtn = ({id, dispatch, user, profile}) => {
            justifyContent="center"
            item xs={12}
            >
-               <Typography align='center' style={{marginTop:'30px'}}>আপনার অভিভাবক যদি উক্ত {user.gender==="পাত্রের বায়োডাটা"? "পাত্রের" : "পাত্রীর"} অভিভাবকের সাথে যোগাযোগ করতে আগ্রহী হোন, তাহলে নীচের বাটনে চাপুন।</Typography><br/><br/>
+               <Typography align='center' style={{margin:'20px'}}>আপনি যদি উক্ত {user.gender==="পাত্রের বায়োডাটা"? "পাত্রের" : "পাত্রীর"} অভিভাবকের সাথে যোগাযোগ করতে আগ্রহী হোন, তাহলে নীচের বাটনে চাপুন।</Typography><br/><br/>
               
-             <Link to='/contactRequest'> <button className="full-bio-btn mb-4"
-              >যোগাযোগ</button></Link> 
+               <Link style={{ textDecoration: 'none', }} to="/contactRequest">
+     <Card className={classes.BioSearchBox}  elevation={3}>
+        
+      
+      
+     
+     
+
+     
+      <div className="container-fluid" >
+     
+         <div className='row mx-3 my-4'>
+             <Grid container spacing={2}>
+                
+             <Grid item xs ={12} md={12}>
+             <Typography variant='body1' align="center">যোগাযোগ</Typography>
+            </Grid>
+            
+             
+        
+             
+            
+             
+        </Grid>
+        </div>
+        
+         
+     </div>
+     
+      
+        
+        
+        
+       
+     </Card>
+         
+     </Link>
            </Grid>
         </div>
        

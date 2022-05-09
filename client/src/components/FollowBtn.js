@@ -1,4 +1,4 @@
-import { Button, Grid, makeStyles, Typography } from '@material-ui/core'
+import { Card, Grid, makeStyles, Typography } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {  follow, unfollow } from '../redux/actions/profileAction'
@@ -10,19 +10,17 @@ const useStyles = makeStyles((theme)=>({
      
       
   },
-  tab: {
-    backgroundColor:'#002884',
-    color:'#FFFFFF',
-    height:'35px',
-  
+  BioSearchBox: {
+    backgroundColor:'#880e4f',
+    color:'	#FFFFFF',
     '&:hover': {
-      backgroundColor: '#fff',
-      color: '#000000',
-      border:'1px solid #000000',
-      height:'35px',
+      backgroundColor: 'hsl(320, 94%, 21%)',
+      color: '#FFFFFF',
+      outline:'none',
+      cursor:'pointer'
+    }
     
-  },
-  },
+},
      
      
   
@@ -77,7 +75,7 @@ const FollowBtn = ({user}) => {
             container
             alignItems='center'
             justifyContent='center' >
-             <Typography align = 'center'>আলহামদুলিল্লাহ! আমরা আপনার বায়োডাটা {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষের' : 'পাত্রীপক্ষের'} নিকট পাঠিয়েছি। {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষ' : 'পাত্রীপক্ষ'} আপনার অভিভাবককে যোগাযোগ করতে বললে আমরা আপনাকে নোটিফিকেশনের মাধ্যমে জানিয়ে দেবো ইন-শা-আল্লাহ।</Typography>
+             <Typography align = 'center'>আলহামদুলিল্লাহ! আপনার বায়োডাটা {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষের' : 'পাত্রীপক্ষের'} নিকট পাঠানো হয়েছে। {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষ' : 'পাত্রীপক্ষ'} আপনাকে যোগাযোগ করতে বললে আপনাকে নোটিফিকেশনের মাধ্যমে জানানো হবে ইন-শা-আল্লাহ।</Typography>
                         
             </Grid>
             
@@ -89,14 +87,44 @@ const FollowBtn = ({user}) => {
             container
             alignItems='center'
             justifyContent='center' >
-            <Typography style={{marginBottom:'20px'}} align = 'center'>আপনার অভিভাবক যদি আমাদের মাধ্যমে {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষের' : 'পাত্রীপক্ষের'} নিকট প্রস্তাব পাঠাতে আগ্রহী হোন, তাহলে নীচের বাটনে চাপুন।</Typography>
-            <Button disableRipple style={{maxWidth:'600px',}} className={classes.tab}
-            onClick={handleFollow}> 
-            <Typography>
+            <Typography style={{marginBottom:'20px'}} align = 'center'>আপনি যদি আমাদের মাধ্যমে {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষের' : 'পাত্রীপক্ষের'} নিকট প্রস্তাব পাঠাতে আগ্রহী হন, তাহলে নীচের বাটনে চাপুন।</Typography>
+            <Card className={classes.BioSearchBox}  onClick={handleFollow}  elevation={3}>
+        
+      
+      
+     
+     
+
+     
+      <div className="container-fluid" >
+     
+         <div className='row mx-3 my-4'>
+             <Grid container spacing={2}>
+                
+             <Grid item xs ={12} md={12}>
+             <Typography variant='h6' align='center'>
             {user.gender==='পাত্রের বায়োডাটা'?'পাত্রপক্ষকে' : 'পাত্রীপক্ষকে'} আপনার বায়োডাটা প্রেরণ করুন
             </Typography>
-              
-            </Button>  
+            </Grid>
+            
+             
+        
+             
+            
+             
+        </Grid>
+        </div>
+        
+         
+     </div>
+     
+      
+        
+        
+        
+       
+     </Card>
+            
                     </Grid>
             
             

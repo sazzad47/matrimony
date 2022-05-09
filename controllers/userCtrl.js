@@ -26,7 +26,7 @@ const userCtrl = {
                     
                     {$and:
                         [
-                            {approval: 'yes' },  {gender: {$regex: gender}},
+                            {approval: 'yes' }, {isPublished: 'yes' },  {gender: {$regex: gender}},
                         ]}
                            
                    
@@ -42,7 +42,7 @@ const userCtrl = {
                     
                     {$and:
                         [
-                            {approval: 'yes' },  {status: {$regex: status}},
+                            {approval: 'yes' }, {isPublished: 'yes' },  {status: {$regex: status}},
                         ]}
                            
                    
@@ -58,7 +58,7 @@ const userCtrl = {
                     
                     {$and:
                         [
-                            {approval: 'yes' },  {pdivision: {$regex: pdivision}},
+                            {approval: 'yes' }, {isPublished: 'yes' },  {pdivision: {$regex: pdivision}},
                         ]}
                            
                            
@@ -74,7 +74,7 @@ const userCtrl = {
                 const users = await Users.find(
                     {$and:
                     [
-                        {approval: 'yes' }, {gender: {$regex: gender}},  {status: {$regex: status}},
+                        {approval: 'yes' }, {isPublished: 'yes' }, {gender: {$regex: gender}},  {status: {$regex: status}},
                     ]}
                             
                            
@@ -90,7 +90,7 @@ const userCtrl = {
                 const users = await Users.find(
                     {$and:
                     [
-                        {approval: 'yes' },  {gender: {$regex: gender}},  {pdivision: {$regex: pdivision}},
+                        {approval: 'yes' }, {isPublished: 'yes' },  {gender: {$regex: gender}},  {pdivision: {$regex: pdivision}},
                     ]}
                             
                            
@@ -106,7 +106,7 @@ const userCtrl = {
                 const users = await Users.find(
                     {$and:
                     [
-                        {approval: 'yes' },  {status: {$regex: status}},  {pdivision: {$regex: pdivision}},
+                        {approval: 'yes' }, {isPublished: 'yes' },  {status: {$regex: status}},  {pdivision: {$regex: pdivision}},
                     ]}
                             
                            
@@ -122,7 +122,7 @@ const userCtrl = {
                 const users = await Users.find(
                     {$and:
                     [
-                        {approval: 'yes' }, {gender: {$regex: gender}}, {status: {$regex: status}},  {pdivision: {$regex: pdivision}},
+                        {approval: 'yes' }, {isPublished: 'yes' }, {gender: {$regex: gender}}, {status: {$regex: status}},  {pdivision: {$regex: pdivision}},
                     ]}
                             
                            
@@ -158,7 +158,7 @@ const userCtrl = {
        
     
         
-        const biodatas = await Users.find({approval:'yes'})
+        const biodatas = await Users.find({approval: 'yes' }, {isPublished: 'yes' })
 
         res.json({ biodatas});
     } catch (error) {    
@@ -173,7 +173,7 @@ const userCtrl = {
        
     
         
-        const biodata = await Users.findById(id, {approval:'yes'})
+        const biodata = await Users.findById(id, {approval: 'yes' }, {isPublished: 'yes' })
 
         res.json({ biodata});
     } catch (error) {    
