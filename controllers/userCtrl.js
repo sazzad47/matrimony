@@ -158,7 +158,7 @@ const userCtrl = {
        
     
         
-        const biodatas = await Users.find({approval: 'yes' }, {isPublished: 'yes' })
+        const biodatas = await Users.find({approval: 'yes' })
 
         res.json({ biodatas});
     } catch (error) {    
@@ -173,7 +173,7 @@ const userCtrl = {
        
     
         
-        const biodata = await Users.findById(id, {approval: 'yes' }, {isPublished: 'yes' })
+        const biodata = await Users.findById(id, {approval: 'yes' })
 
         res.json({ biodata});
     } catch (error) {    
