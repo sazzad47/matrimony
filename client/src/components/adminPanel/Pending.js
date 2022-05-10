@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory, useLocation } from 'react-router-dom';
-import { Grid, Button, FormControl, InputLabel, makeStyles, Paper, Select, CircularProgress, Typography, Card } from '@material-ui/core'
+
+import { Grid, makeStyles, CircularProgress, Typography} from '@material-ui/core'
 import ReactPaginate from 'react-paginate'
 import { useSelector, useDispatch } from 'react-redux'
-import { getDataAPI } from '../utils/fetchData'
-import { GLOBALTYPES } from '../redux/actions/globalTypes'
-import UserCard from './UserCard'
-import LoadIcon from '../images/loading.gif'
-import { getBiodatasBySearch } from '../redux/actions/getBiodatasAction'
-import { getPendingBiodatas } from '../redux/actions/pendingAction';
-import BioSearch from './home/BioSearch';
-import BioSearchByNumber from './home/BioSearchByNumber';
+
+import UserCard from '../UserCard'
+
+import { getPendingBiodatas } from '../../redux/actions/pendingAction';
 
 const useStyles = makeStyles((theme)=>({
     bioSearchSelect: {

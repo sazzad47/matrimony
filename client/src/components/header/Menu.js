@@ -189,18 +189,10 @@ const HeaderMenu = () => {
           <div className="drawer-icon pr-2"> <i class="bi bi-receipt"></i> </div> Delete Your Biodata
         </MenuItem></>}
          { auth.user.role==='admin'?
-         <><MenuItem className={classes.menu} component={Link} to ="/requests" onClick={handleCloseMenu}>
-          <div className="drawer-icon pr-2"> <i class="bi bi-save"></i> </div> Requests
+         <><MenuItem className={classes.menu} component={Link} to ="/dashboard" onClick={handleCloseMenu}>
+          <div className="drawer-icon pr-2"> <i class="bi bi-save"></i> </div> Dashboard
         </MenuItem>
-         <MenuItem className={classes.menu} component={Link} to ="/reports" onClick={handleCloseMenu}>
-          <div className="drawer-icon pr-2"> <i class="bi bi-save"></i> </div> Reports
-        </MenuItem>
-          <MenuItem className={classes.menu} component={Link} to ="/pending" onClick={handleCloseMenu}>
-          <div className="drawer-icon pr-2"> <i class="bi bi-save"></i> </div> Pending
-        </MenuItem>
-        <MenuItem className={classes.menu} component={Link} to ="/applicants" onClick={handleCloseMenu}>
-          <div className="drawer-icon pr-2"> <i class="bi bi-gear-fill"></i> </div> Applicants
-        </MenuItem>
+         
         </>:null}
       <MenuItem className={classes.menu} component={Link} to ="/"  onClick={() => {
           handleCloseMenu();

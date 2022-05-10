@@ -42,3 +42,14 @@ export const getBiodatasByNumber = (userData) => async (dispatch) => {
         console.log(error);
     }
 }
+export const getBiodatasByAdmin = (userData) => async (dispatch) => {
+    const {index} = userData
+    try {
+        dispatch({type: 'START_LOADING'});
+        const  res= await getDataAPI(`searchByAdmin?index=${index}`)
+        dispatch({type: 'GET_BIODATAS_BY_ADMIN', payload: res.data.users});
+        dispatch({type: 'END_LOADING'});
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import { Button, Card, Typography, Grid, makeStyles } from '@material-ui/core'
+import { Button, Card, Typography, Grid,makeStyles} from '@material-ui/core'
 
 import { useDispatch } from 'react-redux'
 
 
-import {getBiodatasByNumber} from '../../redux/actions/getBiodatasAction'
+import { getBiodatasByAdmin } from '../../redux/actions/getBiodatasAction'
 const convertToEnglishNumber = require('banglanumber-to-englishnumber');
 const useStyles = makeStyles((theme)=>({
     BioSearchBox: {
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme)=>({
   }));
   
 
-const BioSearchByNumber = () => {
+const AdminSearch = () => {
     
     const dispatch = useDispatch()
     const history = useHistory();
@@ -50,7 +50,7 @@ const BioSearchByNumber = () => {
      gender:'',status:'',pdivision:"", index:""
   }
   const [userData, setUserData] = useState(initState)
-  const {index  } = userData
+  const { index  } = userData
     
     
  
@@ -72,7 +72,7 @@ const BioSearchByNumber = () => {
 
     const handleSearch = async (e) => {
         e.preventDefault()
-        dispatch(getBiodatasByNumber(userData));
+        dispatch(getBiodatasByAdmin(userData));
         history.push('/biodatas')
             
           
@@ -144,4 +144,4 @@ const BioSearchByNumber = () => {
     )
 }
 
-export default BioSearchByNumber
+export default AdminSearch

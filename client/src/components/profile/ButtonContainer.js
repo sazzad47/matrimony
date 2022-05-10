@@ -65,7 +65,7 @@ const ButtonContainer = ({user}) => {
                 type='submit' 
                 className="bio-status w-100"
                 onClick={() => {handlePublish();}}
-                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Published' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not approved' : auth.user.isPublished==='hidden'? 'Hidden': (!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat)? 'Not completed yet' : 'Completed'} </button>
+                >{(auth.user.isPublished==='yes' && auth.user.approval==='yes')? 'Published' : (auth.user.isPublished==='yes' && auth.user.approval==='no')? 'Pending approval' : (auth.user.isPublished==='yes' && auth.user.approval==='declined')? 'Not approved' : (auth.user.isPublished==='hidden' && auth.user.approval==='yes')? 'Hidden': (!auth.user.eduMedium || !auth.user.status || !auth.user.pdistrict || !auth.user.aMazhab || !auth.user.gMobile || !auth.user.fatherN || !auth.user.marriageC || !auth.user.partDistrict || !auth.user.allTrue || !auth.user.salat)? 'Not completed yet' : 'Completed'} </button>
                 </div>:null}
             <div className="row bio-btn-Container">
                 {user._id===auth.user._id?
@@ -100,7 +100,7 @@ const ButtonContainer = ({user}) => {
                  </div>
                  </>
                  :
-                 (auth.user._id===user._id || auth.user.gender===user.gender || auth.user.gender==='' || auth.user.isPublished==='hidden' || auth.user.approval==='no')? null :
+                 (auth.user._id===user._id || auth.user.gender===user.gender || auth.user.gender==='' || auth.user.isPublished==='hidden' || auth.user.isPublished==='deleted' || auth.user.role==='admin' || auth.user.approval==='no')? null :
                 <>
                 <div className="col-12 col-md-12 col-lg-12  d-flex justify-content-center">
                     <FollowBtn user = {user}/>

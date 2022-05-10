@@ -17,6 +17,17 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    searchUserByAdmin: async (req, res) => {
+        const {index} = req.query
+        try {
+            const users = await Users.find({index:index }
+               ).select("gender status age pdivision pdistrict index groomPhoto bridePhoto")
+            
+            res.json({users})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
 
     searchUser: async (req, res) => {
         const {gender,status,pdivision} = req.query

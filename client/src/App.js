@@ -29,7 +29,7 @@ import { getApplicant } from './redux/actions/applicantAction'
 
 import Biodatas from './pages/biodatas'
 import ConatctRequest from './pages/contactRequest'
-import SingleBiodata from './pages/biodatas/[id]'
+
 
 import ReportProblem from './pages/reportProblem';
 import About from './pages/about';
@@ -37,10 +37,11 @@ import Help from './pages/help&support';
 import Terms from './pages/terms&policies';
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop';
-import Pending from './components/Pending'
-import Applicants from './components/Applicants'
-import Requests from './components/Requests'
-import Reports from './components/Reports'
+import Dashboard from './components/adminPanel/Dashboard'
+import Pending from './components/adminPanel/Pending'
+import Applicants from './components/adminPanel/Applicants'
+import Requests from './components/adminPanel/Requests'
+import Reports from './components/adminPanel/Reports'
 
 import Quiz from './pages/quiz'
 
@@ -76,7 +77,7 @@ function App() {
 
   useEffect(() => {
     if (!("Notification" in window)) {
-      alert("This browser does not support desktop notification");
+      
     }
     else if (Notification.permission === "granted") {}
     else if (Notification.permission !== "denied") {
@@ -124,6 +125,7 @@ function App() {
           <Route exact path="/register" component={Register} />
          
          
+          <Route path="/dashboard" exact component={auth.user?.role ==='admin'? Dashboard : Home} />
           <Route path="/pending" exact component={auth.user?.role ==='admin'? Pending : Home} />
           <Route path="/applicants" exact component={auth.user?.role ==='admin'? Applicants : Home} />
           <Route path="/requests" exact component={auth.user?.role ==='admin'? Requests : Home} />

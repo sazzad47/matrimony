@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import DeleteIcon from '@material-ui/icons/Delete'
-import { patchDataAPI } from '../utils/fetchData'
-import { getApplicant, updateApplicant } from '../redux/actions/applicantAction'
-import { CircularProgress } from '@material-ui/core'
+
+import { updateApplicant } from '../../redux/actions/applicantAction'
+
 
 const Applicant = ({user}) => {
   const dispatch = useDispatch();

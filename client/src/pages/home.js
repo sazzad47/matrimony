@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import homePhoto from '../images/homeAyat.png'
 import Instructions from '../components/contents/Instructions'
@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 
 import BioSearch from '../components/home/BioSearch'
 
-import { Button, Grid, makeStyles, Paper, Typography, Card } from '@material-ui/core';
+import { makeStyles} from '@material-ui/core';
 import { Helmet } from 'react-helmet-async'
 import BioSearchByNumber from './../components/home/BioSearchByNumber';
 import CreateBioBtn from '../components/home/CreateBioBtn'

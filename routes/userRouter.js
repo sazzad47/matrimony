@@ -15,6 +15,7 @@ router.patch('/user/:id/decline', auth, userCtrl.decline)
 
 router.get('/search', userCtrl.searchUser)
 router.get('/searchByNumber', userCtrl.searchUserByNumber)
+router.get('/searchByAdmin', userCtrl.searchUserByAdmin)
 router.get('/pdf',userCtrl.downloadPDF)
 
 

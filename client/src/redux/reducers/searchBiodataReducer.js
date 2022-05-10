@@ -29,6 +29,9 @@ const Biodatas =  (state = { isLoading: true, biodatas: [] }, action) => {
       
       case 'GET_BIODATAS_BY_NUMBER':
         return { ...state, biodatas: action.payload};
+      
+      case 'GET_BIODATAS_BY_ADMIN':
+        return { ...state, biodatas: action.payload};
         
       case PENDING_BIODATAS_TYPES.HIDE_BIODATA:
           return {

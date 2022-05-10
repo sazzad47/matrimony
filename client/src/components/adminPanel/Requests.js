@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 
 import Request from './Request';
-import { getRequests } from '../redux/actions/deleteAction'
+import { getRequests } from '../../redux/actions/deleteAction'
 
 const Requests = () => {
     const {loading, deleteRequests } = useSelector(state => state.deleteRequests)
