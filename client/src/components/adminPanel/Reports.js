@@ -1,4 +1,4 @@
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, Typography } from '@material-ui/core';
 import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 
@@ -15,7 +15,7 @@ const Reports = () => {
    
     
     return (
-      loading? <div className='loading'><CircularProgress/> </div>: !reports.length ? 'No reports found':
+      loading? <div className='loading'><CircularProgress/> </div>: !reports.length ? <div className='biodatas_page' style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}><Typography>No report found!</Typography></div>:
         <div>
             <table class="table table-bordered">
   <thead>
