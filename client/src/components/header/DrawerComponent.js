@@ -9,9 +9,9 @@ import MenuIcon from '@material-ui/icons/Menu'
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme)=>({
     drawerPaper: {
-      marginTop: "110px",
+      marginTop: "80px",
       [theme.breakpoints.up("sm")]:{
-        marginTop: "110px",
+        marginTop: "80px",
     }
 }
 
