@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory,Link } from 'react-router-dom'
-import {Grid, Typography} from '@material-ui/core'
+import React from 'react'
+import {Link } from 'react-router-dom'
+
 import { useSelector, useDispatch } from 'react-redux'
-import { publishBiodata, updateProfileUser } from '../../redux/actions/profileAction'
+import { publishBiodata } from '../../redux/actions/profileAction'
 import FollowBtn from '../FollowBtn'
 import ApproveBtn from '../ApproveBtn'
-import ContactBtn from './ContactBtn'
-import { approvePending, declinePending, deleteBiodata, hideBiodata } from '../../redux/actions/pendingAction'
+
+
 import ContactBtnPvt from './ContactBtnPvt';
+import ManageBiodata from '../adminPanel/ManageBiodata'
 
 const ButtonContainer = ({user}) => {
 
-    const history = useHistory();
+   
     
    
 
@@ -22,32 +23,10 @@ const ButtonContainer = ({user}) => {
         dispatch(publishBiodata(auth))
        }
 
-    const { auth, theme, socket } = useSelector(state => state)
+    const { auth } = useSelector(state => state)
     const dispatch = useDispatch()
     
-    
-    
-    const  handleApproval = () => {
-        dispatch(approvePending({user, auth, socket}))
-        history.push('/pending')
-       
-      }  
-    const  handleDecline = () => {
-        dispatch(declinePending({user, auth, socket}))
-        history.push('/pending')
-       
-      }  
-    const  handleHide = () => {
-        dispatch(hideBiodata({user, auth, socket}))
-        history.push('/biodatas')
-       
-      }  
-    const  handleDelete = () => {
-        dispatch(deleteBiodata({user, auth, socket}))
-        history.push('/biodatas')
-       
-      }  
-    
+
 
      
 
@@ -57,7 +36,14 @@ const ButtonContainer = ({user}) => {
 
    
     return (
-        <div>
+        <> {auth.user.role==="admin"?
+        <div className="d-flex align-items-center justify-content-center ">
+
+         <ManageBiodata user={user}/>
+           
+        
+       </div> : 
+        <>
              {user._id===auth.user._id?
                 <div className="pb-4 d-flex d-md-none d-lg-none justify-content-center">
                 <button 
@@ -76,13 +62,7 @@ const ButtonContainer = ({user}) => {
                  </Link>
                 </div> : null
                 } 
-                 {auth.user.role==="admin"?
-                <div className="col-6 col-md-6 col-lg-6">
-
-                
-                   {user.approval==='yes'? <button onClick={handleHide} className="bio-edit-btn">Hide</button>: <button onClick={handleApproval} className="bio-edit-btn">Approve</button>}
-                
-               </div> : null}
+                 
       
                 
                 {auth.user.followers.find(item => item._id === user._id)?
@@ -126,19 +106,10 @@ const ButtonContainer = ({user}) => {
                 >Publish</button>
                 </div>:null}
 
-                {auth.user.role==="admin"?
-                <div className="col-6 col-md-6 col-lg-6 d-flex justify-content-end">
-
-                
-            {user.approval==='yes'? <button onClick={handleDelete} className="bio-edit-btn">Delete</button>:  
-            <button 
-                    onClick={handleDecline} 
-                    className="bio-edit-btn">Decline</button>}
-                
-               </div> : null} 
             </div>
            
-        </div>
+        </>}
+        </>
     )
 }
 
