@@ -17,7 +17,7 @@ const Footer = () => {
                 </a>
                </Grid>
                <Grid style={{display:'flex',justifyContent:'center'}} item xs={12} sm={6} md={6} lg={6}>
-               <a href="https://www.facebook.com/groups/jannatersathi" target="_blank" rel="noreferrer"
+               <a href="https://www.facebook.com/groups/completehalfyourdeen" target="_blank" rel="noreferrer"
                 style={{wordBreak: 'break-all'}} >
                    <Typography>আমাদের ফেইসবুক গ্রুপ</Typography>
                 </a>
