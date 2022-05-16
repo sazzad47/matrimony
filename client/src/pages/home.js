@@ -11,6 +11,7 @@ import { makeStyles} from '@material-ui/core';
 import { Helmet } from 'react-helmet-async'
 import BioSearchByNumber from './../components/home/BioSearchByNumber';
 import CreateBioBtn from '../components/home/CreateBioBtn'
+import HowToCreateBio from '../components/contents/HowToCreateBio'
 
 
 let scroll = 0;
@@ -73,6 +74,10 @@ const Home = () => {
              <div className='mt-5 pt-2 d-block d-md-none d-lg-none'>
 
           <CreateBioBtn/>
+          <div className='mt-5'>
+
+            <HowToCreateBio/>
+           </div>
              </div>
             
                </div>
@@ -88,6 +93,10 @@ const Home = () => {
               <div style={{minWidth:'400px'}} className='mt-5 d-none d-md-block d-lg-block'>
 
              <CreateBioBtn/>
+             <div className='mt-5'>
+
+             <HowToCreateBio/>
+             </div>
                 </div>
             
                 </div>
