@@ -49,7 +49,7 @@ const ApplicationForm = () => {
           <CardContent>
             <Typography gutterBottom variant="body3">
             যোগাযোগ তথ্য পেতে আমাদের নির্ধারিত ফি পরিশোধ করতে হবে। অনুগ্রহ ক'রে নীচের আবেদন ফর্মটি পূরণ ক'রে সাবমিট করুন। 
-            ফর্ম সাবমিট করার সর্বোচ্চ ৪৮ ঘন্টার মধ্যে আপনার দেয়া মোবাইল নাম্বারে SMS এর মাধ্যমে যোগাযোগ তথ্য পাঠিয়ে দেয়া হবে ইন-শা-আল্লাহ।<br/><br/>
+            ফর্ম সাবমিট করার সর্বোচ্চ ৪৮ ঘন্টার মধ্যে আপনার দেয়া ই-মেইল আইডিতে যোগাযোগ তথ্য পাঠিয়ে দেয়া হবে ইন-শা-আল্লাহ।<br/><br/>
           </Typography> 
             
             <form onSubmit={handleSubmit}>
@@ -179,8 +179,8 @@ const ApplicationForm = () => {
              
         </Grid>
         <Grid  container justifyContent="flex-end" item xs={4}>
-        <img className="nagad" src={Nagad} alt="nagad" 
-        className={toggleState === 3 ? "pay-tab-active" : "pay-tab"}
+        <img  src={Nagad} alt="nagad" 
+        className ={toggleState === 3 ? "pay-tab-active" : "pay-tab"}
         onClick={() => toggleTab(3)} 
            />
             
