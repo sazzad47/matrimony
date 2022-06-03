@@ -48,7 +48,7 @@ const DeleteBiodata = () => {
             <form onSubmit={handleSubmit}>
 
               
-              <Grid container spacing={1}>
+              <Grid container spacing={2}>
               <div className='d-none'>
                 <Grid  item xs={12}>
                   <TextField 
