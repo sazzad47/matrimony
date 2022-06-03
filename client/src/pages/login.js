@@ -4,7 +4,7 @@ import { login } from '../redux/actions/authAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { GoogleLogin } from 'react-google-login'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import { Divider, Chip, Container, Paper, Avatar,Grid, Typography,Button, IconButton, InputAdornment, makeStyles, TextField } from '@material-ui/core';
+import { Container, Paper, Avatar,Grid, Typography,Button, IconButton, InputAdornment, makeStyles, TextField } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Icon from '../components/icon';
