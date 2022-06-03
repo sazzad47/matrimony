@@ -53,11 +53,11 @@ const ApplicationForm = () => {
           </Typography> 
             
             <form onSubmit={handleSubmit}>
-              <Grid container spacing={1}>
+              <Grid container spacing={3}>
                 <Grid  item xs={12}>
                   <TextField 
                   placeholder="আপনার পূর্ণ নাম লিখুন" 
-                  label="পূর্ণ নাম" 
+                  label="আপনার পূর্ণ নাম" 
                   variant="outlined" 
                   fullWidth 
                   required
@@ -108,6 +108,11 @@ const ApplicationForm = () => {
                   onChange={(e) => {
                     setEmail(e.target.value) }} />
                 </Grid>
+                <Grid item xs = {12}>
+                  <Typography>
+                    কয়টি বায়োডাটার যোগাযোগ তথ্য চাচ্ছেন?
+                  </Typography>
+                </Grid>
                 <Grid item xs = {6}>
                   <TextField 
                   select
@@ -136,7 +141,12 @@ const ApplicationForm = () => {
                 <Grid item xs ={12}
                
                >
-                 <Typography gutterBottom variant="body2"color="textSecondary" > যতটি বায়োডাটার যোগাযোগ তথ্য চাচ্ছেন। </Typography>
+                
+               </Grid>
+               <Grid item xs ={12}>
+                 <Typography>
+                  যে-বায়োডাটার যোগাযোগ তথ্য চাচ্ছেন, সে-বায়োডাটার নাম্বার লিখুন। একাধিক হলে মাঝখানে কমা দিয়ে লিখুন।
+                 </Typography>
                </Grid>
                 <Grid item xs ={12}>
                   <TextField 
@@ -155,7 +165,7 @@ const ApplicationForm = () => {
                 <Grid item xs ={12}
                
                 >
-                  <Typography gutterBottom variant="body2"color="textSecondary" >যার সাথে যোগাযোগ করতে চাচ্ছেন। একাধিক হলে কমা দিয়ে লিখুন। </Typography>
+                 
                 </Grid>
                 <Grid  
                  container
