@@ -1,7 +1,6 @@
 import { Button, Card, CardContent, Grid, TextField, Typography } from '@material-ui/core';
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import CreateBiodata from './createBiodata'
+import { useDispatch } from 'react-redux'
 import Rocket from '../images/Rocket.png'
 import Nagad from '../images/Nagad.png'
 import Bkash from '../images/Bkash.png'
