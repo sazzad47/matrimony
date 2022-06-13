@@ -255,7 +255,24 @@ const EditProfile = () => {
                   <Grid container>
 
                   
-                 <TextField
+                 {pdistrict==="ঢাকা"?<TextField
+                 fullWidth
+                 required
+                 style={{marginBottom:'20px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
+                 variant="outlined"
+                 label="থানা/উপজেলা"
+                 select
+                 id="pupazila"
+                 name="pupazila"
+                 value={pupazila}
+                 onChange={handleInput}
+                 >
+                    {pupazilas}
+                   
+                   
+          
+                 </TextField>
+                 :<TextField
                  fullWidth
                  required
                  style={{marginBottom:'20px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
@@ -271,7 +288,7 @@ const EditProfile = () => {
                    
                    
           
-                 </TextField>
+                 </TextField>}
                  </Grid>
               
                    
@@ -325,7 +342,24 @@ const EditProfile = () => {
                   <Grid container>
 
                   
-                 <TextField
+                {cdistrict==="ঢাকা"? <TextField
+                 fullWidth
+                 required
+                 style={{marginBottom:'20px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
+                 variant="outlined"
+                 label="থানা/উপজেলা"
+                 select
+                 id="cupazila"
+                 name="cupazila"
+                 value={cupazila}
+                 onChange={handleInput}
+                 >
+                    {cupazilas}
+                   
+                   
+          
+                 </TextField>
+                : <TextField
                  fullWidth
                  required
                  style={{marginBottom:'20px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
@@ -341,7 +375,7 @@ const EditProfile = () => {
                    
                    
           
-                 </TextField>
+                 </TextField>}
                  </Grid>
               
                    
