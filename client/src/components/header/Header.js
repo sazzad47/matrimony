@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {AppBar, Button, Grid, makeStyles, Toolbar, Typography} from '@material-ui/core'
 import HeaderMenu from './Menu'
 
-import Search from './Search'
+
 import DrawerComponent from './DrawerComponent'
 import { useSelector } from 'react-redux'
 const useStyles = makeStyles((theme)=>({
