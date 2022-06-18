@@ -1796,6 +1796,7 @@ const EditProfile = ({setOnEdit}) => {
                         <option value ="বিজ্ঞান">বিজ্ঞান</option>
                         <option value ="মানবিক">মানবিক</option>
                         <option value ="ব্যবসা">ব্যবসা</option>
+                        <option value ="কারিগরি">কারিগরি</option>
                   </TextField>
                  
                    </Grid>
@@ -1958,6 +1959,7 @@ const EditProfile = ({setOnEdit}) => {
                         <option value ="বিজ্ঞান">বিজ্ঞান</option>
                         <option value ="মানবিক">মানবিক</option>
                         <option value ="ব্যবসা">ব্যবসা</option>
+                        <option value ="কারিগরি">কারিগরি</option>
                   </TextField>
                   
                    </Grid>
