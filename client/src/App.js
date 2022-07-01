@@ -75,17 +75,17 @@ function App() {
   
   
 
-  useEffect(() => {
-    if (!("Notification" in window)) {
+  // useEffect(() => {
+  //   if (!("Notification" in window)) {
       
-    }
-    else if (Notification.permission === "granted") {}
-    else if (Notification.permission !== "denied") {
-      Notification.requestPermission().then(function (permission) {
-        if (permission === "granted") {}
-      });
-    }
-  },[])
+  //   }
+  //   else if (Notification.permission === "granted") {}
+  //   else if (Notification.permission !== "denied") {
+  //     Notification.requestPermission().then(function (permission) {
+  //       if (permission === "granted") {}
+  //     });
+  //   }
+  // },[])
 
  
   useEffect(() => {
