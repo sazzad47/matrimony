@@ -90,7 +90,7 @@ const EditProfile = ({setOnEdit}) => {
             <form onSubmit={handleSubmit}>
                 
 
-                 <Typography style={{paddingTop:'20px'}} variant='h6' align='center'>আপনি যেমন জীবনসঙ্গী আশা করেন</Typography>  
+                 <Typography style={{paddingTop:'20px'}} variant='h6' align='center'>যেমন জীবনসঙ্গী আশা করেন</Typography>  
                  <div className="custom-form mt-4 mr-3 ml-1">
               <h6> বৈবাহিক অবস্থা *</h6>
                <Grid container>
@@ -302,7 +302,7 @@ const EditProfile = ({setOnEdit}) => {
              </div>
          
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> জান্নাতের সাথীর যে বৈশিষ্ট্য বা গুণাবলী আশা করেন *</h6>
+              <h6> জান্নাতের সাথীর যে গুণাবলী আশা করেন *</h6>
                <Grid container>
                  <textarea
                 
