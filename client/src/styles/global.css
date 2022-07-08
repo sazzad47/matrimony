@@ -87,6 +87,8 @@ img {
 @import url("./home.css");
 /* -------- CreateBiodata ---------- */
 @import url("./createBiodata.css");
+/* -------- Footer ---------- */
+@import url("./footer.css");
 
 /* -------- Status Modal ---------- */
 @import url("./status_modal.css");

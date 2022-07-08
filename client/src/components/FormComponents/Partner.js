@@ -302,7 +302,7 @@ const EditProfile = ({setOnEdit}) => {
              </div>
          
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> জান্নাতের সাথীর যে গুণাবলী আশা করেন *</h6>
+              <h6 className='mr-2 mr-md-auto mr-lg-auto mr-xl-auto'> জান্নাতের সাথীর যে গুণাবলী আশা করেন *</h6>
                <Grid container>
                  <textarea
                 

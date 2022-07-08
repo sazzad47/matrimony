@@ -1,33 +1,52 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {Card,Typography, Grid} from '@material-ui/core'
 
 const Footer = () => {
     return (
-        <Card style={{marginTop:'30px', backgroundColor:'#002884', color:'#ffffff'}} >
-            <hr/>
-           <Grid 
-           container
-           alignItems='center'
-           justifyContent='center'
-           >
-               <Grid style={{display:'flex',justifyContent:'center'}} item xs={12} sm={6} md={6} lg={6}>
-               <a href="https://www.facebook.com/JannaterSathiOfficial" target="_blank" rel="noreferrer"
-                style={{wordBreak: 'break-all'}} >
-                    <Typography>আমাদের ফেইসবুক পেইজ</Typography>
-                </a>
-               </Grid>
-               <Grid style={{display:'flex',justifyContent:'center'}} item xs={12} sm={6} md={6} lg={6}>
-               <a href="https://www.facebook.com/groups/completehalfyourdeen" target="_blank" rel="noreferrer"
-                style={{wordBreak: 'break-all'}} >
-                   <Typography>আমাদের ফেইসবুক গ্রুপ</Typography>
-                </a>
-               </Grid>
-           </Grid>
-           <Grid style={{display:'flex',justifyContent:'center', marginTop:'30px',}}>
-
-           &copy; 2022 JannaterSathi.com
-           </Grid>
-        </Card>
+       
+        <footer className='footer'>
+        <div className='footerMenus px-2 px-md-3 px-lg-5 row'>
+          <div className='footerMenu align-items-start col-12 col-md-6 col-lg-3'>
+            <div className='row'>Services</div>
+            <div className='row'><Link className='footerLink' to="/edit_biodata">Create your bio-data</Link></div>
+            <div className='row'><Link className='footerLink' to="/quiz">Quiz</Link></div>
+            <div className='row'><Link className='footerLink' to="/reportProblem">Report a Problem</Link></div>
+           
+          </div>
+          <div className='footerMenu align-items-start col-12 col-md-6 col-lg-3'>
+            <div className='row'>Website</div>
+            <div className='row'><Link className='footerLink' to="/help&support">FAQs</Link></div>
+            <div className='row text-start'><Link className='footerLink' to="terms&policies">Terms & Privacy Policies</Link></div>
+           
+          </div>
+          <div className='footerMenu align-items-start col-12 col-md-6 col-lg-3'>
+            <div className='row'>Contact</div>
+            <div className='row'>Hotline: (+880) 1709006114</div>
+            <div className='row'>Email: jannatersathi@gmail.com</div>
+            
+    
+          </div>
+          <div className='footerMenu align-items-start col-12 col-md-6 col-lg-3 followUs'>
+            <div className='row'>Follow Us</div>
+            <div className='row social'>
+                <a href="https://www.facebook.com/JannaterSathiOfficial" target="_blank" rel="noreferrer">
+                <i className="bi bi-facebook"></i>Our facebook page </a></div>
+            <div className='row social'>
+            <a href="https://www.facebook.com/groups/JannaterSathiOfficial" target="_blank" rel="noreferrer">
+                <i className="bi bi-facebook"></i>Our facebook group </a></div>
+            <div className='row social'>
+            <a href="https://www.youtube.com/channel/UCTzCZLjeeAGO1go16_ITjDQ" target="_blank" rel="noreferrer">
+                 <i className="bi bi-youtube"></i>Our youtube channel</a></div>
+        
+          </div>
+         
+         </div>
+         <div className='footer-footer'>
+          
+           <div className='copyright'>© 2022 JannaterSathi. All rights reserved.</div>
+        </div>
+      </footer>
     )
 }
 

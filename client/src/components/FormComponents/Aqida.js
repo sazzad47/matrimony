@@ -93,7 +93,7 @@ const EditProfile = ({setOnEdit}) => {
 
             <form onSubmit={handleSubmit}>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> ইসলামী দাম্পত্য জীবন নিয়ে আপনার পরিকল্পনা কী? *</h6>
+              <h6 className='mr-2 mr-md-2 mr-lg-auto mr-xl-auto'> ইসলামী দাম্পত্য জীবন নিয়ে আপনার পরিকল্পনা কী? *</h6>
                <Grid container>
                  <textarea
                 
@@ -117,7 +117,7 @@ const EditProfile = ({setOnEdit}) => {
              </div>
                 
              <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> আপনি কোন মাযহাব অনুসরণ করেন? *</h6>
+              <h6 > আপনি কোন মাযহাব অনুসরণ করেন? *</h6>
                <Grid container>
                  <textarea
                 
@@ -187,7 +187,7 @@ const EditProfile = ({setOnEdit}) => {
              </div>
           
              <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> আপনার পছন্দের অন্তত ৩ জন আলেমের নাম লিখুন। *</h6>
+              <h6 className='mr-2 mr-md-2 mr-lg-auto mr-xl-auto'> আপনার পছন্দের অন্তত ৩ জন আলেমের নাম লিখুন। *</h6>
                <Grid container>
                  <textarea
                 
@@ -210,7 +210,7 @@ const EditProfile = ({setOnEdit}) => {
                 
              </div>
              <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> আপনার পছন্দের অন্তত ৩ জন লেখকের নাম লিখুন। *</h6>
+              <h6 className='mr-2 mr-md-2 mr-lg-auto mr-xl-auto'> আপনার পছন্দের অন্তত ৩ জন লেখকের নাম লিখুন। *</h6>
                <Grid container>
                  <textarea
                 

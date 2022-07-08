@@ -592,7 +592,7 @@ const EditProfile = ({setOnEdit}) => {
                 
              </div>
              <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> বিয়ের পর স্ত্রীকে চাকরি করার অনুমতি দেবেন? *</h6>
+              <h6 className='mr-2 mr-sm-auto mr-md-auto mr-lg-auto mr-xl-auto'> বিয়ের পর স্ত্রীকে চাকরি করার অনুমতি দেবেন? *</h6>
                <Grid container>
                  <textarea
                 
@@ -615,7 +615,7 @@ const EditProfile = ({setOnEdit}) => {
                 
              </div>
              <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> বিয়ের পর স্ত্রীকে পড়াশোনা করার অনুমতি দেবেন? *</h6>
+              <h6 className='mr-2 mr-sm-auto mr-md-auto mr-lg-auto mr-xl-auto'> বিয়ের পর স্ত্রীকে পড়াশোনা করার অনুমতি দেবেন? *</h6>
                <Grid container>
                  <textarea
                 
@@ -638,7 +638,7 @@ const EditProfile = ({setOnEdit}) => {
                 
              </div>
              <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> বিয়ে উপলক্ষে পাত্রীপক্ষ থেকে কোনো প্রকার উপহার কিংবা অর্থ আশা করবেন? *</h6>
+              <h6 className='mr-2 mr-md-2 mr-lg-2 mr-xl-auto'> বিয়ে উপলক্ষে পাত্রীপক্ষ থেকে কোনো প্রকার উপহার কিংবা অর্থ আশা করবেন? *</h6>
                <Grid container>
                  <textarea
                 

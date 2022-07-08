@@ -435,31 +435,38 @@ const EditProfile = () => {
               
                   </div>
 
-                 {prof==="ছাত্রী"? null : <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     required
-                     fullWidth
-                     className={classes.textfield}
-                     variant="outlined"
-                     multiline
-                     maxRows = "200"
-                     label="পেশা সম্পর্কিত তথ্য"
-                     id="detProf"
-                     name="detProf"
-                     value={detProf}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   {gender==="পাত্রের বায়োডাটা"? <div className={classes.textfield}>
+                  {prof==="ছাত্রী"? null : 
+                  <div className="custom-form mt-4 mr-3 ml-1">
+                  <h6> পেশা সম্পর্কিত তথ্য *</h6>
+                   <Grid container>
+                     <textarea
                     
-                   {gender === "পাত্রের বায়োডাটা"? <small>
-                    এ-অংশটি খুব গুরুত্বপূর্ণ। এখানে আপনার পেশা সম্পর্কে বিস্তারিত লিখুন। ছাত্র হলে স্ত্রীর ভরণ-পোষণ, খোরপোষ কীভাবে বহন করবেন সে-সম্পর্কে লিখুন।
-                    </small>
-                    : null}
-                    </div> :null}
-                </div>}
+                     rows="8"
+                      required
+                    
+                      className='textArea'
+                     
+                    
+                     
+        
+                      id="detProf"
+                      name="detProf"
+                      value={detProf}
+                      onChange={handleInput}
+                      
+                     />
+                   
+                     </Grid>
+                     {gender==="পাত্রের বায়োডাটা"? <div className={classes.textfield}>
+                    
+                    {gender === "পাত্রের বায়োডাটা"?<small>
+                     এ-অংশটি খুব গুরুত্বপূর্ণ। এখানে আপনার পেশা সম্পর্কে বিস্তারিত লিখুন। ছাত্র হলে স্ত্রীর ভরণ-পোষণ, খোরপোষ কীভাবে বহন করবেন সে-সম্পর্কে লিখুন।
+                     </small>
+                     : null}
+                     </div> :null}
+                 </div>
+                
+               }
                  {prof==="ছাত্রী"? null :<div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
