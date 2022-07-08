@@ -167,27 +167,28 @@ const EditProfile = ({setOnEdit}) => {
                   </div>:
                   auth.user.status==="বিধবা"?
                   <div>
-                         <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                    required
-                   
-                    
-                     fullWidth
-                     className={classes.textfield}
-                     multiline
-                     maxRows = "200"
-                     variant="outlined"
-                    
-                     label="পূর্বের সংসারের সময়কাল"
-                     id="divorcedC"
-                     name="divorcedC"
-                     value={divorcedC}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    <div className={classes.textfield}>
+                     <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>পূর্বের সংসারের সময়কাল *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="4"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="divorcedC"
+                  name="divorcedC"
+                  value={divorcedC}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div className={classes.textfield}>
                     
                     <small>
                     আপনার পূর্বের সংসারের সময়কাল কতো ছিলো, আপনার স্বামী কবে কীভাবে ইন্তেকাল করেছিলেন, ইত্যাদি সম্পর্কে লিখুন। 
@@ -195,29 +196,30 @@ const EditProfile = ({setOnEdit}) => {
                      
                       </small>
                       </div>
-                    
-                </div>
-                <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                    required
-                   
-                   
-                     fullWidth
-                     className={classes.textfield}
-                     multiline
-                     maxRows = "200"
-                     variant="outlined"
-                    
-                     label="আপনার সন্তান আছে?"
-                     id="divorcedCil"
-                     name="divorcedCil"
-                     value={divorcedCil}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    <div className={classes.textfield}>
+                
+             </div>
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>আপনার সন্তান আছে? *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="3"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="divorcedCil"
+                  name="divorcedCil"
+                  value={divorcedCil}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div className={classes.textfield}>
                     
                     <small>
                     যদি সন্তান থাকে, তাহলে সন্তানের বয়স কতো এবং বিয়ের পর সন্তানের সার্বিক দায়িত্ব কে নেবে, ইত্যাদি সম্পর্কেও লিখুন।
@@ -225,64 +227,64 @@ const EditProfile = ({setOnEdit}) => {
                      
                       </small>
                       </div>
-                    
-                </div>
+             </div>
+               
                   </div>:
                  auth.user.status==="বিপত্নীক"?
                  <div>
-                          <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                    required
-                   
+                   <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>পূর্বের সংসারের সময়কাল *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="4"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="divorcedC"
+                  name="divorcedC"
+                  value={divorcedC}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div className={classes.textfield}>
                     
-                     fullWidth
-                     className={classes.textfield}
-                     multiline
-                     maxRows = "200"
-                     variant="outlined"
-                    
-                     label="পূর্বের সংসারের সময়কাল"
-                     id="divorcedC"
-                     name="divorcedC"
-                     value={divorcedC}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    <div className={classes.textfield}>
-                    
-                    <small>
+                 <small>
                     আপনার পূর্বের সংসারের সময়কাল কতো ছিলো, আপনার স্ত্রী কবে কীভাবে ইন্তেকাল করেছিলেন, ইত্যাদি সম্পর্কে লিখুন। 
                       
                      
                       </small>
                       </div>
-                    
-                </div>
-                   
-                <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                    required
+                
+             </div>
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>আপনার সন্তান আছে? *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="3"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="divorcedCil"
+                  name="divorcedCil"
+                  value={divorcedCil}
+                  onChange={handleInput}
                   
-                    
-                     fullWidth
-                     className={classes.textfield}
-                     multiline
-                     maxRows = "200"
-                     variant="outlined"
-                    
-                     label="আপনার সন্তান আছে?"
-                     id="divorcedCil"
-                     name="divorcedCil"
-                     value={divorcedCil}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-
-                    <div className={classes.textfield}>
+                 />
+               
+                 </Grid>
+                 <div className={classes.textfield}>
                     
                     <small>
                     যদি সন্তান থাকে, তাহলে সন্তানের বয়স কতো এবং বিয়ের পর সন্তানের সার্বিক দায়িত্ব কে নেবে, ইত্যাদি সম্পর্কেও লিখুন।
@@ -290,8 +292,9 @@ const EditProfile = ({setOnEdit}) => {
                      
                       </small>
                       </div>
-                    
-                </div>
+             </div>
+                   
+               
                    </div>:
                 auth.user.status==="বিবাহিত"?
                   <div>
@@ -342,7 +345,7 @@ const EditProfile = ({setOnEdit}) => {
                      value={cWP}
                      onChange={handleInput}
                      >
-                       <option className='text-muted' value="" disabled selected>বয়স</option>
+                       <option className='text-muted' value="" disabled selected>স্ত্রীর অনুমতি</option>
                        <option value = "হ্যাঁ">হ্যাঁ</option>
                          <option value = "না">না</option>
                        
@@ -423,63 +426,66 @@ const EditProfile = ({setOnEdit}) => {
              
                
                 {mCilN==="১ জন"?
-                <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
-                  required
-                  multiline
-                  maxRows = "200"
-                  
-                   fullWidth
-                   className={classes.textfield}
+                  <div className="custom-form mt-4 mr-3 ml-1">
+                  <h6> সন্তান সম্পর্কে তথ্য দিন *</h6>
+                   <Grid container>
+                     <textarea
+                    
+                     rows="4"
+                      required
+                    
+                      className='textArea'
+                     
+                    
+                     
+        
+                      id="mCilInfo"
+                      name="mCilInfo"
+                      value={mCilInfo}
+                      onChange={handleInput}
+                      
+                     />
                    
-                   variant="outlined"
-                  
-                   label="সন্তান সম্পর্কে তথ্য দিন"
-                   id="mCilInfo"
-                   name="mCilInfo"
-                   value={mCilInfo}
-                   onChange={handleInput}
-                   
-                  />
-                  </Grid>
-                  <div className={classes.textfield}>
+                     </Grid>
+                     <div className={classes.textfield}>
                   
                   <small>
                   সন্তানের বয়স, পেশা, ইত্যাদি সম্পর্কে লিখুন।
                   </small>
                   </div>
-              </div>
+                 </div>
+               
                
                :
-
-               <div className="form mt-4 mr-3 ml-1">
-               <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
+<div className="custom-form mt-4 mr-3 ml-1">
+                  <h6> সন্তানদের সম্পর্কে তথ্য দিন *</h6>
+                   <Grid container>
+                     <textarea
+                    
+                     rows="4"
+                      required
+                    
+                      className='textArea'
+                     
+                    
+                     
+        
+                      id="mCilInfo"
+                      name="mCilInfo"
+                      value={mCilInfo}
+                      onChange={handleInput}
+                      
+                     />
+                   
+                     </Grid>
+                     <div className={classes.textfield}>
                   
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
-                 
-                  label="সন্তানদের সম্পর্কে তথ্য দিন"
-                  id="mCilInfo"
-                  name="mCilInfo"
-                  value={mCilInfo}
-                  onChange={handleInput}
-                  
-                 />
-                 </Grid>
-                 <div className={classes.textfield}>
-                 
-                 <small>
+                     <small>
                  সকল সন্তানের বয়স, পেশা, ইত্যাদি সম্পর্কে লিখুন।
                  </small>
+                  </div>
                  </div>
-             </div>
+              
                
                 } 
                 </div>:null}
@@ -512,26 +518,26 @@ const EditProfile = ({setOnEdit}) => {
                  </div>
               
                   </div>
-                  
-                  <div className="form mt-4 mr-3 ml-1">
+                  <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ে করবেন কেনো? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
-               
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                 <textarea
+                
+                 rows="3"
+                  required
+                
+                  className='textArea'
                  
-                  label="বিয়ে করবেন কেনো?"
+                
+                 
+    
                   id="marriageC"
                   name="marriageC"
                   value={marriageC}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
@@ -539,190 +545,192 @@ const EditProfile = ({setOnEdit}) => {
                 
                 {auth.user.gender==="পাত্রের বায়োডাটা"?
                 <div>
-                    <div className="form mt-4 mr-3 ml-1">
+                    <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ের পর স্ত্রীকে নিয়ে কোথায় থাকবেন? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="3"
+                  required
+                
+                  className='textArea'
                  
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                
                  
-                  label="বিয়ের পর স্ত্রীকে নিয়ে কোথায় থাকবেন?"
+    
                   id="fWR"
                   name="fWR"
                   value={fWR}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-                    <div className="form mt-4 mr-3 ml-1">
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ের পর স্ত্রীকে পরিপূর্ণ পর্দায় রাখতে পারবেন? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
                  
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                
                  
-                  label="বিয়ের পর স্ত্রীকে পরিপূর্ণ পর্দায় রাখতে পারবেন?"
+    
                   id="fWPorda"
                   name="fWPorda"
                   value={fWPorda}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-                    <div className="form mt-4 mr-3 ml-1">
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ের পর স্ত্রীকে চাকরি করার অনুমতি দেবেন? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
+                 <textarea
                 
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                 rows="2"
+                  required
+                
+                  className='textArea'
                  
-                  label="বিয়ের পর স্ত্রীকে চাকরি করার অনুমতি দেবেন?"
+                
+                 
+    
                   id="fWJob"
                   name="fWJob"
                   value={fWJob}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-                   
-                    <div className="form mt-4 mr-3 ml-1">
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ের পর স্ত্রীকে পড়াশোনা করার অনুমতি দেবেন? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
                  
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                
                  
-                  label="বিয়ের পর স্ত্রীকে পড়াশোনা করার অনুমতি দেবেন?"
+    
                   id="fWStudy"
                   name="fWStudy"
                   value={fWStudy}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-                    <div className="form mt-4 mr-3 ml-1">
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ে উপলক্ষে পাত্রীপক্ষ থেকে কোনো প্রকার উপহার কিংবা অর্থ আশা করবেন? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
                  
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                
                  
-                  label="বিয়ে উপলক্ষে পাত্রীপক্ষ থেকে কোনো প্রকার উপহার কিংবা অর্থ আশা করবেন?"
+    
                   id="marriageGift"
                   name="marriageGift"
                   value={marriageGift}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-                   
-                    
-                
-               
-                
-               
+                 
+            
                 </div>:null}
                 {auth.user.gender==="পাত্রীর বায়োডাটা"? 
                 <div>
-                       <div className="form mt-4 mr-3 ml-1">
+                   <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ের পর শ্বশুর-শ্বাশুড়ীর সাথে থাকতে ইচ্ছুক? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
                  
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                
                  
-                  label="বিয়ের পর শ্বশুর-শ্বাশুড়ীর সাথে থাকতে ইচ্ছুক?"
+    
                   id="mWKhedmot"
                   name="mWKhedmot"
                   value={mWKhedmot}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-                       <div className="form mt-4 mr-3 ml-1">
+                   <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ের পর চাকরি করতে ইচ্ছুক? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
-                  
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
                  
-                  label="বিয়ের পর চাকরি করতে ইচ্ছুক?"
+                
+                 
+    
                   id="mWJob"
                   name="mWJob"
                   value={mWJob}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-                       <div className="form mt-4 mr-3 ml-1">
+                   <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ের পর পড়াশোনা চালিয়ে যেতে চান? *</h6>
                <Grid container>
-                 <TextField
+                 <textarea
                 
-                 multiline
-                 maxRows = "200"
+                 rows="2"
+                  required
+                
+                  className='textArea'
                  
-                  
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                
                  
-                  label="বিয়ের পর পড়াশোনা চালিয়ে যেতে চান?"
+    
                   id="mWStudy"
                   name="mWStudy"
                   value={mWStudy}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                  <div className={classes.textfield}>
                     
@@ -731,37 +739,36 @@ const EditProfile = ({setOnEdit}) => {
                     </small>
                     </div>
              </div>
-                       <div className="form mt-4 mr-3 ml-1">
+                   <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বিয়ের মোহরানা সম্পর্কে আপনার ধারণা কী? *</h6>
                <Grid container>
-                 <TextField
-                 required
-                 multiline
-                 maxRows = "200"
-                  
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
                  
-                  label="বিয়ের মোহরানা সম্পর্কে আপনার ধারণা কী?"
+                
+                 
+    
                   id="mMohrana"
                   name="mMohrana"
                   value={mMohrana}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                  <div className={classes.textfield}>
                     
-                    <small>
+                 <small>
                     বিয়ের মোহরানা কেমন হওয়া উচিত, ইসলামে মোহরানার গুরুত্ত্ব, ইত্যাদি সম্পর্কে লিখুন।
                     </small>
                     </div>
              </div>
                     
-                  
-               
-                  
+                   
                 
                     </div> :null}
                 

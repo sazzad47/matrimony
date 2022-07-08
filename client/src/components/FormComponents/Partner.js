@@ -91,174 +91,216 @@ const EditProfile = ({setOnEdit}) => {
                 
 
                  <Typography style={{paddingTop:'20px'}} variant='h6' align='center'>আপনি যেমন জীবনসঙ্গী আশা করেন</Typography>  
-            <div className="form mt-4 mr-3 ml-1">
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বৈবাহিক অবস্থা *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="বৈবাহিক অবস্থা"
+                
+                 
+    
                   id="pStatus"
                   name="pStatus"
                   value={pStatus}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-            <div className="form mt-4 mr-3 ml-1">
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বয়স *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="বয়স"
+                
+                 
+    
                   id="pAge"
                   name="pAge"
                   value={pAge}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-            <div className="form mt-4 mr-3 ml-1">
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> বর্ণ *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="বর্ণ"
+                
+                 
+    
                   id="pColor"
                   name="pColor"
                   value={pColor}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-            <div className="form mt-4 mr-3 ml-1">
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> উচ্চতা *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="উচ্চতা"
+                
+                 
+    
                   id="pHeight"
                   name="pHeight"
                   value={pHeight}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-            <div className="form mt-4 mr-3 ml-1">
+         
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> ন্যূনতম শিক্ষাগত যোগ্যতা *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="ন্যূনতম শিক্ষাগত যোগ্যতা"
+                
+                 
+    
                   id="pEdu"
                   name="pEdu"
                   value={pEdu}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-            <div className="form mt-4 mr-3 ml-1">
+         
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> পেশা *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="পেশা"
+                
+                 
+    
                   id="pProf"
                   name="pProf"
                   value={pProf}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-            <div className="form mt-4 mr-3 ml-1">
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> পেশা *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="জেলা"
+                
+                 
+    
+                  id="pProf"
+                  name="pProf"
+                  value={pProf}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                
+             </div>
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> জেলা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
                   id="partDistrict"
                   name="partDistrict"
                   value={partDistrict}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
-            <div className="form mt-4 mr-3 ml-1">
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> অর্থনৈতিক অবস্থা *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 maxRows = "200"
+                 <textarea
+                
+                 rows="2"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="অর্থনৈতিক অবস্থা"
+                
+                 
+    
                   id="pEconomic"
                   name="pEconomic"
                   value={pEconomic}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>
+         
             <div className="custom-form mt-4 mr-3 ml-1">
               <h6> জান্নাতের সাথীর যে বৈশিষ্ট্য বা গুণাবলী আশা করেন *</h6>
                <Grid container>

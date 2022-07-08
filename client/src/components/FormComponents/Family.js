@@ -264,168 +264,184 @@ const EditProfile = ({setOnEdit}) => {
 
                 {brother==="ভাই নেই"? null
                 : brother==="১ জন"?
-                <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
-                   required
-                   fullWidth
-                   className={classes.textfield}
-                   multiline
-                   maxRows="200"
-                   variant="outlined"
-                  
-                   label="ভাই সম্পর্কে তথ্য"
-                   id="brotherInfo"
-                   name="brotherInfo"
-                   value={brotherInfo}
-                   onChange={handleInput}
-                   
-                  />
-                  </Grid>
-                  <div className={classes.textfield}>
-                  
-                  <small>
+                <div className="custom-form mt-4 mr-3 ml-1">
+                    <h6> ভাই সম্পর্কে তথ্য *</h6>
+                     <Grid container>
+                       <textarea
+                      
+                       rows="4"
+                        required
+                      
+                        className='textArea'
+                       
+                      
+                       
+          
+                        id="brotherInfo"
+                        name="brotherInfo"
+                        value={brotherInfo}
+                        onChange={handleInput}
+                        
+                       />
+                     
+                       </Grid>
+                       <div className={classes.textfield}>
+                      
+                       <small>
                   আপনার ভাইয়ের শিক্ষাগত যোগ্যতা, বৈবাহিক অবস্থা, পেশা, বর্তমান অবস্থান লিখুন।
                   </small>
-                  </div>
-                  
-              </div>
-                   
+                      </div>
+                   </div>
+               
                   
                     :
-                    <div className="form mt-4 mr-3 ml-1">
-                    <Grid container>
-                      <TextField
-                       required
-                       fullWidth
-                       className={classes.textfield}
-                       multiline
-                       maxRows="200"
-                       variant="outlined"
+                    <div className="custom-form mt-4 mr-3 ml-1">
+                    <h6> ভাইদের সম্পর্কে তথ্য *</h6>
+                     <Grid container>
+                       <textarea
                       
-                       label="ভাইদের সম্পর্কে তথ্য"
-                       id="brotherInfo"
-                       name="brotherInfo"
-                       value={brotherInfo}
-                       onChange={handleInput}
+                       rows="4"
+                        required
+                      
+                        className='textArea'
                        
-                      />
-                      </Grid>
-                      <div className={classes.textfield}>
+                      
+                       
+          
+                        id="brotherInfo"
+                        name="brotherInfo"
+                        value={brotherInfo}
+                        onChange={handleInput}
+                        
+                       />
+                     
+                       </Grid>
+                       <div className={classes.textfield}>
                       
                       <small>
                       সকল ভাইয়ের শিক্ষাগত যোগ্যতা, বৈবাহিক অবস্থা, পেশা, বর্তমান অবস্থান লিখুন।
                       </small>
                       </div>
-                      
-                  </div>
+                   </div>
+                   
                     
                 }
                 {sister==="বোন নেই"? null
                 : sister==="১ জন"?
-                <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
-                   required
-                   fullWidth
-                   className={classes.textfield}
-                   multiline
-                   maxRows="200"
-                   variant="outlined"
+                <div className="custom-form mt-4 mr-3 ml-1">
+                <h6> বোন সম্পর্কে তথ্য *</h6>
+                 <Grid container>
+                   <textarea
                   
-                   label="বোন সম্পর্কে তথ্য"
-                   id="sisterInfo"
-                   name="sisterInfo"
-                   value={sisterInfo}
-                   onChange={handleInput}
+                   rows="4"
+                    required
+                  
+                    className='textArea'
                    
-                  />
-                  </Grid>
-                  <div className={classes.textfield}>
                   
-                  <small>
+                   
+      
+                    id="sisterInfo"
+                    name="sisterInfo"
+                    value={sisterInfo}
+                    onChange={handleInput}
+                    
+                   />
+                 
+                   </Grid>
+                   <div className={classes.textfield}>
+                  
+                   <small>
                   আপনার বোনের শিক্ষাগত যোগ্যতা, বৈবাহিক অবস্থা, পেশা, বিবাহিত হলে স্বামীর পেশা লিখুন। 
                   </small>
                   </div>
-                  
-              </div>
+               </div>
+              
               
                 :
-                <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
-                   required
-                   fullWidth
-                   className={classes.textfield}
-                   multiline
-                   maxRows="200"
-                   variant="outlined"
+                <div className="custom-form mt-4 mr-3 ml-1">
+                <h6> বোনদের সম্পর্কে তথ্য *</h6>
+                 <Grid container>
+                   <textarea
                   
-                   label="বোনদের সম্পর্কে তথ্য"
-                   id="sisterInfo"
-                   name="sisterInfo"
-                   value={sisterInfo}
-                   onChange={handleInput}
+                   rows="4"
+                    required
+                  
+                    className='textArea'
                    
-                  />
-                  </Grid>
-                  <div className={classes.textfield}>
+                  
+                   
+      
+                    id="sisterInfo"
+                    name="sisterInfo"
+                    value={sisterInfo}
+                    onChange={handleInput}
+                    
+                   />
+                 
+                   </Grid>
+                   <div className={classes.textfield}>
                   
                   <small>
                   সকল বোনের শিক্ষাগত যোগ্যতা, বৈবাহিক অবস্থা, পেশা, বিবাহিত হলে স্বামীর পেশা লিখুন। 
                   </small>
                   </div>
-                  
-              </div>
+               </div>
+               
                 
                 }
-               <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
-                   
-                   fullWidth
-                   className={classes.textfield}
-                   multiline
-                   maxRows="200"
-                   variant="outlined"
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> চাচা মামাদের সম্পর্কে তথ্য *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="4"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="uncleInfo"
+                  name="uncleInfo"
+                  value={uncleInfo}
+                  onChange={handleInput}
                   
-                   label="চাচা মামাদের সম্পর্কে তথ্য"
-                   id="uncleInfo"
-                   name="uncleInfo"
-                   value={uncleInfo}
-                   onChange={handleInput}
-                   
-                  />
-                  </Grid>
-                  <div className={classes.textfield}>
+                 />
+               
+                 </Grid>
+                 <div className={classes.textfield}>
                   
                   <small>
                   জানাতে না চাইলে ঘরটি ফাঁকা রাখুন। 
                   </small>
                   </div>
+             </div>
+              
+              <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> পরিবারের অর্থনৈতিক ও সামাজিক অবস্থা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="3"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="familyStatus"
+                  name="familyStatus"
+                  value={familyStatus}
+                  onChange={handleInput}
                   
-              </div>
-               <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
-                   required
-                   fullWidth
-                   className={classes.textfield}
-                   multiline
-                   maxRows="200"
-                   variant="outlined"
-                  
-                   label="পরিবারের অর্থনৈতিক ও সামাজিক অবস্থা"
-                   id="familyStatus"
-                   name="familyStatus"
-                   value={familyStatus}
-                   onChange={handleInput}
-                   
-                  />
-                  </Grid>
-                  
-                  
-              </div>
+                 />
+               
+                 </Grid>
+                
+             </div>
                
 
                 

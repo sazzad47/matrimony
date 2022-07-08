@@ -66,6 +66,16 @@
     background-color:wheat;
     color:white;
   }
+  .contactReqSelect {
+  width: 100%;
+  min-height: 3.5rem;
+  border-radius: 3px;
+  text-indent: 10px;
+  }
+  .contactReqSelect:active, .contactReqSelect:hover, .contactReqSelect:focus {
+    border: 1px solid blueviolet;
+    outline:none;
+  }
   
 
 

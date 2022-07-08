@@ -113,22 +113,29 @@ const ApplicationForm = () => {
                   </Typography>
                 </Grid>
                 <Grid item xs = {6}>
-                  <TextField 
-                  select
-                  fullWidth
-                  variant="outlined"
-                  label="বায়োডাটার সংখ্যা"
-                  id="totalPrice"
-                  name="totalPrice"
-                  value={totalPrice} 
-                  onChange={(e) => {
-                    setTotalPrice(e.target.value) }} >
-                    <option value ="১০০">১</option>
+               
+                 <select
+                
+                 required
+                 className='contactReqSelect'
+                 
+                 id="totalPrice"
+                 name="totalPrice"
+                 value={totalPrice}
+                 onChange={(e) => {
+                  setTotalPrice(e.target.value) }}
+                 >
+                   <option className='text-muted' value="" disabled selected>বায়োডাটার সংখ্যা</option>
+                   <option value ="১০০">১</option>
                     <option value ="২০০">২</option> 
                     <option value ="৩০০">৩</option>
                     <option value ="৪০০" >৪</option>
                     <option value ="৫০০">৫</option> 
-                    </TextField>
+                   
+          
+                 </select>
+                 
+                
                 </Grid>
                 <Grid 
                 container 
