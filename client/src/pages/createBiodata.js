@@ -115,7 +115,7 @@ function CreateBiodata() {
         className={toggleState === 2 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(2)}
             >
-              <Typography>{auth.user.eduMedium?<i class="bi bi-check"></i>:null} শিক্ষাগত যোগ্যতা</Typography>
+              <Typography>{auth.user.eduMedium?<i class="bi bi-check"></i>:null} শিক্ষা</Typography>
            
             </Button>
         </Grid>
@@ -162,7 +162,7 @@ function CreateBiodata() {
         className={toggleState === 6 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(6)}
             >
-              <Typography>{auth.user.marriageC?<i class="bi bi-check"></i>:null} বিয়ে সংক্রান্ত তথ্য</Typography>
+              <Typography>{auth.user.marriageC?<i class="bi bi-check"></i>:null} বিয়ে</Typography>
         
             </Button>
         </Grid>

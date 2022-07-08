@@ -67,24 +67,27 @@ const EditProfile = () => {
             {/* something to add */}
              </div>
              <div className="col-md-6"> 
-             <Card elevation={6} style={{marginBottom:'20px'}}>
+             <Card elevation={6} style={{marginBottom:'2rem',margin:'2rem 1rem'}}>
              
            <Rules/>
               </Card>
-              <Grid style = {{ marginBottom:'1px'}} spacing={10} container alignItems='center' justifyContent='center'>
-                 <Grid item xs={6} sm={6} md={6} lg={6}>
-              <Card elevation={6}>
+              <Grid style = {{ marginBottom:'0.1rem'}} spacing={10} container alignItems='center' justifyContent='center'>
+                 <Grid  item xs={6} sm={6} md={6} lg={6}>
+              <Card style={{margin:'0 1rem'}} elevation={6}>
                     <Link style={{ textDecoration: 'none', color: 'white' }} to={`/biodatas/${auth.user._id}`}> <Button className={classes.tab} fullWidth > Preview </Button>
                     </Link>
                      </Card>
                      </Grid>
                      <Grid item xs={6} sm={6} md={6} lg={6}>
-                <Card elevation={6}>
+                <Card style={{margin:'0 1rem'}} elevation={6}>
                     <Publishbtn/>
                     </Card>
                     </Grid>
                      </Grid>
+                     <Grid style={{margin:'0 1rem'}}>
+
             <CreateBiodata/>
+                     </Grid>
            
                 
       
