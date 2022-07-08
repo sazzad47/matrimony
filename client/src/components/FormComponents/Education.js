@@ -5,6 +5,7 @@ import { checkImage } from '../../utils/imageUpload'
 import { GLOBALTYPES } from '../../redux/actions/globalTypes'
 import { updateProfileUser } from '../../redux/actions/profileAction'
 import { Button, Grid, makeStyles, TextField , InputLabel, FormControl} from '@material-ui/core'
+import { yearData } from './Data'
 
 const useStyles = makeStyles((theme)=>({
   textfield: {
@@ -111,7 +112,15 @@ const EditProfile = ({setOnEdit}) => {
     
     
     
-
+    const years = yearData.map((name) => (
+      <option
+        key={name}
+        value={name}
+        className="pl-3"
+      >
+        {name}
+      </option>
+    ))
      
     
 
@@ -126,141 +135,100 @@ const EditProfile = ({setOnEdit}) => {
         e.preventDefault()
         dispatch(updateProfileUser({userData, approval, auth}))
     }
-
+   
     return (
         <div className="edit_profile">
             
 
             <form onSubmit={handleSubmit}>
-                
-            <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                    
-                  <TextField
-                  select
-                  label="আপনি কোন মাধ্যমে পড়াশোনা করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
+            <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কোন মাধ্যমে পড়াশোনা করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="eduMedium"
-                  name="eduMedium"
-                  value={eduMedium}
-                  onChange={handleInput}
-                  >
-                 <option value="ক্বওমী মাদরাসা">ক্বওমী মাদরাসা</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="eduMedium"
+                 name="eduMedium"
+                 value={eduMedium}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>পড়াশোনার মাধ্যম</option>
+                   <option value="ক্বওমী মাদরাসা">ক্বওমী মাদরাসা</option>
                  <option value="আলিয়া মাদরাসা">আলিয়া মাদরাসা</option>
                  <option value="জেনারেল">জেনারেল</option>
-                  </TextField>
-                  
-                   </Grid>
-               
-                    
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-
-           
+              
+                  </div>
                 
+           
                {eduMedium==="ক্বওমী মাদরাসা"? 
                
                
                
                <div>
-                    <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                    
-                  <TextField
-                  select
-                  label="আপনি কি পূর্ণ হাফেয?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+
+                 <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি পূর্ণ হাফেয? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="hifz"
-                  name="hifz"
-                  value={hifz}
-                  onChange={handleInput}
-                  >
-                 <option value="হ্যাঁ">হ্যাঁ</option>
-                 <option value="না">না</option>
-                  </TextField>
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                   </Grid>
+                 id="hifz"
+                 name="hifz"
+                 value={hifz}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>হিফযুল কোরআন</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
+                   <option value="না">না</option>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
               
+                  </div>  
 
                {hifz==="হ্যাঁ"? <div>
-               <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
+               <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কতো সালে হিফয সম্পন্ন করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                   
-                  <TextField
-                  select
-                  label="কতো সালে হিফয সম্পন্ন করেছেন?"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
-                  
-                  id="hifzYear"
-                  name="hifzYear"
-                  value={hifzYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-                 
-                   </Grid>
-                 </div>
-                    
+                 <select
                 
-               
+                 required
+                 className='formSelect'
+                 
+                 id="hifzYear"
+                 name="hifzYear"
+                 value={hifzYear}
+                 onChange={handleInput} 
+                 >
+                   <option className='text-muted' value="" disabled selected>হিফযের সাল</option>
+                   {years}
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+              
                  <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
@@ -282,100 +250,63 @@ const EditProfile = ({setOnEdit}) => {
               
                    </div>
                   :null}
-              <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                 
-                   
-                  <TextField
-                  select
-                  label="আপনি কি তাকমিল পাশ করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  id="takmil"
-                  name="takmil"
-                  value={takmil}
-                  onChange={handleInput}
-                  >
-                 <option value="হ্যাঁ">হ্যাঁ</option>
-                 <option value="না">না</option>
-                  </TextField>
-                 
-                   </Grid>
-                 </div>
-                    
+                   <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি তাকমিল পাশ করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
                 
+                 required
+                 className='formSelect'
+                 
+                 id="takmil"
+                 name="takmil"
+                 value={takmil}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>তাকমিল</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
+                   <option value="না">না</option>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
               
-              
+                  </div>
+         
 
                
                {takmil==="হ্যাঁ"? <div>
+               <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কতো সালে তাকমিল পাশ করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
 
-               <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                
-                   
-                  <TextField
-                  select
-                  label="কতো সালে তাকমিল পাশ করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
                   
-                  id="takmilYear"
-                  name="takmilYear"
-                  value={takmilYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
+                 <select
                 
-                   </Grid>
+                 required
+                 className='formSelect'
+                 
+                 id="takmilYear"
+                 name="takmilYear"
+                 value={takmilYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>তাকমিল পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-               
+              
+                  </div>
+
+         
                
                  <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
@@ -395,64 +326,62 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-              
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="তাকমিলের ফলাফল"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>তাকমিলের ফলাফল *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="takmilResult"
-                  name="takmilResult"
-                  value={takmilResult}
-                  onChange={handleInput}
-                  >
-                       <option value = "মুমতায (স্টার মার্ক)">মুমতায (স্টার মার্ক)</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="takmilResult"
+                 name="takmilResult"
+                 value={takmilResult}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>তাকমিলের ফলাফল</option>
+                   <option value = "মুমতায (স্টার মার্ক)">মুমতায (স্টার মার্ক)</option>
                        <option value = "জায়্যিদ জিদ্দান (প্রথম বিভাগ)">জায়্যিদ জিদ্দান (প্রথম বিভাগ)</option>
                        <option value = "জায়্যিদ (দ্বিতীয় বিভাগ)">জায়্যিদ (দ্বিতীয় বিভাগ)</option>
                        <option value = "মাকবুল (তৃতীয় বিভাগ)">মাকবুল (তৃতীয় বিভাগ)</option>
-                  </TextField>
-                
-                   </Grid>
-                 </div>
-                    
-                
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
                    
-                   
-                  <TextField
-                  select
-                  label="আপনি কি তাখাস্সুস সম্পন্ন করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  
-                  id="takhassus"
-                  name="takhassus"
-                  value={takhassus}
-                  onChange={handleInput}
-                  >
-                 <option value="হ্যাঁ">হ্যাঁ</option>
-                 <option value="না">না</option>
-                  </TextField>
-                  
-                   </Grid>
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
               
+                  </div>
+              
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি তাখাস্সুস সম্পন্ন করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
 
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="takhassus"
+                 name="takhassus"
+                 value={takhassus}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>তাখাস্সুস</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
+                 <option value="না">না</option>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
               
+                  </div>
+           
 
               {takhassus==="হ্যাঁ"? <div>
               <div className="form mt-4 mr-3 ml-1">
@@ -473,70 +402,32 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-               
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="কতো সালে তাখাস্সুস সম্পন্ন করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কতো সালে তাখাস্সুস সম্পন্ন করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="takhassusYear"
-                  name="takhassusYear"
-                  value={takhassusYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                   </Grid>
+                 id="takhassusYear"
+                 name="takhassusYear"
+                 value={takhassusYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>তাখাস্সুস পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
               
-              
+                  </div>
+      
                  <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
@@ -555,87 +446,97 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                 
-                   
-                  <TextField
-                  select
-                  label="তাখাস্সুসের ফলাফল"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>তাখাস্সুসের ফলাফল *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="takhassusResult"
-                  name="takhassusResult"
-                  value={takhassusResult}
-                  onChange={handleInput}
-                  >
-                       <option value = "মুমতায (স্টার মার্ক)">মুমতায (স্টার মার্ক)</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="takhassusResult"
+                 name="takhassusResult"
+                 value={takhassusResult}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>তাখাস্সুসের ফলাফল</option>
+                   <option value = "মুমতায (স্টার মার্ক)">মুমতায (স্টার মার্ক)</option>
                        <option value = "জায়্যিদ জিদ্দান (প্রথম বিভাগ)">জায়্যিদ জিদ্দান (প্রথম বিভাগ)</option>
                        <option value = "জায়্যিদ (দ্বিতীয় বিভাগ)">জায়্যিদ (দ্বিতীয় বিভাগ)</option>
                        <option value = "মাকবুল (তৃতীয় বিভাগ)">মাকবুল (তৃতীয় বিভাগ)</option>
-                  </TextField>
-                  
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
               
-                 <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
-                    
-                    <small>
-                    উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
-                    </small>
-                    </div>
-                </div>
-               
-
-               </div>
-               : 
-               <div className="form mt-4 mr-3 ml-1">
+                  </div>
+              
+                  <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
                <Grid container>
-                 <TextField                
-                  fullWidth
-                  multiline
-                  maxRows = {200}
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  label="অন্যান্য শিক্ষাগত যোগ্যতা"
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
                   id="story"
                   name="story"
                   value={story}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
-                <div  className={classes.textfield}>                
+                 <div  className={classes.textfield}>
+                    
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
+                
              </div>
+               
+
+               </div>
+               : 
+               <div className="custom-form mt-4 mr-3 ml-1">
+               <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+                <Grid container>
+                  <textarea
+                 
+                  rows="8"
+                   required
+                 
+                   className='textArea'
+                  
+                 
+                  
+     
+                   id="story"
+                   name="story"
+                   value={story}
+                   onChange={handleInput}
+                   
+                  />
+                
+                  </Grid>
+                  <div  className={classes.textfield}>
+                     
+                     <small>
+                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
+                     </small>
+                     </div>
+                 
+              </div>
                
                
                }
@@ -651,7 +552,7 @@ const EditProfile = ({setOnEdit}) => {
                      className={classes.textfield}
                      variant="outlined"
                     
-                     label="কোন বর্ষ পর্যন্ত পড়েছেন?"
+                     label="কোন বর্ষ (জামাত) পর্যন্ত পড়েছেন?"
                      id="takmilJamat"
                      name="takmilJamat"
                      value={takmilJamat}
@@ -663,31 +564,35 @@ const EditProfile = ({setOnEdit}) => {
                    
                 </div>
                  
-               <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+                <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
                </div>
                 :null
                }
@@ -702,98 +607,60 @@ const EditProfile = ({setOnEdit}) => {
               
 
               <div>
-                   <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="আপনি কি পূর্ণ হাফেয?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                 <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি পূর্ণ হাফেয? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="aliaHifz"
-                  name="aliaHifz"
-                  value={aliaHifz}
-                  onChange={handleInput}
-                  >
-                 <option value="হ্যাঁ">হ্যাঁ</option>
-                 <option value="না">না</option>
-                  </TextField>
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                   </Grid>
+                 id="aliaHifz"
+                 name="aliaHifz"
+                 value={aliaHifz}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>হিফযুল কোরআন</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
+                   <option value="না">না</option>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
-             
+              
+                  </div>  
+                
 
                 {aliaHifz==="হ্যাঁ"? <div>
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কতো সালে হিফয সম্পন্ন করেছেন?শ *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                    
-                  <TextField
-                  select
-                  label="কতো সালে হিফয সম্পন্ন করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  
-                  id="aliaHifzYear"
-                  name="aliaHifzYear"
-                  value={aliaHifzYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                   </Grid>
+                 id="aliaHifzYear"
+                 name="aliaHifzYear"
+                 value={aliaHifzYear}
+                 onChange={handleInput} 
+                 >
+                   <option className='text-muted' value="" disabled selected>হিফযের সাল</option>
+                   {years}
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
-                
+              
+                  </div>
+             
                  <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
@@ -815,348 +682,257 @@ const EditProfile = ({setOnEdit}) => {
                 
                     </div>
                    :null}
+                      <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি দাখিল পাশ করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                  
-                    
-                  <TextField
-                  select
-                  label="আপনি কি দাখিল পাশ করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  
-                  id="dakhil"
-                  name="dakhil"
-                  value={dakhil}
-                  onChange={handleInput}
-                  >
-                 <option value="হ্যাঁ">হ্যাঁ</option>
+                 id="dakhil"
+                 name="dakhil"
+                 value={dakhil}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>দাখিল</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                  <option value="না">না</option>
-                  </TextField>
-                  
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
-                
-
-
-                
+              
+                  </div>
+            
                 {dakhil==="হ্যাঁ"? <div>
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="দাখিলের ফলাফল"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>দাখিলের ফলাফল *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="dakhilResult"
-                  name="dakhilResult"
-                  value={dakhilResult}
-                  onChange={handleInput}
-                  >
-                      <option value = "Golden A+">Golden A+</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="dakhilResult"
+                 name="dakhilResult"
+                 value={dakhilResult}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>দাখিলের ফলাফল</option>
+                   <option value = "Golden A+">Golden A+</option>
                        <option value = "A+">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
                         <option value = "C">C</option>
                         <option value = "D">D</option>
-                  </TextField>
-                 
-                   </Grid>
-                 </div>
-                    
-                
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                  
                    
-                  <TextField
-                  select
-                  label="দাখিলের বিভাগ"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>দাখিলের বিভাগ *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="dakhilGroup"
-                  name="dakhilGroup"
-                  value={dakhilGroup}
-                  onChange={handleInput}
-                  >
-                      
-                        <option value ="বিজ্ঞান">বিজ্ঞান</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="dakhilGroup"
+                 name="dakhilGroup"
+                 value={dakhilGroup}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>দাখিলের বিভাগ</option>
+                   <option value ="বিজ্ঞান">বিজ্ঞান</option>
                         <option value ="মানবিক">মানবিক</option>
                         <option value ="ব্যবসা">ব্যবসা</option>
-                  </TextField>
-                 
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
-                
-                
-               
-            
-                 
-                 
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="দাখিল পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>দাখিল পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="dakhilYear"
-                  name="dakhilYear"
-                  value={dakhilYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-                  
-                   </Grid>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="dakhilYear"
+                 name="dakhilYear"
+                 value={dakhilYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>দাখিল পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
-                
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি আলিম পাশ করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                   
-                  <TextField
-                  select
-                  label="আপনি কি আলিম পাশ করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  
-                  id="alim"
-                  name="alim"
-                  value={alim}
-                  onChange={handleInput}
-                  >
-                <option value="হ্যাঁ">হ্যাঁ</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="alim"
+                 name="alim"
+                 value={alim}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>আলিম</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                 <option value="আলিম পড়ছি, এখনো শেষ হয়নি।">আলিম পড়ছি, এখনো শেষ হয়নি।</option>
                 <option value="দাখিলের পর আর পড়িনি।">দাখিলের পর আর পড়িনি।</option>
-                  </TextField>
-                  
-                   </Grid>
-                 </div>
-                    
-               
-               
-               
-
-               {alim==="হ্যাঁ"? <div>
-               <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
                    
-                    
-                  <TextField
-                  select
-                  label="আলিমের ফলাফল"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+               
+               {alim==="হ্যাঁ"? <div>
+               <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আলিমের ফলাফল *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="alimResult"
-                  name="alimResult"
-                  value={alimResult}
-                  onChange={handleInput}
-                  >
-                      <option value = "Golden A+">Golden A+</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="alimResult"
+                 name="alimResult"
+                 value={alimResult}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>আলিমের ফলাফল</option>
+                   <option value = "Golden A+">Golden A+</option>
                       <option value = "A+">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
                         <option value = "C">C</option>
                         <option value = "D">D</option>
-                  </TextField>
-                
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
-            
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="আলিমের বিভাগ"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আলিমের বিভাগ *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="alimGroup"
-                  name="alimGroup"
-                  value={alimGroup}
-                  onChange={handleInput}
-                  >
-                      
-                        <option value ="বিজ্ঞান">বিজ্ঞান</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="alimGroup"
+                 name="alimGroup"
+                 value={alimGroup}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>আলিমের বিভাগ</option>
+                   <option value ="বিজ্ঞান">বিজ্ঞান</option>
                         <option value ="মানবিক">মানবিক</option>
                         <option value ="ব্যবসা">ব্যবসা</option>
-                  </TextField>
-                
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
-                
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="আলিম পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আলিম পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="alimYear"
-                  name="alimYear"
-                  value={alimYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                   </Grid>
+                 id="alimYear"
+                 name="alimYear"
+                 value={alimYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>আলিম পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                 
-                   
-                  <TextField
-                  select
-                  label= "আপনি কি ফাযিল পাশ করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি ফাযিল পাশ করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="fazil"
-                  name="fazil"
-                  value={fazil}
-                  onChange={handleInput}
-                  >
-                 <option value="হ্যাঁ">হ্যাঁ</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="fazil"
+                 name="fazil"
+                 value={fazil}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>ফাযিল</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                  <option value="ফাযিল পড়ছি, এখনো শেষ হয়নি।">ফাযিল পড়ছি, এখনো শেষ হয়নি।</option>
                  <option value="আলিমের পর আর পড়িনি।">আলিমের পর আর পড়িনি।</option>
-                  </TextField>
-                
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-               
               
+                  </div>
+           
                   
               {fazil==="হ্যাঁ"?
               <div>
@@ -1178,96 +954,59 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-              
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="ফাযিল পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>ফাযিল পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="fazilYear"
-                  name="fazilYear"
-                  value={fazilYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-              
-                   </Grid>
-                 </div>
-                    
+                 <select
                 
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
+                 required
+                 className='formSelect'
+                 
+                 id="fazilYear"
+                 name="fazilYear"
+                 value={fazilYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>ফাযিল পাসের সন</option>
+                   {years}
                    
-                    
-                  <TextField
-                  select
-                  label="আপনি কি কামিল পাশ করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি কামিল পাশ করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="kamil"
-                  name="kamil"
-                  value={kamil}
-                  onChange={handleInput}
-                  >
-                 <option value="হ্যাঁ">হ্যাঁ</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="kamil"
+                 name="kamil"
+                 value={kamil}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>কামিল</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                  <option value="কামিল পড়ছি, এখনো শেষ হয়নি।">কামিল পড়ছি, এখনো শেষ হয়নি।</option>
                  <option value="ফাযিলের পর আর পড়িনি।">ফাযিলের পর আর পড়িনি।</option>
-                  </TextField>
-                  
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
+              
+                  </div>
+             
               
                 {kamil==="হ্যাঁ"? 
                 <div>
@@ -1289,69 +1028,32 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-            
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="কামিল পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কামিল পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="kamilYear"
-                  name="kamilYear"
-                  value={kamilYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                   </Grid>
+                 id="kamilYear"
+                 name="kamilYear"
+                 value={kamilYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>কামিল পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
+              
+                  </div>
+            
                  <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
@@ -1375,31 +1077,33 @@ const EditProfile = ({setOnEdit}) => {
               </div>:
               
               kamil==="কামিল পড়ছি, এখনো শেষ হয়নি।"? <div>
-               <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কোন বর্ষে পড়ছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  <TextField
-                  select
-                  label="কোন বর্ষে পড়ছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
-                  
-                  id="kamilJamat"
-                  name="kamilJamat"
-                  value={kamilJamat}
-                  onChange={handleInput}
-                  >
-                 <option value ="প্রথম বর্ষ">প্রথম বর্ষ</option>
-                 <option value ="দ্বিতীয় বর্ষ">দ্বিতীয় বর্ষ</option>
-                  </TextField>
-                 
-                   </Grid>
-                 </div>
-                    
+                 <select
                 
+                 required
+                 className='formSelect'
+                 
+                 id="kamilJamat"
+                 name="kamilJamat"
+                 value={kamilJamat}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>বর্ষ</option>
+                   <option value ="প্রথম বর্ষ">প্রথম বর্ষ</option>
+                 <option value ="দ্বিতীয় বর্ষ">দ্বিতীয় বর্ষ</option>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+            
                  <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
@@ -1443,33 +1147,34 @@ const EditProfile = ({setOnEdit}) => {
               </div>:null
                 }
               </div>:fazil==="ফাযিল পড়ছি, এখনো শেষ হয়নি।"? <div>
-              <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                    
-                  <TextField
-                  select
-                  label="কোন বর্ষে পড়ছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+              <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কোন বর্ষে পড়ছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="fazilJamat"
-                  name="fazilJamat"
-                  value={fazilJamat}
-                  onChange={handleInput}
-                  >
-                 <option value ="প্রথম বর্ষ">প্রথম বর্ষ</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="fazilJamat"
+                 name="fazilJamat"
+                 value={fazilJamat}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>বর্ষ</option>
+                   <option value ="প্রথম বর্ষ">প্রথম বর্ষ</option>
                  <option value ="দ্বিতীয় বর্ষ">দ্বিতীয় বর্ষ</option>
                  <option value = "তৃতীয় বর্ষ">তৃতীয় বর্ষ</option>
-                  </TextField>
-                 
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-               
+              
+                  </div>
+            
                  <div className="form mt-4 mr-3 ml-1">
                  <Grid container>
                     <TextField
@@ -1494,146 +1199,156 @@ const EditProfile = ({setOnEdit}) => {
 
 
 
-              <div className="form mt-4 mr-3 ml-1">
-                    <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+              <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
-
+                
+             </div>
                 </div>
                 :alim==="আলিম পড়ছি, এখনো শেষ হয়নি।"? 
                 <div>
-                     <div className="custom-form mt-4 mr-3 ml-1">
-                    
-                     <Grid container>
-                   
-                  <TextField
-                  select
-                  label="কোন বর্ষে পড়ছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                    <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কোন বর্ষে পড়ছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="alimJamat"
-                  name="alimJamat"
-                  value={alimJamat}
-                  onChange={handleInput}
-                  >
-                 <option value ="প্রথম বর্ষ">প্রথম বর্ষ</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="alimJamat"
+                 name="alimJamat"
+                 value={alimJamat}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>বর্ষ</option>
+                   <option value ="প্রথম বর্ষ">প্রথম বর্ষ</option>
                  <option value ="দ্বিতীয় বর্ষ">দ্বিতীয় বর্ষ</option>
-                  </TextField>
-                
-                   </Grid>
-                 </div>
-                    
-                
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
                    
-                    
-                  <TextField
-                  select
-                  label="আলিমের বিভাগ"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
                  
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আলিমের বিভাগ *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="alimGroup"
-                  name="alimGroup"
-                  value={alimGroup}
-                  onChange={handleInput}
-                  >
-                      
-                        <option value ="বিজ্ঞান">বিজ্ঞান</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="alimGroup"
+                 name="alimGroup"
+                 value={alimGroup}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>আলিমের বিভাগ</option>
+                   <option value ="বিজ্ঞান">বিজ্ঞান</option>
                         <option value ="মানবিক">মানবিক</option>
                         <option value ="ব্যবসা">ব্যবসা</option>
-                  </TextField>
-                 
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
+              
+                  </div>
                 
+                  <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
                 
-                 <div className="form mt-4 mr-3 ml-1">
-                    <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
 
                 </div>:
                 alim==="দাখিলের পর আর পড়িনি।"?
                 <div>
                     
-                    <div className="form mt-4 mr-3 ml-1">
-                    <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+                    <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
-
+                
+             </div>
                 </div>:null 
                 
                 
@@ -1641,25 +1356,24 @@ const EditProfile = ({setOnEdit}) => {
                  </div>
                   : dakhil==="না"?
                  <div>
-                      <div className="custom-form mt-4 mr-3 ml-1">
-                      <Grid container>
+                    <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কোন শ্রেণী পর্যন্ত পড়েছেন? *</h6> 
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                    
-                  <TextField
-                  select
-                  label="কোন ক্লাস পর্যন্ত পড়েছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  
-                  id="dakhilJamat"
-                  name="dakhilJamat"
-                  value={dakhilJamat}
-                  onChange={handleInput}
-                  >
-                        <option value="১০ম">১০ম</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="dakhilJamat"
+                 name="dakhilJamat"
+                 value={dakhilJamat}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>শ্রেণী</option>
+                   <option value="১০ম">১০ম</option>
                         <option value="৯ম">৯ম</option>
                         <option value="৮ম">৮ম</option>
                         <option value="৭ম">৭ম</option>
@@ -1669,41 +1383,44 @@ const EditProfile = ({setOnEdit}) => {
                         <option value="৩য়">৩য়</option>
                         <option value="২য়">২য়</option>
                         <option value="১ম">১ম</option>
-                  </TextField>
-                  
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
               
+                  </div>
+                 
+                
+                  <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
                
-                
-                
-                 <div className="form mt-4 mr-3 ml-1">
-                    <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
                 </div>
                  :null
                 }
@@ -1713,351 +1430,266 @@ const EditProfile = ({setOnEdit}) => {
                 
                 : eduMedium==="জেনারেল"? 
                 <div>
-               <div className="custom-form mt-4 mr-3 ml-1">
-                  <Grid container>
-                
-                   
-                  <TextField
-                  select
-                  label="আপনি কি এসএসসি পাশ করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  
-                  id="ssc"
-                  name="ssc"
-                  value={ssc}
-                  onChange={handleInput}
-                  >
-                 <option value="হ্যাঁ">হ্যাঁ</option>
-                 <option value="না">না</option>
-                  </TextField>
-                
-                   </Grid>
-                 </div>
-                    
-                
-               
+                    <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি এসএসসি পাশ করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
 
-             
-             {ssc==="হ্যাঁ"? <div>
-             <div className="custom-form mt-4 mr-3 ml-1">
-                    <Grid container>
-                
-                   
-                  <TextField
-                  select
-                  label="এসএসসির ফলাফল"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
                   
-                  id="sscResult"
-                  name="sscResult"
-                  value={sscResult}
-                  onChange={handleInput}
-                  >
-                      <option value = "Golden A+">Golden A+</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="ssc"
+                 name="ssc"
+                 value={ssc}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এসএসসি</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
+                 <option value="না">না</option>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+            
+             {ssc==="হ্যাঁ"? <div>
+             <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>এসএসসির ফলাফল *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="sscResult"
+                 name="sscResult"
+                 value={sscResult}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এসএসসির ফলাফল</option>
+                   <option value = "Golden A+">Golden A+</option>
                        <option value = "A+">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
                         <option value = "C">C</option>
                         <option value = "D">D</option>
-                  </TextField>
-                
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>এসএসসির বিভাগ *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                    
-                  <TextField
-                  select
-                  label="এসএসসির বিভাগ"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  
-                  id="sscGroup"
-                  name="sscGroup"
-                  value={sscGroup}
-                  onChange={handleInput}
-                  >
-                      
-                        <option value ="বিজ্ঞান">বিজ্ঞান</option>
+                 id="sscGroup"
+                 name="sscGroup"
+                 value={sscGroup}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এসএসসির বিভাগ</option>
+                   <option value ="বিজ্ঞান">বিজ্ঞান</option>
                         <option value ="মানবিক">মানবিক</option>
                         <option value ="ব্যবসা">ব্যবসা</option>
                         <option value ="কারিগরি">কারিগরি</option>
-                  </TextField>
-                 
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
+              
+                  </div>
                 
-            
-             
-            
-         
-              
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>এসএসসি পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="sscYear"
+                 name="sscYear"
+                 value={sscYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এসএসসি পাসের সন</option>
+                   {years}
                    
-                  
-                  <TextField
-                  select
-                  label="এসএসসি পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
-                  
-                  id="sscYear"
-                  name="sscYear"
-                  value={sscYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-                 
-                   </Grid>
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
               
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="আপনি কি এইচএসসি পাশ করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি এইচএসসি পাশ করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="hsc"
-                  name="hsc"
-                  value={hsc}
-                  onChange={handleInput}
-                  >
-                     <option value="হ্যাঁ">হ্যাঁ</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="hsc"
+                 name="hsc"
+                 value={hsc}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এইচএসসি</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                      <option value="এইচএসসি পড়ছি, এখনো শেষ হয়নি।">এইচএসসি পড়ছি, এখনো শেষ হয়নি।</option>
                      <option value="ডিপ্লোমা পড়ছি, এখনো শেষ হয়নি।">ডিপ্লোমা পড়ছি, এখনো শেষ হয়নি।</option> 
                      <option value="ডিপ্লোমা সম্পন্ন করেছি।">ডিপ্লোমা সম্পন্ন করেছি।</option>
                      <option value="এসএসসির পর আর পড়িনি।">এসএসসির পর আর পড়িনি।</option>
-                  </TextField>
-                 
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
+              
+                  </div>
                
 
-         
-
             {hsc==="হ্যাঁ"? <div>
-            <div className="custom-form mt-4 mr-3 ml-1">
-                  <Grid container>
+            <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>এইচএসসির ফলাফল *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                    
-                  <TextField
-                  select
-                  label="এইচএসসির ফলাফল"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  
-                  id="hscResult"
-                  name="hscResult"
-                  value={hscResult}
-                  onChange={handleInput}
-                  >
-                      <option value = "Golden A+">Golden A+</option>
+                 id="hscResult"
+                 name="hscResult"
+                 value={hscResult}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এইচএসসির ফলাফল</option>
+                   <option value = "Golden A+">Golden A+</option>
                         <option value = "A+">A+</option>
                         <option value = "A">A</option>
                         <option value = "A-">A-</option>
                         <option value = "B">B</option>
                         <option value = "C">C</option>
                         <option value = "D">D</option>
-                  </TextField>
-                  
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
-           
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="এইচএসসির বিভাগ"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+              
+                  </div>
+        
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>এইচএসসির বিভাগ *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="hscGroup"
-                  name="hscGroup"
-                  value={hscGroup}
-                  onChange={handleInput}
-                  >
-                      
-                        <option value ="বিজ্ঞান">বিজ্ঞান</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="hscGroup"
+                 name="hscGroup"
+                 value={hscGroup}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এইচএসসির বিভাগ</option>
+                   <option value ="বিজ্ঞান">বিজ্ঞান</option>
                         <option value ="মানবিক">মানবিক</option>
                         <option value ="ব্যবসা">ব্যবসা</option>
                         <option value ="কারিগরি">কারিগরি</option>
-                  </TextField>
-                  
-                   </Grid>
-                 </div>
-                    
-                 
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
                    
-                   
-                  <TextField
-                   select
-                   label="এইচএসসি পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
-                  
-                  id="hscYear"
-                  name="hscYear"
-                  value={hscYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-               
-                   </Grid>
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>এইচএসসি পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                    
-                  <TextField
-                  select
-                  label="আপনি কি অনার্স সম্পন্ন করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  id="honors"
-                  name="honors"
-                  value={honors}
-                  onChange={handleInput}
-                  >
-                     <option value="হ্যাঁ">হ্যাঁ</option>
+                 id="hscYear"
+                 name="hscYear"
+                 value={hscYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এইচএসসি পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি অনার্স সম্পন্ন করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="honors"
+                 name="honors"
+                 value={honors}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>অনার্স</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                      <option value="অনার্স পড়ছি, এখনো শেষ হয়নি।">অনার্স পড়ছি, এখনো শেষ হয়নি।</option>
                      <option value="ডিগ্রী পড়ছি, এখনো শেষ হয়নি।">ডিগ্রী পড়ছি, এখনো শেষ হয়নি।</option>
                      <option value="ডিগ্রী সম্পন্ন করেছি।">ডিগ্রী সম্পন্ন করেছি।</option>
                      <option value="না, এইচএসসির পর আর পড়িনি।">না, এইচএসসির পর আর পড়িনি।</option>
-                  </TextField>
-                 
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
-               
+              
+                  </div>
+             
        
            {honors==="হ্যাঁ"?
            <div>
@@ -2098,100 +1730,63 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-           
-                <div className="custom-form mt-4 mr-3 ml-1">
-                <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="অনার্স পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>অনার্স পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  
-                  id="honorsYear"
-                  name="honorsYear"
-                  value={honorsYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-                  
-                   </Grid>
+                 id="honorsYear"
+                 name="honorsYear"
+                 value={honorsYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>অনার্স পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি মাস্টার্স সম্পন্ন করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
-                  
-                    
-                  <TextField
-                   select
-                   label="আপনি কি মাস্টার্স সম্পন্ন করেছেন?"
-                   fullWidth
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  
-                  id="masters"
-                  name="masters"
-                  value={masters}
-                  onChange={handleInput}
-                  >
-                     <option value="হ্যাঁ">হ্যাঁ</option>
+                 id="masters"
+                 name="masters"
+                 value={masters}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>মাস্টার্স</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                      <option value="পড়ছি, এখনো শেষ হয়নি।">পড়ছি, এখনো শেষ হয়নি।</option>
                      <option value="না, অনার্সের পর আর পড়িনি।">না, অনার্সের পর আর পড়িনি।</option>
-                  </TextField>
-                
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
-             
+              
+                  </div>
+               
              {masters==="হ্যাঁ"? 
              <div>
+
+              
                   <div className="form mt-4 mr-3 ml-1">
                   <Grid container>
                     <TextField
@@ -2229,70 +1824,31 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-           
-                <div className="custom-form mt-4 mr-3 ml-1">
-                <Grid container>
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>মাস্টার্স পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                   
-                  <TextField
-                   select
-                   label="মাস্টার্স পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
-                  
-                  id="mastersYear"
-                  name="mastersYear"
-                  value={mastersYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
+                 <select
                 
-                   </Grid>
-                 </div>
-                    
+                 required
+                 className='formSelect'
                  
-           
+                 id="mastersYear"
+                 name="mastersYear"
+                 value={mastersYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>মাস্টার্স পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
              
              
            </div>:
@@ -2440,99 +1996,59 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-           
-                <div className="custom-form mt-4 mr-3 ml-1">
-                <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="ডিগ্রী পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>ডিগ্রী পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="honorsYear"
-                  name="honorsYear"
-                  value={honorsYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-               
-                   </Grid>
-                 </div>
-                    
+                 <select
                 
-           
-           
-            
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
-                  
+                 required
+                 className='formSelect'
+                 
+                 id="honorsYear"
+                 name="honorsYear"
+                 value={honorsYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>ডিগ্রী পাসের সন</option>
+                   {years}
                    
-                  <TextField
-                  select
-                  label="আপনি কি মাস্টার্স সম্পন্ন করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি মাস্টার্স সম্পন্ন করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="masters"
-                  name="masters"
-                  value={masters}
-                  onChange={handleInput}
-                  >
-                     <option value="হ্যাঁ">হ্যাঁ</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="masters"
+                 name="masters"
+                 value={masters}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>মাস্টার্স</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                      <option value="পড়ছি, এখনো শেষ হয়নি।">পড়ছি, এখনো শেষ হয়নি।</option>
                      <option value="না, ডিগ্রীর পর আর পড়িনি।">না, ডিগ্রীর পর আর পড়িনি।</option>
-                  </TextField>
-                
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                
+              
+                  </div>
+            
              
              {masters==="হ্যাঁ"? 
              <div>
@@ -2574,66 +2090,31 @@ const EditProfile = ({setOnEdit}) => {
                    
                 </div>
            
-                <div className="custom-form mt-4 mr-3 ml-1">
-                <Grid container>
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>মাস্টার্স পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                   
-                  <TextField
-                   select
-                   label="মাস্টার্স পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  
-                  id="mastersYear"
-                  name="mastersYear"
-                  value={mastersYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-               
-                   </Grid>
+                 id="mastersYear"
+                 name="mastersYear"
+                 value={mastersYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>মাস্টার্স পাসের সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
+              
+                  </div>
                     
                  
            </div>:
@@ -2744,118 +2225,123 @@ const EditProfile = ({setOnEdit}) => {
 
 
              
-           <div className="form mt-4 mr-3 ml-1">
-                   <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+           <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
 
 
              </div>
              :hsc==="এইচএসসি পড়ছি, এখনো শেষ হয়নি।"? 
              <div>
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
-                 
-                   
-                  <TextField
-                   select
-                   label="কোন বর্ষে পড়ছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                 
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কোন বর্ষে পড়ছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="hscJamat"
-                  name="hscJamat"
-                  value={hscJamat}
-                  onChange={handleInput}
-                  >
-                 <option value ="প্রথম বর্ষ">প্রথম বর্ষ</option>
-                 <option value ="দ্বিতীয় বর্ষ">দ্বিতীয় বর্ষ</option>
-                  </TextField>
-               
-                   </Grid>
-                 </div>
-                    
+                 <select
                 
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="এইচএসসির বিভাগ"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+                 required
+                 className='formSelect'
                  
+                 id="hscJamat"
+                 name="hscJamat"
+                 value={hscJamat}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>বর্ষ</option>
+                   <option value ="প্রথম বর্ষ">প্রথম বর্ষ</option>
+                 <option value ="দ্বিতীয় বর্ষ">দ্বিতীয় বর্ষ</option>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>এইচএসসির বিভাগ *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="hscGroup"
-                  name="hscGroup"
-                  value={hscGroup}
-                  onChange={handleInput}
-                  >
-                      
-                        <option value ="বিজ্ঞান">বিজ্ঞান</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="hscGroup"
+                 name="hscGroup"
+                 value={hscGroup}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>এইচএসসির বিভাগ</option>
+                   <option value ="বিজ্ঞান">বিজ্ঞান</option>
                         <option value ="মানবিক">মানবিক</option>
                         <option value ="ব্যবসা">ব্যবসা</option>
-                  </TextField>
-               
-                   </Grid>
-                 </div>
-                    
-                
+                   
           
+                 </select>
+                 </Grid>
+                 </div>
               
-              
-                 <div className="form mt-4 mr-3 ml-1">
-                   <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+                  </div>
+               
+                  <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
 
              </div>
              : hsc==="ডিপ্লোমা সম্পন্ন করেছি।"? <div>
@@ -2897,97 +2383,59 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-           
-                <div className="custom-form mt-4 mr-3 ml-1">
-                <Grid container>
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>ডিপ্লোমা পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  
-                  <TextField
-                   select
-                   label="ডিপ্লোমা পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  
-                  id="diplomaYear"
-                  name="diplomaYear"
-                  value={diplomaYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-             
-                   </Grid>
+                 id="diplomaYear"
+                 name="diplomaYear"
+                 value={diplomaYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
+              
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনি কি বিএসসি করেছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                 <Grid container>
-                  
-                  <TextField
-                   select
-                   label="আপনি কি বিএসসি করেছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  
-                  id="diplomaBsc"
-                  name="diplomaBsc"
-                  value={diplomaBsc}
-                  onChange={handleInput}
-                  >
-                      
-                      <option value="হ্যাঁ">হ্যাঁ</option>
+                 id="diplomaBsc"
+                 name="diplomaBsc"
+                 value={diplomaBsc}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>বিএসসি</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                      <option value="করছি, এখনো শেষ হয়নি।">করছি, এখনো শেষ হয়নি।</option>
                      <option value="না,ডিপ্লোমার পর আর পড়িনি।">না,ডিপ্লোমার পর আর পড়িনি।</option>
-                  </TextField>
-                
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-                 
-        
+              
+                  </div>
+                
              {diplomaBsc==="হ্যাঁ"?
              <div>
                   <div className="form mt-4 mr-3 ml-1">
@@ -3026,69 +2474,32 @@ const EditProfile = ({setOnEdit}) => {
                     </Grid>
                    
                 </div>
-           
-                <div className="custom-form mt-4 mr-3 ml-1">
-                <Grid container>
-                   
-                   
-                  <TextField
-                   select
-                   label="বিএসসি পাসের সন"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>বিএসসি পাসের সন *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  
-                  id="diplomaBscYear"
-                  name="diplomaBscYear"
-                  value={diplomaBscYear}
-                  onChange={handleInput}
-                  >
-                       <option value ="২০২৭">২০২৭</option>
-                       <option value ="২০২৬">২০২৬</option>
-                       <option value ="২০২৫">২০২৫</option>
-                       <option value ="২০২৪">২০২৪</option>
-                       <option value ="২০২৩">২০২৩</option>
-                       <option value ="২০২২">২০২২</option>
-                       <option value ="২০২১">২০২১</option>
-                       <option value ="২০২০">২০২০</option>
-                       <option value ="২০১৯">২০১৯</option>
-                       <option value ="২০১৮">২০১৮</option>
-                       <option value ="২০১৭">২০১৭</option>
-                       <option value ="২০১৬">২০১৬</option>
-                       <option value ="২০১৫">২০১৫</option>
-                       <option value ="২০১৪">২০১৪</option>
-                       <option value ="২০১৩">২০১৩</option>
-                       <option value ="২০১২">২০১২</option>
-                       <option value ="২০১১">২০১১</option>
-                       <option value ="২০১০">২০১০</option>
-                       <option value ="২০০৯">২০০৯</option>
-                       <option value ="২০০৮">২০০৮</option>
-                       <option value ="২০০৭">২০০৭</option>
-                       <option value ="২০০৬">২০০৬</option>
-                       <option value ="২০০৫">২০০৫</option>
-                       <option value ="২০০৪">২০০৪</option>
-                       <option value ="২০০৩">২০০৩</option>
-                       <option value ="২০০২">২০০২</option>
-                       <option value ="২০০১">২০০১</option>
-                       <option value ="২০০০">২০০০</option>
-                       <option value ="১৯৯৯">১৯৯৯</option>
-                       <option value ="১৯৯৮">১৯৯৮</option>
-                       <option value ="১৯৯৭">১৯৯৭</option>
-                       <option value ="১৯৯৬">১৯৯৬</option>
-                       <option value ="১৯৯৫">১৯৯৫</option>
-                       <option value ="১৯৯৪">১৯৯৪</option>
-                       <option value ="১৯৯৩">১৯৯৩</option>
-                       <option value ="১৯৯২">১৯৯২</option>
-                       <option value ="১৯৯১">১৯৯১</option>
-                       <option value ="১৯৯০">১৯৯০</option>
-                  </TextField>
-                  
-                   </Grid>
+                 id="diplomaBscYear"
+                 name="diplomaBscYear"
+                 value={diplomaBscYear}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>সন</option>
+                   {years}
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
-             
+              
+                  </div>
+              
              
              </div>: diplomaBsc==="করছি, এখনো শেষ হয়নি।"? 
              <div>
@@ -3150,31 +2561,35 @@ const EditProfile = ({setOnEdit}) => {
            
             
              </div>:null}
-               <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
              </div>: hsc==="ডিপ্লোমা পড়ছি, এখনো শেষ হয়নি।"? 
              <div>
               <div className="form mt-4 mr-3 ml-1">
@@ -3233,59 +2648,67 @@ const EditProfile = ({setOnEdit}) => {
                    
                 </div>
              
-                <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+                <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
              
              </div>:hsc==="এসএসসির পর আর পড়িনি।"?
              <div>
-              <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+               <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
              </div>
              :null
              
@@ -3293,25 +2716,24 @@ const EditProfile = ({setOnEdit}) => {
               </div>
                : ssc==="না"? 
               <div>
-                   <div className="custom-form mt-4 mr-3 ml-1">
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কোন শ্রেণী পর্যন্ত পড়েছেন? *</h6>
+                   <div className='select-wrapper'>
                    <Grid container>
-                
-                    
-                  <TextField
-                  select
-                  label="কোন ক্লাস পর্যন্ত পড়েছেন?"
-                  fullWidth
-                  required
-                  className={classes.textfield}
-                  variant="outlined"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
+
                   
-                  id="sscJamat"
-                  name="sscJamat"
-                  value={sscJamat}
-                  onChange={handleInput}
-                  >
-                        <option value="১০ম">১০ম</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="sscJamat"
+                 name="sscJamat"
+                 value={sscJamat}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>শ্রেণী</option>
+                   <option value="১০ম">১০ম</option>
                         <option value="৯ম">৯ম</option>
                         <option value="৮ম">৮ম</option>
                         <option value="৭ম">৭ম</option>
@@ -3321,38 +2743,44 @@ const EditProfile = ({setOnEdit}) => {
                         <option value="৩য়">৩য়</option>
                         <option value="২য়">২য়</option>
                         <option value="১ম">১ম</option>
-                  </TextField>
-                
-                   </Grid>
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                    
               
-             
-                 <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     
-                     fullWidth
-                     multiline
-                     maxRows = {200}
-                     className={classes.textfield}
-                     variant="outlined"
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     label="অন্যান্য শিক্ষাগত যোগ্যতা"
-                     id="story"
-                     name="story"
-                     value={story}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                   <div  className={classes.textfield}>
+                  </div>
+                  
+            
+                  <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>অন্যান্য শিক্ষাগত যোগ্যতা *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="story"
+                  name="story"
+                  value={story}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div  className={classes.textfield}>
                     
                     <small>
                     উপরে জানাতে পারেননি এমন কোনো শিক্ষাগত যোগ্যতা থাকলে এখানে লিখতে পারেন। 
                     </small>
                     </div>
-                </div>
+                
+             </div>
              </div>
               :null
              }

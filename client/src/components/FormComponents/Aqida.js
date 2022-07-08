@@ -92,155 +92,147 @@ const EditProfile = ({setOnEdit}) => {
             
 
             <form onSubmit={handleSubmit}>
+            <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> ইসলামী দাম্পত্য জীবন নিয়ে আপনার পরিকল্পনা কী? *</h6>
+               <Grid container>
+                 <textarea
                 
-            <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     required
-                     fullWidth
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     className={classes.textfield}
-                     multiline
-                     minRows = "4"
-                     variant="outlined"
-                    
-                     label="ইসলামী দাম্পত্য জীবন নিয়ে আপনার পরিকল্পনা কী?"
-                     id="lifeP"
-                     name="lifeP"
-                     value={lifeP}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    
-                </div>
-            <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     required
-                     fullWidth
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     className={classes.textfield}
-                     
-                     variant="outlined"
-                    
-                     label="আপনি কোন মাযহাব অনুসরণ করেন?"
-                     id="aMazhab"
-                     name="aMazhab"
-                     value={aMazhab}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    
-                </div>
-            <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     required
-                     fullWidth
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     className={classes.textfield}
-                     
-                     variant="outlined"
-                     multiline
-                     minRows = "4"
-                     label="কোনো রাজনৈতিক মতাদর্শ থাকলে লিখুন।"
-                     id="politics"
-                     name="politics"
-                     value={politics}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    
-                </div>
-            <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     required
-                     fullWidth
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     className={classes.textfield}
-                     
-                     variant="outlined"
-                     multiline
-                     minRows = "4"
-                     label="মাজার সম্পর্কে আপনার বিশ্বাস কী?"
-                     id="majar"
-                     name="majar"
-                     value={majar}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    
-                </div>
+                 rows="4"
+                  required
                 
-            <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     required
-                     fullWidth
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     className={classes.textfield}
-                     
-                     variant="outlined"
-                     multiline
-                     minRows = "4"
-                     label="বিদ'আত সম্পর্কে আপনার ধারণা কী?"
-                     id="dayC"
-                     name="dayC"
-                     value={dayC}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    
-                </div>
-            <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     required
-                     fullWidth
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     className={classes.textfield}
-                     
-                     variant="outlined"
-                     multiline
-                     minRows = "4"
-                     label="আপনার পছন্দের অন্তত ৩ জন আলেমের নাম লিখুন।"
-                     id="fAlem"
-                     name="fAlem"
-                     value={fAlem}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    
-                </div>
-            <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                     required
-                     fullWidth
-                     InputProps={{ classes: { root: classes.inputRoot } }}
-                     className={classes.textfield}
-                     
-                     variant="outlined"
-                     multiline
-                     minRows = "4"
-                     label="আপনার পছন্দের অন্তত ৩ জন লেখকের নাম লিখুন।"
-                     id="fWriter"
-                     name="fWriter"
-                     value={fWriter}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-                    
-                </div>
+                  className='textArea'
+                 
                 
+                 
+    
+                  id="lifeP"
+                  name="lifeP"
+                  value={lifeP}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                
+             </div>
+                
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> আপনি কোন মাযহাব অনুসরণ করেন? *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="aMazhab"
+                  name="aMazhab"
+                  value={aMazhab}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                
+             </div>
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> কোনো রাজনৈতিক মতাদর্শ থাকলে লিখুন। *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="politics"
+                  name="politics"
+                  value={politics}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                
+             </div>
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> মাজার সম্পর্কে আপনার বিশ্বাস কী? *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="majar"
+                  name="majar"
+                  value={majar}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                
+             </div>
+          
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> আপনার পছন্দের অন্তত ৩ জন আলেমের নাম লিখুন। *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="fAlem"
+                  name="fAlem"
+                  value={fAlem}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                
+             </div>
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> আপনার পছন্দের অন্তত ৩ জন লেখকের নাম লিখুন। *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="2"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="fWriter"
+                  name="fWriter"
+                  value={fWriter}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                
+             </div>
+           
                
                 
                 

@@ -98,29 +98,28 @@ const EditProfile = ({setOnEdit}) => {
 
                {auth.user.status==="ডিভোর্সড"?
                <div>
-                     <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                    required
-                    multiline
-                    maxRows = "200"
-                    
-                     fullWidth
-                     className={classes.textfield}
-                     multiline
-                     maxRows = "200"
-                     variant="outlined"
-                    
-                     label="ডিভোর্সের কারণ"
-                     id="divorcedC"
-                     name="divorcedC"
-                     value={divorcedC}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-
-                    <div className={classes.textfield}>
+                 <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>ডিভোর্সের কারণ *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="4"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="divorcedC"
+                  name="divorcedC"
+                  value={divorcedC}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div className={classes.textfield}>
                     
                     <small>
                      ডিভোর্স কেনো হয়েছিলো, পূর্বের সংসারের সময়কাল কতো ছিলো, ইত্যাদি সম্পর্কে লিখুন।
@@ -128,31 +127,30 @@ const EditProfile = ({setOnEdit}) => {
                      
                       </small>
                       </div>
-                    
-                </div>
-                     <div className="form mt-4 mr-3 ml-1">
-                  <Grid container>
-                    <TextField
-                    required
-                    multiline
-                    maxRows = "200"
-                   
-                     fullWidth
-                     className={classes.textfield}
-                     multiline
-                     maxRows = "200"
-                     variant="outlined"
-                    
-                     label="আপনার সন্তান আছে?"
-                     id="divorcedCil"
-                     name="divorcedCil"
-                     value={divorcedCil}
-                     onChange={handleInput}
-                     
-                    />
-                    </Grid>
-
-                    <div className={classes.textfield}>
+                
+             </div>
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6>আপনার সন্তান আছে? *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="3"
+                  required
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="divorcedCil"
+                  name="divorcedCil"
+                  value={divorcedCil}
+                  onChange={handleInput}
+                  
+                 />
+               
+                 </Grid>
+                 <div className={classes.textfield}>
                     
                     <small>
                     যদি সন্তান থাকে, তাহলে সন্তানের বয়স কতো এবং বিয়ের পর সন্তানের সার্বিক দায়িত্ব কে নেবে, ইত্যাদি সম্পর্কেও লিখুন।
@@ -160,8 +158,8 @@ const EditProfile = ({setOnEdit}) => {
                      
                       </small>
                       </div>
-                    
-                </div>
+             </div>
+                   
                 
                  
 
@@ -173,8 +171,7 @@ const EditProfile = ({setOnEdit}) => {
                   <Grid container>
                     <TextField
                     required
-                    multiline
-                    maxRows = "200"
+                   
                     
                      fullWidth
                      className={classes.textfield}
@@ -204,8 +201,7 @@ const EditProfile = ({setOnEdit}) => {
                   <Grid container>
                     <TextField
                     required
-                    multiline
-                    maxRows = "200"
+                   
                    
                      fullWidth
                      className={classes.textfield}
@@ -238,8 +234,7 @@ const EditProfile = ({setOnEdit}) => {
                   <Grid container>
                     <TextField
                     required
-                    multiline
-                    maxRows = "200"
+                   
                     
                      fullWidth
                      className={classes.textfield}
@@ -270,8 +265,7 @@ const EditProfile = ({setOnEdit}) => {
                   <Grid container>
                     <TextField
                     required
-                    multiline
-                    maxRows = "200"
+                  
                     
                      fullWidth
                      className={classes.textfield}
@@ -301,124 +295,89 @@ const EditProfile = ({setOnEdit}) => {
                    </div>:
                 auth.user.status==="বিবাহিত"?
                   <div>
-                       <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                    
-                  <TextField
-                  required
-                  fullWidth
-                  className={classes.textfield}
-                 
-                  select
-                  label="বর্তমানে কতজন স্ত্রী আছেন?"
-                  variant="outlined"
-                  
+                      <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>বর্তমানে কতজন স্ত্রী আছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
 
                   
-                  id="cWN"
-                  name="cWN"
-                  value={cWN}
-                  onChange={handleInput}
-                  >
-                        
-                        <option value = "১ জন">১ জন</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="cWN"
+                 name="cWN"
+                 value={cWN}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>বর্তমান স্ত্রীর সংখ্যা</option>
+                   <option value = "১ জন">১ জন</option>
                         <option value = "২ জন">২ জন</option>
                         <option value = "৩ জন">৩ জন</option>
-                       
-                  </TextField>
-                 
-                   </Grid>
-               
-                    
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-                  
-               
-                   
-                      <div className="custom-form mt-4 mr-3 ml-1">
-                      <Grid container>
-                    
-                    
-                     {cWN==="১ জন"? 
-                                   
-                  <TextField
-                   required
-                   fullWidth
-                   className={classes.textfield}
-                 
-                   select
-                   label="নতুন বিয়েতে পূর্বের স্ত্রীর অনুমতি আছে?"
-                   variant="outlined"
-                   InputProps={{ classes: { root: classes.inputRoot } }}
-                   
-                   id="cWP"
-                   name="cWP"
-                   value={cWP}
-                   onChange={handleInput}
-                   >
-                         
-                         <option value = "হ্যাঁ">হ্যাঁ</option>
-                         <option value = "না">না</option>
-                        
-                        
-                   </TextField> :
-                  <TextField
-                   required
-                   fullWidth
-                   className={classes.textfield}
-                  
-                   select
-                   label="নতুন বিয়েতে পূর্বের স্ত্রীদের অনুমতি আছে?"
-                   variant="outlined"
-                   InputProps={{ classes: { root: classes.inputRoot } }}
-                   
-                   id="cWP"
-                   name="cWP"
-                   value={cWP}
-                   onChange={handleInput}
-                   >
-                         
-                         <option value = "হ্যাঁ">হ্যাঁ</option>
-                         <option value = "না">না</option>
-                        
-                        
-                   </TextField>}
-                  
-                    </Grid>
-                
-                     
+              
                   </div>
-                      <div className="custom-form mt-4 mr-3 ml-1">
-                      <Grid container>
                     
-                     
-                 
-                    <TextField
-                    required
-                   fullWidth
-                   className={classes.textfield}
-                  
-                   select
-                   label="আপনার সন্তান আছে?"
-                   variant="outlined"
-                  
                    
-                   id="mCil"
-                   name="mCil"
-                   value={mCil}
-                   onChange={handleInput}
-                   >
-                         
-                         <option value = "হ্যাঁ">হ্যাঁ</option>
-                         <option value = "না">না</option>
-                        
-                        
-                   </TextField>
-                  
-                    </Grid>
-                
+                      
+                      <div className="custom-form mt-4 mr-3 ml-1" >
+                        {cWN==="১ জন"?<h6 className='ms-2'>নতুন বিয়েতে পূর্বের স্ত্রীর অনুমতি আছে? *</h6>:
+                        <h6 className='ms-2'>নতুন বিয়েতে পূর্বের স্ত্রীদের অনুমতি আছে? *</h6>}
+                       <div className='select-wrapper'>
+                       <Grid container>
+    
+                      
+                     <select
+                    
+                     required
+                     className='formSelect'
                      
+                     id="cWP"
+                     name="cWP"
+                     value={cWP}
+                     onChange={handleInput}
+                     >
+                       <option className='text-muted' value="" disabled selected>বয়স</option>
+                       <option value = "হ্যাঁ">হ্যাঁ</option>
+                         <option value = "না">না</option>
+                       
+              
+                     </select>
+                     </Grid>
+                     </div>
+                  
+                      </div>
+                      <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনার সন্তান আছে? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="mCil"
+                 name="mCil"
+                 value={mCil}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>সন্তান</option>
+                   <option value = "হ্যাঁ">হ্যাঁ</option>
+                         <option value = "না">না</option>
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
                   </div>
+                     
                     
                    
                
@@ -426,28 +385,24 @@ const EditProfile = ({setOnEdit}) => {
                 
                 
                 <div>
-                
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  required
-                  fullWidth
-                  className={classes.textfield}
-                 
-                  select
-                  label="কতজন সন্তান আছে?"
-                  variant="outlined"
-                 
+                    <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>কতজন সন্তান আছে? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  id="mCilN"
-                  name="mCilN"
-                  value={mCilN}
-                  onChange={handleInput}
-                  >
-                        
-                        <option value = "১ জন">১ জন</option>
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="mCilN"
+                 name="mCilN"
+                 value={mCilN}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>সন্তানের সংখ্যা</option>
+                   <option value = "১ জন">১ জন</option>
                         <option value = "২ জন">২ জন</option>
                         <option value = "৩ জন">৩ জন</option>
                         <option value = "৪ জন">৪ জন</option>
@@ -457,12 +412,15 @@ const EditProfile = ({setOnEdit}) => {
                         <option value = "৮ জন">৮ জন</option>
                         <option value = "৯ জন">৯ জন</option>
                         <option value = "১০ জন">১০ জন</option>
-                  </TextField>
-                
-                   </Grid>
-               
-                    
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
+              
+                  </div>
+                
+             
                
                 {mCilN==="১ জন"?
                 <div className="form mt-4 mr-3 ml-1">
@@ -528,37 +486,33 @@ const EditProfile = ({setOnEdit}) => {
                  
                 
                   </div>:null}
-                  <div className="custom-form mt-4 mr-3 ml-1">
-                      <Grid container>
-                    
-                     
-                 
-                    <TextField
-                    required
-                   fullWidth
-                   className={classes.textfield}
-                 
-                   label="বিয়েতে আপনার অভিভাবক রাজি আছেন?"
-                   variant="outlined"
-                   InputProps={{ classes: { root: classes.inputRoot } }}
-                   
-                   id="gPermission"
-                   name="gPermission"
-                   value={gPermission}
-                   onChange={handleInput}
-                   >
-                         
-                         <option value = "হ্যাঁ">হ্যাঁ</option>
-                         <option value = "না">না</option>
-                        
-                        
-                   </TextField>
-                 
-                    </Grid>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>বিয়েতে আপনার অভিভাবক রাজি আছেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
                 
-                     
-                  </div>
+                 required
+                 className='formSelect'
                  
+                 id="gPermission"
+                 name="gPermission"
+                 value={gPermission}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>অভিভাবকের অনুমতি</option>
+                   <option value = "হ্যাঁ">হ্যাঁ</option>
+                         <option value = "না">না</option>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+                  
                   <div className="form mt-4 mr-3 ml-1">
                <Grid container>
                  <TextField
@@ -814,7 +768,7 @@ const EditProfile = ({setOnEdit}) => {
                     <div className="form mt-4 mr-3 ml-1">
                  
                  <Button disableRipple fullWidth
-                 className={classes.textfield} className={classes.tab} onClick={() => {
+                  className={classes.tab} onClick={() => {
                handleApproval();
              
               }}  type="submit">Save</Button>

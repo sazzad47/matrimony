@@ -124,180 +124,150 @@ const EditProfile = () => {
                  
                 
           
-                <div className="custom-form mt-4 mr-3 ml-1">
+            <div className="custom-form mt-4 mr-3 ml-1">
                   
-                 <h6> স্থায়ী ঠিকানা *  </h6>
-
-                  <Grid container>
-
+                  <h6> স্থায়ী ঠিকানা *  </h6>
                   
-                 <TextField
-                 fullWidth
-                 required
-                 style={{marginBottom:'10px', marginTop:'20px', marginLeft:'20px',marginRight:'20px'}}
-                 variant="outlined"
-                 label="বিভাগ"
-                 select
-                 id="pdivision"
-                 name="pdivision"
-                 value={pdivision}
-                 onChange={handleInput}
-                 >
+ 
+            
+                   <div className='select-wrapper'>
+                    <Grid container>
+ 
+                   
+                  <select
+                 
+                  required
+                  className='formSelect'
+                
+                
+                  id="pdivision"
+                  name="pdivision"
+                  value={pdivision}
+                  onChange={handleInput}
+                  >
+                    <option className='text-muted' value="" disabled selected>বিভাগ</option>
                     {pdivisions}
+                    
+           
+                  </select>
+                  </Grid>
+                  </div>
+                   <div className='select-wrapper'>
+                    <Grid container>
+ 
                    
-                   
-          
-                 </TextField>
-                 </Grid>
-                  <Grid container>
-
-                  
-                 <TextField
-                 fullWidth
-                 required
-                 style={{marginBottom:'10px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
-                 variant="outlined"
-                 label="জেলা"
-                 select
-                 id="pdistrict"
-                 name="pdistrict"
-                 value={pdistrict}
-                 onChange={handleInput}
-                 >
+                  <select
+                 
+                  required
+                  className='formSelect'
+   
+                  id="pdistrict"
+                  name="pdistrict"
+                  value={pdistrict}
+                  onChange={handleInput}
+                  >
+                    <option className='text-muted' value="" disabled selected>জেলা</option>
                     {pdistricts}
+                    
+           
+                  </select>
+                  </Grid>
+                  </div>
+                   <div className='select-wrapper'>
+                    <Grid container>
+ 
                    
-                   
-          
-                 </TextField>
-                 </Grid>
-                  <Grid container>
-
-                  
-                  {pdistrict==="ঢাকা"?<TextField
-                 fullWidth
-                 required
-                 style={{marginBottom:'20px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
-                 variant="outlined"
-                 label="থানা/উপজেলা"
-                 select
-                 id="pupazila"
-                 name="pupazila"
-                 value={pupazila}
-                 onChange={handleInput}
-                 >
+                  <select
+                 
+                  required
+                  className='formSelect'
+                 
+                  id="pupazila"
+                  name="pupazila"
+                  value={pupazila}
+                  onChange={handleInput}
+                  >
+                    <option className='text-muted' value="" disabled selected>উপজেলা</option>
                     {pupazilas}
+                    
+           
+                  </select>
+                  </Grid>
+                  </div>
+               
+                 </div>
+                 <div className="custom-form mt-4 mr-3 ml-1">
                    
+                  <h6> বর্তমান ঠিকানা *  </h6>
+                 
+                  <div className='select-wrapper'>
+                    <Grid container>
+ 
                    
-          
-                 </TextField>
-                 :<TextField
-                 fullWidth
-                 required
-                 style={{marginBottom:'20px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
-                 variant="outlined"
-                 label="উপজেলা"
-                 select
-                 id="pupazila"
-                 name="pupazila"
-                 value={pupazila}
-                 onChange={handleInput}
-                 >
-                    {pupazilas}
-                   
-                   
-          
-                 </TextField>}
-                 </Grid>
-              
-                   
-                </div>
-                <div className="custom-form mt-4 mr-3 ml-1">
-                  
-                 <h6> বর্তমান ঠিকানা *  </h6>
-
-                  <Grid container>
-
-                  
-                 <TextField
-                 fullWidth
-                 required
-                 style={{marginBottom:'10px', marginTop:'20px', marginLeft:'20px',marginRight:'20px'}}
-                 variant="outlined"
-                 label="বিভাগ"
-                 select
-                 id="cdivision"
-                 name="cdivision"
-                 value={cdivision}
-                 onChange={handleInput}
-                 >
+                  <select
+                 
+                  required
+                  className='formSelect'
+                
+                
+                  id="cdivision"
+                  name="cdivision"
+                  value={cdivision}
+                  onChange={handleInput}
+                  >
+                    <option className='text-muted' value="" disabled selected>বিভাগ</option>
                     {cdivisions}
+                    
+           
+                  </select>
+                  </Grid>
+                  </div>
+                   <div className='select-wrapper'>
+                    <Grid container>
+ 
                    
+                  <select
+                 
+                  required
+                  className='formSelect'
+   
+                  id="cdistrict"
+                  name="cdistrict"
+                  value={cdistrict}
+                  onChange={handleInput}
+                  >
+                    <option className='text-muted' value="" disabled selected>জেলা</option>
+                    {cdistricts}
+                    
+           
+                  </select>
+                  </Grid>
+                  </div>
+                   <div className='select-wrapper'>
+                    <Grid container>
+ 
                    
-          
-                 </TextField>
-                 </Grid>
-                  <Grid container>
-
-                  
-                 <TextField
-                 fullWidth
-                 required
-                 style={{marginBottom:'10px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
-                 variant="outlined"
-                 label="জেলা"
-                 select
-                 id="cdistrict"
-                 name="cdistrict"
-                 value={cdistrict}
-                 onChange={handleInput}
-                 >
-                   {cdistricts}
-                   
-                   
-          
-                 </TextField>
-                 </Grid>
-                  <Grid container>
-
-                  
-                  {cdistrict==="ঢাকা"? <TextField
-                 fullWidth
-                 required
-                 style={{marginBottom:'20px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
-                 variant="outlined"
-                 label="থানা/উপজেলা"
-                 select
-                 id="cupazila"
-                 name="cupazila"
-                 value={cupazila}
-                 onChange={handleInput}
-                 >
+                  <select
+                 
+                  required
+                  className='formSelect'
+                 
+                  id="cupazila"
+                  name="cupazila"
+                  value={cupazila}
+                  onChange={handleInput}
+                  >
+                    <option className='text-muted' value="" disabled selected>উপজেলা</option>
                     {cupazilas}
-                   
-                   
-          
-                 </TextField>
-                : <TextField
-                 fullWidth
-                 required
-                 style={{marginBottom:'20px', marginTop:'10px', marginLeft:'20px',marginRight:'20px'}}
-                 variant="outlined"
-                 label="উপজেলা"
-                 select
-                 id="cupazila"
-                 name="cupazila"
-                 value={cupazila}
-                 onChange={handleInput}
-                 >
-                    {cupazilas}
-                   
-                   
-          
-                 </TextField>}
-                 </Grid>
-              
-                   
-                </div>
+                    
+           
+                  </select>
+                  </Grid>
+                  </div>
+                
+ 
+               
+                 </div>
                  
             
                

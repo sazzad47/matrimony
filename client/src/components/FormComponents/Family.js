@@ -189,84 +189,78 @@ const EditProfile = ({setOnEdit}) => {
                     
                 </div>
               
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>ভাই ক'জন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
 
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="ভাই ক'জন?"
-                  fullWidth
-                  className={classes.textfield}
-                  required
                   
-                  variant="outlined"
-                 
-                  
-                  id="brother"
-                  name="brother"
-                  value={brother}
-                  onChange={handleInput}
-                  >
-                        <option value = "ভাই নেই">ভাই নেই</option>
-                        <option value = "১ জন">১ জন</option>
-                        <option value = "২ জন">২ জন</option>
-                        <option value = "৩ জন">৩ জন</option>
-                        <option value = "৪ জন">৪ জন</option>
-                        <option value = "৫ জন">৫ জন</option>
-                        <option value = "৬ জন">৬ জন</option>
-                        <option value = "৭ জন">৭ জন</option>
-                        <option value = "৮ জন">৮ জন</option>
-                        <option value = "৯ জন">৯ জন</option>
-                        <option value = "১০ জন">১০ জন</option>
-                  </TextField>
-                 
-                   </Grid>
-               
-                    
-                 </div>
-
-                <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  select
-                  label="বোন ক'জন?"
-                  fullWidth
-                  className={classes.textfield}
-                  required
-                  
-                  variant="outlined"
-                 
-                  
-                  id="sister"
-                  name="sister"
-                  value={sister}
-                  onChange={handleInput}
-                  >
-                        <option value = "বোন নেই">বোন নেই</option>
-                        <option value = "১ জন">১ জন</option>
-                        <option value = "২ জন">২ জন</option>
-                        <option value = "৩ জন">৩ জন</option>
-                        <option value = "৪ জন">৪ জন</option>
-                        <option value = "৫ জন">৫ জন</option>
-                        <option value = "৬ জন">৬ জন</option>
-                        <option value = "৭ জন">৭ জন</option>
-                        <option value = "৮ জন">৮ জন</option>
-                        <option value = "৯ জন">৯ জন</option>
-                        <option value = "১০ জন">১০ জন</option>
-                  </TextField>
-                  
-                   </Grid>
-               
-                    
-                 </div>
-
-               
-               
+                 <select
                 
+                 required
+                 className='formSelect'
+                 
+                 id="brother"
+                 name="brother"
+                 value={brother}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>ভাইয়ের সংখ্যা</option>
+                   <option value = "ভাই নেই">ভাই নেই</option>
+                        <option value = "১ জন">১ জন</option>
+                        <option value = "২ জন">২ জন</option>
+                        <option value = "৩ জন">৩ জন</option>
+                        <option value = "৪ জন">৪ জন</option>
+                        <option value = "৫ জন">৫ জন</option>
+                        <option value = "৬ জন">৬ জন</option>
+                        <option value = "৭ জন">৭ জন</option>
+                        <option value = "৮ জন">৮ জন</option>
+                        <option value = "৯ জন">৯ জন</option>
+                        <option value = "১০ জন">১০ জন</option>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+              
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>বোন ক'জন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
+                
+                 required
+                 className='formSelect'
+                 
+                 id="sister"
+                 name="sister"
+                 value={sister}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>বোনের সংখ্যা</option>
+                   <option value = "বোন নেই">বোন নেই</option>
+                        <option value = "১ জন">১ জন</option>
+                        <option value = "২ জন">২ জন</option>
+                        <option value = "৩ জন">৩ জন</option>
+                        <option value = "৪ জন">৪ জন</option>
+                        <option value = "৫ জন">৫ জন</option>
+                        <option value = "৬ জন">৬ জন</option>
+                        <option value = "৭ জন">৭ জন</option>
+                        <option value = "৮ জন">৮ জন</option>
+                        <option value = "৯ জন">৯ জন</option>
+                        <option value = "১০ জন">১০ জন</option>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
+              
+                  </div>
+              
 
                 {brother==="ভাই নেই"? null
                 : brother==="১ জন"?

@@ -259,24 +259,26 @@ const EditProfile = ({setOnEdit}) => {
                  </Grid>
                 
              </div>
-            <div className="form mt-4 mr-3 ml-1">
+            <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> জান্নাতের সাথীর যে বৈশিষ্ট্য বা গুণাবলী আশা করেন *</h6>
                <Grid container>
-                 <TextField
-                 multiline
-                 minRows = "8"
+                 <textarea
+                
+                 rows="8"
                   required
-                  fullWidth
-                  className={classes.textfield}
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                  variant="outlined"
+                
+                  className='textArea'
                  
-                  label="জান্নাতের সাথীর যে বৈশিষ্ট্য বা গুণাবলী আশা করেন"
+                
+                 
+    
                   id="pVirtue"
                   name="pVirtue"
                   value={pVirtue}
                   onChange={handleInput}
                   
                  />
+               
                  </Grid>
                 
              </div>

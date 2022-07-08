@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { checkImage } from '../../utils/imageUpload'
 import { GLOBALTYPES } from '../../redux/actions/globalTypes'
 import { updateProfileUser } from '../../redux/actions/profileAction'
-import { Button, Grid, makeStyles, TextField } from '@material-ui/core'
+import { Button, Grid, makeStyles, TextareaAutosize, TextField } from '@material-ui/core'
 
 const useStyles = makeStyles((theme)=>({
   textfield: {
@@ -90,34 +90,33 @@ const EditProfile = ({setOnEdit}) => {
             
 
             <form onSubmit={handleSubmit}>
+            <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>পাঁচ ওয়াক্ত সালাত আদায় করেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
+                  
+                 <select
                 
-            <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                  
-                   
-                  <TextField
-                  fullWidth
-                  
-                  
-                  required
-                  label="পাঁচ ওয়াক্ত সালাত আদায় করেন?"
-                  variant="outlined"
-                  className={classes.textfield}
-                  select
-                  id="salat"
-                  name="salat"
-                  value={salat}
-                  onChange={handleInput}
-                  >
-                     <option value="হ্যাঁ">হ্যাঁ</option>
+                 required
+                 className='formSelect'
+                 
+                 id="salat"
+                 name="salat"
+                 value={salat}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>পাঁচ ওয়াক্ত সালাত</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                      <option value="না">না</option>
-                  </TextField>
-                
-                   </Grid>
-               
-                    
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
+              
+                  </div>
+        
                 
                  <div className="form mt-4 mr-3 ml-1">
                <Grid container>
@@ -148,62 +147,59 @@ const EditProfile = ({setOnEdit}) => {
 
             {auth.user.gender==="পাত্রের বায়োডাটা"?
             <div>
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                   
-                  <TextField
-                  required
-                  fullWidth
-                  className={classes.textfield}
-                  select
+                <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>আপনার সুন্নতি দাড়ি আছে? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  label="আপনার সুন্নতি দাড়ি আছে?"
-                  variant="outlined"
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  
-                  id="dari"
-                  name="dari"
-                  value={dari}
-                  onChange={handleInput}
-                  >
-                     <option value="হ্যাঁ">হ্যাঁ</option>
+                 id="dari"
+                 name="dari"
+                 value={dari}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>সুন্নতি দাড়ি</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                      <option value="না">না</option>
-                  </TextField>
+                   
+          
+                 </select>
+                 </Grid>
+                 </div>
               
-                   </Grid>
-               
-                    
-                 </div>
-                 <div className="custom-form mt-4 mr-3 ml-1">
-                     <Grid container>
-                   
-                    
-                  <TextField
-                  required
-                  fullWidth
-                  className={classes.textfield}
-                  select
-                  label="টাখনুর উপর কাপড় পরেন?"
+                  </div>
+                  <div className="custom-form mt-4 mr-3 ml-1" >
+                   <h6 className='ms-2'>টাখনুর উপর কাপড় পরেন? *</h6>
+                   <div className='select-wrapper'>
+                   <Grid container>
+
                   
-                  
-                  variant="outlined"
+                 <select
+                
+                 required
+                 className='formSelect'
                  
-                  
-                  id="takhnu"
-                  name="takhnu"
-                  value={takhnu}
-                  onChange={handleInput}
-                  >
-                     <option value="হ্যাঁ">হ্যাঁ</option>
+                 id="takhnu"
+                 name="takhnu"
+                 value={takhnu}
+                 onChange={handleInput}
+                 >
+                   <option className='text-muted' value="" disabled selected>টাখনুর উপর কাপড়</option>
+                   <option value="হ্যাঁ">হ্যাঁ</option>
                      <option value="না">না</option>
-                  </TextField>
-                 
-                   </Grid>
-               
-                    
+                   
+          
+                 </select>
+                 </Grid>
                  </div>
-        
+              
+                  </div>
+                
                 
                  <div className="form mt-4 mr-3 ml-1">
                <Grid container>
@@ -321,33 +317,7 @@ const EditProfile = ({setOnEdit}) => {
 
               
                 
-                {auth.user.eduMedium==="জেনারেল"?
-               
-               <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
-                  required
-                  multiline
-                  maxRows = "200"
-                  InputProps={{ classes: { root: classes.inputRoot } }}
-                   
-                   fullWidth
-                   className={classes.textfield}
-                   
-                   
-                   variant="outlined"
-                  
-                   label="কুরআন-হাদিসের জ্ঞান অর্জনের চেষ্টা করেন?"
-                   id="iStudy"
-                   name="iStudy"
-                   value={iStudy}
-                   onChange={handleInput} 
-                   
-                  />
-                  </Grid>
-                 
-              </div>
-              :null }
+                
               <div className="form mt-4 mr-3 ml-1">
                 <Grid container>
                   <TextField
@@ -372,30 +342,7 @@ const EditProfile = ({setOnEdit}) => {
                   </Grid>
                  
               </div>
-              <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
-                  required
-                  multiline
-                  maxRows = "200"
-                  
-                   
-                   fullWidth
-                   className={classes.textfield}
-                   
-                   
-                   variant="outlined"
-                  
-                   label="তাহাজ্জুদ সালাত আদায় করেন?"
-                   id="tahajjud"
-                   name="tahajjud"
-                   value={tahajjud}
-                   onChange={handleInput} 
-                   
-                  />
-                  </Grid>
-                  
-              </div>
+              
               <div className="form mt-4 mr-3 ml-1">
                 <Grid container >
                   <TextField
@@ -425,28 +372,28 @@ const EditProfile = ({setOnEdit}) => {
                     </small>
                     </div>
               </div>
-              <div className="form mt-4 mr-3 ml-1">
-                <Grid container>
-                  <TextField
+              <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> নিজের সম্পর্কে কিছু লিখুন *</h6>
+               <Grid container>
+                 <textarea
+                
+                 rows="8"
                   required
-                  multiline
-                  minRows = "8"
+                
+                  className='textArea'
+                 
+                
+                 
+    
+                  id="aboutMe"
+                  name="aboutMe"
+                  value={aboutMe}
+                  onChange={handleInput}
                   
-                   
-                   fullWidth
-                   className={classes.textfield}
-                   
-                   
-                   variant="outlined"
-                  
-                   label="নিজের সম্পর্কে কিছু লিখুন"
-                   id="aboutMe"
-                   name="aboutMe"
-                   value={aboutMe}
-                   onChange={handleInput} 
-                   
-                  /> 
-                  </Grid>
+                 />
+               
+                 </Grid>
+                
                   <div className={classes.textfield}>
                     
                    {auth.user.gender==="পাত্রের বায়োডাটা"? <small>
@@ -456,7 +403,8 @@ const EditProfile = ({setOnEdit}) => {
                     নিজের শখ-স্বপ্ন, স্বভাব-চরিত্র,পছন্দ-অপছন্দ, ইত্যাদি সম্পর্কে বিস্তারিত লিখুন, যেনো পাত্রপক্ষ আপনার সম্পর্কে যথাসম্ভব পরিষ্কার ধারণা পেতে পারেন। 
                     </small>}
                     </div>
-              </div>
+             </div>
+              
                
               
                 
