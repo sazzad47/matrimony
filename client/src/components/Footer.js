@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 import {Card,Typography, Grid} from '@material-ui/core'
 
 const Footer = () => {
+  const firstLogin = localStorage.getItem('firstLogin')
     return (
        
-        <footer className='footer'>
+        <footer className='footer mt-5'>
         <div className='footerMenus px-2 px-md-3 px-lg-5 row'>
           <div className='footerMenu align-items-start col-12 col-md-6 col-lg-3'>
             <div className='row'>Services</div>
-            <div className='row'><Link className='footerLink' to="/edit_biodata">Create your bio-data</Link></div>
+            <div className='row'><Link className='footerLink' to={firstLogin? "/edit_biodata" : "/register"}>Create your bio-data</Link></div>
             <div className='row'><Link className='footerLink' to="/quiz">Quiz</Link></div>
             <div className='row'><Link className='footerLink' to="/reportProblem">Report a Problem</Link></div>
            

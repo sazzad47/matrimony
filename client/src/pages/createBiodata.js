@@ -125,7 +125,7 @@ function CreateBiodata() {
         className={toggleState === 3 ? (classes.activeTab) : (classes.tab)}
         onClick={() => toggleTab(3)}
             >
-              <Typography>{auth.user.fatherN?<i class="bi bi-check"></i>:null} পারিবারিক তথ্য</Typography>
+              <Typography>{auth.user.fatherN?<i class="bi bi-check"></i>:null} পারিবার</Typography>
            
             </Button>
         </Grid>
