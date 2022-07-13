@@ -232,29 +232,6 @@ const EditProfile = ({setOnEdit}) => {
                 
              </div>
                  <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> পেশা *</h6>
-               <Grid container>
-                 <textarea
-                
-                 rows="2"
-                  required
-                
-                  className='textArea'
-                 
-                
-                 
-    
-                  id="pProf"
-                  name="pProf"
-                  value={pProf}
-                  onChange={handleInput}
-                  
-                 />
-               
-                 </Grid>
-                
-             </div>
-                 <div className="custom-form mt-4 mr-3 ml-1">
               <h6> জেলা *</h6>
                <Grid container>
                  <textarea
