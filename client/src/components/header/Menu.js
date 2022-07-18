@@ -103,7 +103,7 @@ const HeaderMenu = () => {
                 
 
                 
-                <Grid 
+                <div className='d-block d-md-none'
                  
                 style={{opacity: 1}} >
                   <Link to ="/">  <span className="nav-link pr-2 pr-lg-3">
@@ -114,7 +114,7 @@ const HeaderMenu = () => {
                              
                    </span>
                    </Link>
-                    </Grid>
+                    </div>
                
                 <Grid 
                 justifyContent="flex-end"
