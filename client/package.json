@@ -48,8 +48,8 @@
     ]
   },
   "engines": {
-    "npm": "8.5.0",
-    "node": "16.14.2"
+    "npm": "8.15.0",
+    "node": "16.17.0"
  },
   "browserslist": {
     "production": [

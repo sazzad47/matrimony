@@ -1,4 +1,4 @@
-import { Card, makeStyles } from '@material-ui/core';
+import { Card, makeStyles, Typography } from '@material-ui/core';
 import React from 'react'
 const useStyles = makeStyles((theme)=>({
   card:{
@@ -20,39 +20,34 @@ const ContactInfo = ({id, dispatch, user, profile}) => {
           <div className="textHeading">বায়োডাটা নং-{user.index} এর যোগাযোগ তথ্য </div>
           </div>
         </div>
-        {user.fullname === ""? null :
-             <div className="row infoBox-1">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">পূর্ণ নাম</div> </div>
-               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.fullname}</div> </div>
-             </div>}
-        {user.gMobile === ""? null :
-             <div className="row infoBox-2">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">অভিভাবকের মোবাইল নাম্বার</div> </div>
-               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.gMobile}</div> </div>
-             </div>}
-        {user.gRelation === ""? null :
-             <div className="row infoBox-1">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">{user.gender === "পাত্রের বায়োডাটা"?<span>পাত্র যার নাম্বার দিয়েছেন</span>:<span>পাত্রী যার নাম্বার দিয়েছেন</span>}</div> </div>
-               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.gRelation}</div> </div>
-             </div>}
-        {user.urEmail === ""? null :
-             <div className="row infoBox-2">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">বায়োডাটা পাঠানোর ই-মেইল এড্রেস</div> </div>
-               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.urEmail}</div> </div>
-             </div>}
-        {user.urMobile === ""? null :
-             <div className="row infoBox-2">
-               <div className="col-md-6 w-50 w-lg-50 wQuestion"><div className="bioInfoQ">{user.gender === "পাত্রের বায়োডাটা"?<span>পাত্রের মোবাইল নাম্বার</span>:<span>পাত্রীর মোবাইল নাম্বার</span>}</div> </div>
-               <div className="col-md-6 w-50 w-lg-50 cAnswer"><div className="bioInfoA">{user.urMobile}</div> </div>
-             </div>}
+        <div className="row infoBox-1">
+               <Typography>আসসালামু আলাইকুম ওয়া রহমাতুল্লাহি ওয়া বারাকাতুহ<br/>
+               জান্নাতের সাথী ডট কম থেকে বলছি,<br/><br/>
+               বায়োডাটা নং {user.index} এর যোগাযোগ তথ্যঃ<br/><br/>
+               {user.gender==='পাত্রের বায়োডাটা'? 'পাত্রের':'পাত্রীর'} অভিভাবকের মোবাইল নাম্বারঃ<br/>
+               {user.gMobile}<br/>
+               অভিভাবকের সাথে {user.gender==='পাত্রের বায়োডাটা'? 'পাত্রের':'পাত্রীর'} সম্পর্কঃ<br/>
+               {user.gRelation}<br/>
+               {user.gender==='পাত্রের বায়োডাটা'? 'পাত্রকে':'পাত্রীকে'} বায়োডাটা পাঠানোর ই-মেইল এড্রেসঃ<br/>
+               {user.urEmail}<br/><br/>
+               যোগাযোগের ক্ষত্রে কোনো ধরনের অসুবিধার সম্মুখীন হলে আমাদেরকে জানানোর অনুরোধ রইলো।</Typography>
         
+          </div>
+        <div className="row infoBox-2 mt-3">
+               <Typography style={{fontWeight:'bold'}}>প্রকাশযোগ্য নয়<br/><br/>
+               {user.gender==='পাত্রের বায়োডাটা'? 'পাত্রের':'পাত্রীর'} নামঃ<br/>
+               {user.fullname}<br/>
+               বাবার নামঃ<br/>
+               {user.fatherN}<br/>
+               মায়ের নামঃ<br/>
+               {user.motherN}<br/>
+               {user.gender==='পাত্রের বায়োডাটা'? 'পাত্রের':'পাত্রীর'} মোবাইল নাম্বারঃ<br/>
+               {user.urMobile}</Typography><br/>
+              
+  
+        
+          </div>
 
-        
-        
-        
-
-        
-        
        
         
         </div>
